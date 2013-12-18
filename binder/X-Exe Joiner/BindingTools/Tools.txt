@@ -1,0 +1,26 @@
+This are my Binding Tools !!
+They are very small.
+
+Heres the description:
+
+GDA (Get Disk Access)
+---------------------
+--> This is an simple tool: It shares all drives on a computer
+    so you can gain access through:
+    \\Host\Lazarus[Drive]$
+    Example: \\Lazarus\LazarusC$
+
+
+QR (Quick Reboot)
+-----------------
+--> This Tool reboots. Very effektive for Lockdown users *G*
+    The Tool reboots, and Lockdown won't react.
+
+
+RCMOS (Reset CMOS)
+------------------
+--> Should be Self-Explaining
+
+
+
+This Tools are for Educational use only !!

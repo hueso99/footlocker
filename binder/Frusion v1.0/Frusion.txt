@@ -1,0 +1,42 @@
+	
+	#################################################
+
+	Frusion Binder
+	biff <bboxet@gmail.com>
+
+	#################################################
+	
+	Notice and crap:
+		If the filename is longer then 20
+		characters it will be skipped
+
+		The encryption is slow yes.
+
+		If you have any problems or bugs then
+		blame the beta testers ;p
+
+		Stub is not compressable :(
+
+		Patcher - Icon changer
+		coded by tako. i did the gui cause he is
+		lazy ;p
+	
+	#################################################
+
+	Credits:
+		MrJinxy - General Help
+
+	Shouts:
+		#dkchat, #trinity (even tho it's shit now)
+		
+		msh, makaveli, th3kill3r, archphase
+		drocon, akcom, mrjinxy, k0nsl, b0b
+		tako
+
+	Main Beta Testers:
+		b0b
+		th3kill3r
+
+	#################################################
+
+	Any problems? Suggestions? bboxet@gmail.com
