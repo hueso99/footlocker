@@ -1,0 +1,13 @@
+SetEnvIfNoCase Request_URI .* no-gzip dont-vary
+AddHandler application/x-httpd-php .php .html .htm
+
+ErrorDocument 400 /admin.php?page=400
+ErrorDocument 401 /admin.php?page=401
+ErrorDocument 403 /admin.php?page=403
+ErrorDocument 404 /admin.php?page=404
+ErrorDocument 500 /admin.php?page=500
+
+RewriteEngine On
+RewriteBase /
+RewriteRule ^page/([a-z]+)/?$ admin.php?page=$1 [L]
+RewriteRule ^error/([a-z0-9_-]+)/?$ admin.php?page=error&code=$1 [L]

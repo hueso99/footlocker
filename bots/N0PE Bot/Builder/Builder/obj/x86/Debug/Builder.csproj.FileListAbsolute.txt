@@ -1,0 +1,9 @@
+C:\Users\GN0M3\Desktop\N0PE Bot\Builder\Builder\bin\Debug\Builder.exe
+C:\Users\GN0M3\Desktop\N0PE Bot\Builder\Builder\bin\Debug\Builder.pdb
+C:\Users\GN0M3\Desktop\N0PE Bot\Builder\Builder\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\GN0M3\Desktop\N0PE Bot\Builder\Builder\obj\x86\Debug\Builder.fMain.resources
+C:\Users\GN0M3\Desktop\N0PE Bot\Builder\Builder\obj\x86\Debug\Builder.Properties.Resources.resources
+C:\Users\GN0M3\Desktop\N0PE Bot\Builder\Builder\obj\x86\Debug\ResGen.read.1.tlog
+C:\Users\GN0M3\Desktop\N0PE Bot\Builder\Builder\obj\x86\Debug\ResGen.write.1.tlog
+C:\Users\GN0M3\Desktop\N0PE Bot\Builder\Builder\obj\x86\Debug\Builder.exe
+C:\Users\GN0M3\Desktop\N0PE Bot\Builder\Builder\obj\x86\Debug\Builder.pdb

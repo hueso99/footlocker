@@ -1,0 +1,7 @@
+C:\Users\Nathan\Documents\Visual Studio 2010\Projects\Net-Weave R Plugins\Botkiller\bin\Debug\Botkiller.dll
+C:\Users\Nathan\Documents\Visual Studio 2010\Projects\Net-Weave R Plugins\Botkiller\bin\Debug\Botkiller.pdb
+C:\Users\Nathan\Documents\Visual Studio 2010\Projects\Net-Weave R Plugins\Botkiller\bin\Debug\XPlugin.dll
+C:\Users\Nathan\Documents\Visual Studio 2010\Projects\Net-Weave R Plugins\Botkiller\bin\Debug\XPlugin.pdb
+C:\Users\Nathan\Documents\Visual Studio 2010\Projects\Net-Weave R Plugins\Botkiller\obj\Debug\Botkiller.csprojResolveAssemblyReference.cache
+C:\Users\Nathan\Documents\Visual Studio 2010\Projects\Net-Weave R Plugins\Botkiller\obj\Debug\Botkiller.dll
+C:\Users\Nathan\Documents\Visual Studio 2010\Projects\Net-Weave R Plugins\Botkiller\obj\Debug\Botkiller.pdb

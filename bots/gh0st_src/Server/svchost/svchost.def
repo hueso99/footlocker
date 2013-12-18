@@ -1,0 +1,6 @@
+LIBRARY svchost
+SEGMENTS
+.shared	READ WRITE SHARED
+EXPORTS
+	ServiceMain
+	ResetSSDT

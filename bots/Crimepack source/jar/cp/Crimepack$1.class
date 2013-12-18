@@ -1,0 +1,21 @@
+package cpak;
+
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Set;
+
+class Crimepack$1 extends HashMap
+{
+  final Crimepack this$0;
+  private final HashSet val$s;
+
+  Crimepack$1(Crimepack paramCrimepack, HashSet paramHashSet)
+  {
+  }
+
+  public Set entrySet()
+  {
+    return this.val$s;
+  }
+}
+

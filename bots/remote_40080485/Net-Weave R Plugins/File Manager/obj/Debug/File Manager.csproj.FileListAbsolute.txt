@@ -1,0 +1,7 @@
+C:\Users\Nathan\Documents\Visual Studio 2010\Projects\Net-Weave R Plugins\File Manager\bin\Debug\File Manager.dll
+C:\Users\Nathan\Documents\Visual Studio 2010\Projects\Net-Weave R Plugins\File Manager\bin\Debug\File Manager.pdb
+C:\Users\Nathan\Documents\Visual Studio 2010\Projects\Net-Weave R Plugins\File Manager\obj\Debug\File Manager.csprojResolveAssemblyReference.cache
+C:\Users\Nathan\Documents\Visual Studio 2010\Projects\Net-Weave R Plugins\File Manager\obj\Debug\File_Manager.MainForm.resources
+C:\Users\Nathan\Documents\Visual Studio 2010\Projects\Net-Weave R Plugins\File Manager\obj\Debug\File Manager.csproj.GenerateResource.Cache
+C:\Users\Nathan\Documents\Visual Studio 2010\Projects\Net-Weave R Plugins\File Manager\obj\Debug\File Manager.dll
+C:\Users\Nathan\Documents\Visual Studio 2010\Projects\Net-Weave R Plugins\File Manager\obj\Debug\File Manager.pdb

@@ -1,0 +1,1 @@
+<tr align="left"><td colspan="2"><span id="{$CATEGORY}"><b>{$CATEGORY}</b><span></td></tr>

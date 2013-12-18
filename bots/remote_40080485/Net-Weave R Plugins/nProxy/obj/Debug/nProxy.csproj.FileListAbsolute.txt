@@ -1,0 +1,9 @@
+C:\Users\Nathan\Documents\Visual Studio 2010\Projects\Net-Weave R Plugins\nProxy\bin\Debug\nProxy.dll
+C:\Users\Nathan\Documents\Visual Studio 2010\Projects\Net-Weave R Plugins\nProxy\bin\Debug\nProxy.pdb
+C:\Users\Nathan\Documents\Visual Studio 2010\Projects\Net-Weave R Plugins\nProxy\bin\Debug\XPlugin.dll
+C:\Users\Nathan\Documents\Visual Studio 2010\Projects\Net-Weave R Plugins\nProxy\bin\Debug\XPlugin.pdb
+C:\Users\Nathan\Documents\Visual Studio 2010\Projects\Net-Weave R Plugins\nProxy\obj\Debug\nProxy.csprojResolveAssemblyReference.cache
+C:\Users\Nathan\Documents\Visual Studio 2010\Projects\Net-Weave R Plugins\nProxy\obj\Debug\nProxy.MainForm.resources
+C:\Users\Nathan\Documents\Visual Studio 2010\Projects\Net-Weave R Plugins\nProxy\obj\Debug\nProxy.csproj.GenerateResource.Cache
+C:\Users\Nathan\Documents\Visual Studio 2010\Projects\Net-Weave R Plugins\nProxy\obj\Debug\nProxy.dll
+C:\Users\Nathan\Documents\Visual Studio 2010\Projects\Net-Weave R Plugins\nProxy\obj\Debug\nProxy.pdb

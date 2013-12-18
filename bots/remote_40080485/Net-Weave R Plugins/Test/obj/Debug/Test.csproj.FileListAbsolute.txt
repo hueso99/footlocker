@@ -1,0 +1,17 @@
+c:\users\nathan\documents\visual studio 2010\Projects\Testing\Net-Weave R Plugins\Test\bin\Debug\Test.dll
+c:\users\nathan\documents\visual studio 2010\Projects\Testing\Net-Weave R Plugins\Test\bin\Debug\Test.pdb
+c:\users\nathan\documents\visual studio 2010\Projects\Testing\Net-Weave R Plugins\Test\bin\Debug\XPlugin.dll
+c:\users\nathan\documents\visual studio 2010\Projects\Testing\Net-Weave R Plugins\Test\bin\Debug\XPlugin.pdb
+c:\users\nathan\documents\visual studio 2010\Projects\Testing\Net-Weave R Plugins\Test\obj\Debug\Test.csprojResolveAssemblyReference.cache
+c:\users\nathan\documents\visual studio 2010\Projects\Testing\Net-Weave R Plugins\Test\obj\Debug\Test.dll
+c:\users\nathan\documents\visual studio 2010\Projects\Testing\Net-Weave R Plugins\Test\obj\Debug\Test.pdb
+c:\users\nathan\documents\visual studio 2010\Projects\Testing\Net-Weave R Plugins\Test\obj\Debug\Test.MainForm.resources
+c:\users\nathan\documents\visual studio 2010\Projects\Testing\Net-Weave R Plugins\Test\obj\Debug\Test.csproj.GenerateResource.Cache
+C:\Users\Nathan\Documents\Visual Studio 2010\Projects\Net-Weave R Plugins\Test\bin\Debug\Test.dll
+C:\Users\Nathan\Documents\Visual Studio 2010\Projects\Net-Weave R Plugins\Test\bin\Debug\Test.pdb
+C:\Users\Nathan\Documents\Visual Studio 2010\Projects\Net-Weave R Plugins\Test\bin\Debug\XPlugin.pdb
+C:\Users\Nathan\Documents\Visual Studio 2010\Projects\Net-Weave R Plugins\Test\obj\Debug\Test.csprojResolveAssemblyReference.cache
+C:\Users\Nathan\Documents\Visual Studio 2010\Projects\Net-Weave R Plugins\Test\obj\Debug\Test.MainForm.resources
+C:\Users\Nathan\Documents\Visual Studio 2010\Projects\Net-Weave R Plugins\Test\obj\Debug\Test.csproj.GenerateResource.Cache
+C:\Users\Nathan\Documents\Visual Studio 2010\Projects\Net-Weave R Plugins\Test\obj\Debug\Test.dll
+C:\Users\Nathan\Documents\Visual Studio 2010\Projects\Net-Weave R Plugins\Test\obj\Debug\Test.pdb

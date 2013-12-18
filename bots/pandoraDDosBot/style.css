@@ -1,0 +1,154 @@
+@charset "utf-8";
+
+* {
+    margin: 0px;
+    padding: 0px;
+    border: 0 none;
+    outline: 0 none;
+    border-collapse:collapse;
+}
+
+html {
+	font-size:14px;
+	font-family: Tahoma, sans-serif;
+	height: 100%;
+	color: #000;
+	background: url('images/background.jpg') #000;
+}
+
+html, body {
+	min-height: 100%;
+	min-width:986px;
+	width: 100%;
+}
+body {
+	position: relative;
+	background: url('images/logo.png') no-repeat top center;
+}
+a, a:visited, a:hover {
+	color: #000;
+	text-decoration: none;
+}
+
+.menu {
+	width: 986px;
+	height: 74px;
+	padding-top: 200px;
+	margin: 0 auto;
+	background: url('images/menu.png') no-repeat bottom;
+}
+
+.menu ul {
+	list-style: none;
+	text-align: justify;
+	margin: 0 auto;
+	width: 750px;
+	height: 50px;
+	vertical-align: middle;
+	padding-top: 5px;
+}
+
+.menu ul:after {
+	display: inline-block;
+	width: 100%;
+	overflow: hidden;
+	content: ' ';
+}
+.menu ul li {
+	display: inline-block;
+}
+
+.menu ul li a {
+	display: inline-block;
+	line-height: 50px;
+	font-weight: bold;
+	font-size: 14px;
+	text-shadow: 1px 1px #bbb;
+}
+
+.shadow {
+	background: url('images/shadow.png') no-repeat;
+	width: 933px;
+	min-height: 490px;
+	margin: 0 auto;
+	position: relative;
+}
+
+.content {
+	padding: 20px 180px;
+	position: relative;
+	text-align: center;
+	color: #bebebe;
+	font-size: 16px;
+	text-shadow: 1px 1px #000;
+}
+.textarea {
+	text-align: center;
+}
+textarea {
+	text-align: left;
+	background: url('images/textarea.png') no-repeat;
+	width: 396px;
+	height: 164px;
+	padding: 10px;
+}
+.input {
+	text-align: center;
+	padding: 5px;
+}
+.button {
+	background: url('images/button.png') no-repeat;
+	width: 170px;
+	height: 32px;
+	font-size: 13px;
+	cursor: pointer;
+	color: #2c2c2c;
+}
+.text {
+	background: url('images/input_text.png') no-repeat;
+	width: 211px;
+	height: 29px;
+	padding: 0 10px;
+	color: #2c2c2c;
+	font-size: 13px;
+}
+.blocks {
+	text-align: center;
+	font-size: 16px;
+	margin: 0 auto 11px;
+	width: 278px;
+	height: 45px;
+}
+.left, .right {
+	/*display: inline-block;*/
+	float: left;
+	line-height: 18px;
+}
+.left {
+	background: url('images/left_block.png') no-repeat;
+	width: 91px;
+	height: 39px;
+	color: #2c2c2c;
+	text-shadow: 1px 1px #ddd;
+	padding: 3px 5px;
+	margin-right: 10px;
+}
+.cell {
+	display: table-cell;
+	vertical-align: middle;
+	height: 37px;
+	overflow: hidden;
+}
+.left .cell {
+	width: 91px;
+}
+.right input {
+	width: 156px;
+	height: 37px;
+	background: url('images/right_block.png') no-repeat center center;
+	font-weight: bold;
+	text-shadow: 1px 1px #bbb;
+	text-align: center;
+	color: #000;
+	padding: 4px 5px;
+}

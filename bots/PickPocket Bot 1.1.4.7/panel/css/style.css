@@ -1,0 +1,81 @@
+/*
+   Script name  : Ajax Auto Suggest
+   File Name 	: style.css
+   Developed By : Amit Patil (India)
+   Email Id 	: amitpatil321@gmail.com
+   last Updated : 9 June 2009
+         This program is freeware.There is no any fucking copyright and bla bla bla.
+   You can use it for your personal use.You can also make any changes to this script.
+   But before using this script i would appericiate your mail.That will encourage me a lot.
+   Any suggestions are always welcome.
+         Have a fun with programming.   
+*/
+body{
+	font-family :verdana;
+	font-size:12px;
+}
+body input{
+	border: 1px solid #444A42;
+	width: 200px;
+	background : #EAEAEA;
+}
+body input:hover{
+	border: 1px solid #0B0C0A;
+	width: 200px;
+	background : #FFFFFF;
+}
+.main{
+	border : 3px solid #8789E7;
+	background : #FFFFD9;
+	padding: 10px 0px;
+	width : 500px;
+	height : 40px;
+}
+#loading{
+	visibility:hidden;
+	padding-left:5px;
+}
+#ajax_response{
+	border : 1px solid #8789E7;
+	background : #FFFFFF;
+	position:absolute;
+	display:none;
+	padding:2px 2px;
+	top:auto;
+}
+#holder{
+	width : 350px;
+}
+.list {
+	padding:0px 0px;
+	margin:0px;
+	list-style : none;
+}
+.list li a{
+	text-align : left;
+	padding:2px;
+	cursor:pointer;
+	display:block;
+	text-decoration : none;
+	color:#000000;
+}
+.selected{
+	background : #CCCFF2;
+}
+.bold{
+	font-weight:bold;
+	color: #131E9F;
+}
+.about{
+	text-align:right;
+	font-size:10px;
+	margin : 10px 4px;
+}
+.about a{
+	color:#BCBCBC;
+	text-decoration : none;
+}
+.about a:hover{
+	color:#575757;
+	cursor : default;
+}

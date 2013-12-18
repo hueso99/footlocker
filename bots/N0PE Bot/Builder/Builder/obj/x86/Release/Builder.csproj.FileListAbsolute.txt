@@ -1,0 +1,18 @@
+C:\Users\GN0M3\Desktop\N0PE Bot\Builder\Builder\bin\Release\Builder.exe
+C:\Users\GN0M3\Desktop\N0PE Bot\Builder\Builder\bin\Release\Builder.pdb
+C:\Users\GN0M3\Desktop\N0PE Bot\Builder\Builder\obj\x86\Release\ResolveAssemblyReference.cache
+C:\Users\GN0M3\Desktop\N0PE Bot\Builder\Builder\obj\x86\Release\Builder.fMain.resources
+C:\Users\GN0M3\Desktop\N0PE Bot\Builder\Builder\obj\x86\Release\Builder.Properties.Resources.resources
+C:\Users\GN0M3\Desktop\N0PE Bot\Builder\Builder\obj\x86\Release\ResGen.read.1.tlog
+C:\Users\GN0M3\Desktop\N0PE Bot\Builder\Builder\obj\x86\Release\ResGen.write.1.tlog
+C:\Users\GN0M3\Desktop\N0PE Bot\Builder\Builder\obj\x86\Release\Builder.exe
+C:\Users\GN0M3\Desktop\N0PE Bot\Builder\Builder\obj\x86\Release\Builder.pdb
+C:\Users\GN0M3\Desktop\Dev\N0PE Systems\N0PE Bot\Builder\Builder\obj\x86\Release\Builder.exe
+C:\Users\GN0M3\Desktop\Dev\N0PE Systems\N0PE Bot\Builder\Builder\obj\x86\Release\Builder.pdb
+C:\Users\GN0M3\Desktop\Dev\N0PE Systems\N0PE Bot\Builder\Builder\bin\Release\Builder.exe
+C:\Users\GN0M3\Desktop\Dev\N0PE Systems\N0PE Bot\Builder\Builder\bin\Release\Builder.pdb
+C:\Users\GN0M3\Desktop\Dev\N0PE Systems\N0PE Bot\Builder\Builder\obj\x86\Release\ResolveAssemblyReference.cache
+C:\Users\GN0M3\Desktop\Dev\N0PE Systems\N0PE Bot\Builder\Builder\obj\x86\Release\Builder.fMain.resources
+C:\Users\GN0M3\Desktop\Dev\N0PE Systems\N0PE Bot\Builder\Builder\obj\x86\Release\Builder.Properties.Resources.resources
+C:\Users\GN0M3\Desktop\Dev\N0PE Systems\N0PE Bot\Builder\Builder\obj\x86\Release\ResGen.read.1.tlog
+C:\Users\GN0M3\Desktop\Dev\N0PE Systems\N0PE Bot\Builder\Builder\obj\x86\Release\ResGen.write.1.tlog

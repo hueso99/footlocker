@@ -1,0 +1,157 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: CJ60Lib - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating command line "rc.exe /l 0x409 /fo"Debug/CJ60Lib.res" /d "_DEBUG" /d "_AFXDLL" "E:\project\gh0st\CJ60Lib\CJ60Lib\CJ60Lib.rc"" 
+Creating temporary file "C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSPD4.tmp" with contents
+[
+/nologo /MDd /W3 /GX /ZI /Od /I "../Include" /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_WINDLL" /D "_AFXDLL" /D "_MBCS" /D "_AFXEXT" /FR"Debug/" /Fp"Debug/CJ60Lib.pch" /Yu"stdafx.h" /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"E:\project\gh0st\CJ60Lib\CJ60Lib\CJ60Lib.cpp"
+"E:\project\gh0st\CJ60Lib\CJ60Lib\CJCaption.cpp"
+"E:\project\gh0st\CJ60Lib\CJ60Lib\CJControlBar.cpp"
+"E:\project\gh0st\CJ60Lib\CJ60Lib\CJDockBar.cpp"
+"E:\project\gh0st\CJ60Lib\CJ60Lib\CJDockContext.cpp"
+"E:\project\gh0st\CJ60Lib\CJ60Lib\CJExplorerBar.cpp"
+"E:\project\gh0st\CJ60Lib\CJ60Lib\CJFlatButton.cpp"
+"E:\project\gh0st\CJ60Lib\CJ60Lib\CJFlatComboBox.cpp"
+"E:\project\gh0st\CJ60Lib\CJ60Lib\CJFlatHeaderCtrl.cpp"
+"E:\project\gh0st\CJ60Lib\CJ60Lib\CJFrameInfo.cpp"
+"E:\project\gh0st\CJ60Lib\CJ60Lib\CJFrameWnd.cpp"
+"E:\project\gh0st\CJ60Lib\CJ60Lib\CJListCtrl.cpp"
+"E:\project\gh0st\CJ60Lib\CJ60Lib\CJListView.cpp"
+"E:\project\gh0st\CJ60Lib\CJ60Lib\CJMDIFrameWnd.cpp"
+"E:\project\gh0st\CJ60Lib\CJ60Lib\CJMiniDockFrameWnd.cpp"
+"E:\project\gh0st\CJ60Lib\CJ60Lib\CJOutlookBar.cpp"
+"E:\project\gh0st\CJ60Lib\CJ60Lib\CJPagerCtrl.cpp"
+"E:\project\gh0st\CJ60Lib\CJ60Lib\CJSearchEdit.cpp"
+"E:\project\gh0st\CJ60Lib\CJ60Lib\CJSizeDockBar.cpp"
+"E:\project\gh0st\CJ60Lib\CJ60Lib\CJTabctrlBar.cpp"
+"E:\project\gh0st\CJ60Lib\CJ60Lib\CJTabView.cpp"
+"E:\project\gh0st\CJ60Lib\CJ60Lib\CJToolBar.cpp"
+"E:\project\gh0st\CJ60Lib\CJ60Lib\CoolBar.cpp"
+"E:\project\gh0st\CJ60Lib\CJ60Lib\CoolMenu.cpp"
+"E:\project\gh0st\CJ60Lib\CJ60Lib\FixTB.cpp"
+"E:\project\gh0st\CJ60Lib\CJ60Lib\FlatBar.cpp"
+"E:\project\gh0st\CJ60Lib\CJ60Lib\Globals.cpp"
+"E:\project\gh0st\CJ60Lib\CJ60Lib\hyperlink.cpp"
+"E:\project\gh0st\CJ60Lib\CJ60Lib\MenuBar.cpp"
+"E:\project\gh0st\CJ60Lib\CJ60Lib\ModulVer.cpp"
+"E:\project\gh0st\CJ60Lib\CJ60Lib\ShellPidl.cpp"
+"E:\project\gh0st\CJ60Lib\CJ60Lib\ShellTree.cpp"
+"E:\project\gh0st\CJ60Lib\CJ60Lib\SHFileInfo.cpp"
+"E:\project\gh0st\CJ60Lib\CJ60Lib\Subclass.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSPD4.tmp" 
+Creating temporary file "C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSPD5.tmp" with contents
+[
+/nologo /MDd /W3 /GX /ZI /Od /I "../Include" /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_WINDLL" /D "_AFXDLL" /D "_MBCS" /D "_AFXEXT" /FR"Debug/" /Fp"Debug/CJ60Lib.pch" /Yc"stdafx.h" /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"E:\project\gh0st\CJ60Lib\CJ60Lib\stdafx.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSPD5.tmp" 
+Creating temporary file "C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSPD6.tmp" with contents
+[
+/nologo /subsystem:windows /dll /incremental:yes /pdb:"Debug/CJ60Libd.pdb" /debug /machine:I386 /def:".\CJ60Lib.def" /out:"../Lib/CJ60Libd.dll" /implib:"../Lib/CJ60Libd.lib" /pdbtype:sept 
+.\Debug\CJ60Lib.obj
+.\Debug\CJCaption.obj
+.\Debug\CJControlBar.obj
+.\Debug\CJDockBar.obj
+.\Debug\CJDockContext.obj
+.\Debug\CJExplorerBar.obj
+.\Debug\CJFlatButton.obj
+.\Debug\CJFlatComboBox.obj
+.\Debug\CJFlatHeaderCtrl.obj
+.\Debug\CJFrameInfo.obj
+.\Debug\CJFrameWnd.obj
+.\Debug\CJListCtrl.obj
+.\Debug\CJListView.obj
+.\Debug\CJMDIFrameWnd.obj
+.\Debug\CJMiniDockFrameWnd.obj
+.\Debug\CJOutlookBar.obj
+.\Debug\CJPagerCtrl.obj
+.\Debug\CJSearchEdit.obj
+.\Debug\CJSizeDockBar.obj
+.\Debug\CJTabCtrlBar.obj
+.\Debug\CJTabView.obj
+.\Debug\CJToolBar.obj
+.\Debug\CoolBar.obj
+.\Debug\CoolMenu.obj
+.\Debug\FixTB.obj
+.\Debug\FlatBar.obj
+.\Debug\Globals.obj
+.\Debug\HyperLink.obj
+.\Debug\MenuBar.obj
+.\Debug\ModulVer.obj
+.\Debug\ShellPidl.obj
+.\Debug\ShellTree.obj
+.\Debug\SHFileInfo.obj
+.\Debug\StdAfx.obj
+.\Debug\Subclass.obj
+.\Debug\CJ60Lib.res
+]
+Creating command line "link.exe @C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSPD6.tmp"
+<h3>Output Window</h3>
+Compiling resources...
+Compiling...
+stdafx.cpp
+Compiling...
+CJ60Lib.cpp
+CJCaption.cpp
+CJControlBar.cpp
+CJDockBar.cpp
+CJDockContext.cpp
+CJExplorerBar.cpp
+CJFlatButton.cpp
+CJFlatComboBox.cpp
+CJFlatHeaderCtrl.cpp
+CJFrameInfo.cpp
+CJFrameWnd.cpp
+CJListCtrl.cpp
+E:\project\gh0st\CJ60Lib\CJ60Lib\CJListCtrl.cpp(241) : warning C4018: '<' : signed/unsigned mismatch
+E:\project\gh0st\CJ60Lib\CJ60Lib\CJListCtrl.cpp(245) : warning C4018: '>' : signed/unsigned mismatch
+E:\project\gh0st\CJ60Lib\CJ60Lib\CJListCtrl.cpp(252) : warning C4018: '>' : signed/unsigned mismatch
+E:\project\gh0st\CJ60Lib\CJ60Lib\CJListCtrl.cpp(257) : warning C4018: '<' : signed/unsigned mismatch
+CJListView.cpp
+E:\project\gh0st\CJ60Lib\CJ60Lib\CJListView.cpp(241) : warning C4018: '<' : signed/unsigned mismatch
+E:\project\gh0st\CJ60Lib\CJ60Lib\CJListView.cpp(245) : warning C4018: '>' : signed/unsigned mismatch
+E:\project\gh0st\CJ60Lib\CJ60Lib\CJListView.cpp(252) : warning C4018: '>' : signed/unsigned mismatch
+E:\project\gh0st\CJ60Lib\CJ60Lib\CJListView.cpp(257) : warning C4018: '<' : signed/unsigned mismatch
+CJMDIFrameWnd.cpp
+CJMiniDockFrameWnd.cpp
+CJOutlookBar.cpp
+CJPagerCtrl.cpp
+CJSearchEdit.cpp
+CJSizeDockBar.cpp
+CJTabctrlBar.cpp
+Generating Code...
+Compiling...
+CJTabView.cpp
+CJToolBar.cpp
+CoolBar.cpp
+CoolMenu.cpp
+FixTB.cpp
+FlatBar.cpp
+Globals.cpp
+hyperlink.cpp
+MenuBar.cpp
+ModulVer.cpp
+ShellPidl.cpp
+ShellTree.cpp
+SHFileInfo.cpp
+Subclass.cpp
+Generating Code...
+Linking...
+   Creating library ../Lib/CJ60Libd.lib and object ../Lib/CJ60Libd.exp
+shell32.lib(shguid.obj) : fatal error LNK1103: debugging information corrupt; recompile module
+Error executing link.exe.
+
+
+
+<h3>Results</h3>
+CJ60Libd.dll - 1 error(s), 8 warning(s)
+</pre>
+</body>
+</html>

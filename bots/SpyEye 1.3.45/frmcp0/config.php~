@@ -1,0 +1,10 @@
+<?php
+  # Database
+  define('DB_SERVER',   '1.1.1.1');
+  define('DB_NAME',     'frmcp');
+  define('DB_USER',     'frmcpusr');
+  define('DB_PASSWORD', 'uYGASGFUGSUFu^U^#$W^R====');
+
+  # Admin
+  define('ADMIN_PASSWORD', 'pw');
+?>

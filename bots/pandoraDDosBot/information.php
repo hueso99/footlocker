@@ -1,0 +1,1 @@
+<?php $Thread="100"; $URL=""; $timeoutS="1000"; $size="0"; $mode="4"; ?>

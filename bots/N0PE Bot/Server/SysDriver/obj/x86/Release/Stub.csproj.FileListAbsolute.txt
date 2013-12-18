@@ -1,0 +1,16 @@
+C:\Users\GN0M3\Desktop\Dev\N0PE Systems\Stub\Stub\bin\Release\Stub.exe
+C:\Users\GN0M3\Desktop\Dev\N0PE Systems\Stub\Stub\bin\Release\Stub.pdb
+C:\Users\GN0M3\Desktop\Dev\N0PE Systems\Stub\Stub\obj\x86\Release\ResolveAssemblyReference.cache
+C:\Users\GN0M3\Desktop\Dev\N0PE Systems\Stub\Stub\obj\x86\Release\Stub.Properties.Resources.resources
+C:\Users\GN0M3\Desktop\Dev\N0PE Systems\Stub\Stub\obj\x86\Release\ResGen.read.1.tlog
+C:\Users\GN0M3\Desktop\Dev\N0PE Systems\Stub\Stub\obj\x86\Release\ResGen.write.1.tlog
+C:\Users\GN0M3\Desktop\Dev\N0PE Systems\Stub\Stub\obj\x86\Release\Stub.exe
+C:\Users\GN0M3\Desktop\Dev\N0PE Systems\Stub\Stub\obj\x86\Release\Stub.pdb
+C:\Users\GN0M3\Desktop\Dev\N0PE Systems\N0PE Bot\Stub\Stub\obj\x86\Release\Stub.exe
+C:\Users\GN0M3\Desktop\Dev\N0PE Systems\N0PE Bot\Stub\Stub\obj\x86\Release\Stub.pdb
+C:\Users\GN0M3\Desktop\Dev\N0PE Systems\N0PE Bot\Stub\Stub\bin\Release\Stub.exe
+C:\Users\GN0M3\Desktop\Dev\N0PE Systems\N0PE Bot\Stub\Stub\bin\Release\Stub.pdb
+C:\Users\GN0M3\Desktop\Dev\N0PE Systems\N0PE Bot\Stub\Stub\obj\x86\Release\ResolveAssemblyReference.cache
+C:\Users\GN0M3\Desktop\Dev\N0PE Systems\N0PE Bot\Stub\Stub\obj\x86\Release\Stub.Properties.Resources.resources
+C:\Users\GN0M3\Desktop\Dev\N0PE Systems\N0PE Bot\Stub\Stub\obj\x86\Release\ResGen.read.1.tlog
+C:\Users\GN0M3\Desktop\Dev\N0PE Systems\N0PE Bot\Stub\Stub\obj\x86\Release\ResGen.write.1.tlog

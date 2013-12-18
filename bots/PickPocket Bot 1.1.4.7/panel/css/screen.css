@@ -1,0 +1,579 @@
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend, button,
+table, caption, tbody, tfoot, thead, tr, th, td {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+body {
+  line-height: 2;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+/* remember to define focus styles! */
+:focus {
+  outline: 0;
+}
+
+/* remember to highlight inserts somehow! */
+ins {
+  text-decoration: none;
+}
+del {
+  text-decoration: line-through;
+}
+
+/* tables still need 'cellspacing="0"' in the markup */
+table {
+  border-collapse: collapse;
+  border-spacing: 1;
+}
+
+/* Page specific
+------------------------------------------------------------------------------*/
+body {
+  background: #fff;
+  color: #333;
+  font-family: "helvetica neue", helvetica, arial, sans-serif;
+}
+
+div.container {
+  margin: 40px auto;
+  width: 960px;
+}
+
+a {
+  color: #333;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+h1 {
+  color: #333;
+  font-size: 38px;
+  font-weight: 300;
+  margin: 24px 0 12px 0;
+}
+
+p {
+  color: #555;
+  font-size: 16px;
+  font-weight: normal;
+  line-height: 140%;
+  margin: 0 0 12px 0;
+}
+
+p.credit {
+  border-top: 1px solid #ccc;
+  font-size: 14px;
+  line-height: 140%;
+  margin: 36px 0 12px 0;
+  padding: 6px 0 0 0;
+}
+
+p.where {
+  margin: 0 0 12px 0;
+}
+
+.button-collection {
+  border-top: 2px solid #ccc;
+  margin: 24px 0 36px 0;
+  padding: 4px 0 12px 0;
+}
+
+.button-info {
+  float: left;
+  margin: 0 40px 0 0;
+  width: 245px;
+}
+
+.button-info h2 {
+  color: #222;
+  font-size: 22px;
+  font-weight: normal;
+  margin: 10px 0 6px 0;
+}
+
+.button-info p {
+  font-size: 14px;
+}
+
+ul.column {
+  float: left;
+  list-style: none;
+  width: 675px;
+}
+
+ul.column li {
+  background: #ddd;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  float: left;
+  margin: 10px 0 0 10px;
+  display: block;
+  height: 150px;
+  text-align: center;
+  width: 215px;
+}
+
+button {
+  margin-top: 60px;
+}
+
+button.webkit-badge {
+  margin-top: 32px;
+}
+
+button.webkit-check {
+  margin-top: 30px;
+}
+
+button.webkit-seal {
+  margin-top: 30px;
+}
+
+button.slick-black {
+  margin-top: 56px;
+}
+
+button.cupid-green {
+  margin-top: 62px;
+}
+
+button.cupid-blue {
+  margin-top: 64px;
+}
+
+button.blue-pill {
+  margin-top: 62px;
+}
+
+button.dribbble {
+  margin-top: 60px;
+}
+
+button.thoughtbot {
+  margin-top: 54px;
+}
+
+button.punch {
+  margin-top: 54px;
+}
+
+button.fat-letters {
+  margin-top: 20px;
+}
+
+button.download-itunes {
+  margin-top: 62px;
+}
+
+/* Clear Floated Elements
+------------------------------------------------------------------------------*/
+.column:after,
+.button-collection:after,
+.clearfix:after {
+  clear: both;
+  content: ' ';
+  display: block;
+  font-size: 0;
+  line-height: 0;
+  visibility: hidden;
+  width: 0;
+  height: 0;
+}
+body{
+	font-family : Verdana;
+	color : #f9f6f1;
+	font-size : 0.7em;
+	background: url(../imgs/background.jpg) no-repeat center top #252525;
+}
+
+.maindiv{
+	width : 760px;
+	border : solid black 1px;
+	margin-left: auto;
+  margin-right: auto;
+  padding : 5px;
+  position: relative;
+  background-color:#222222;
+  /*some CSS3 to be more sex {OPERA,CHROME,SAFARI,IE9,FIREFOX}*/
+  border-radius: 15px;
+  -moz-box-shadow: 7px 7px 5px #3f3f3f;
+	-webkit-box-shadow: 7px 7px 5px #3f3f3f;
+	box-shadow: 7px 7px 5px #3f3f3f;
+	-moz-border-radius: 15px;
+}
+
+h1{
+	margin-top:0px;
+	font-size:15px;
+	margin-left : 15px;
+}
+
+.tusers{
+	width : 100%;
+  border-collapse: collapse;
+}
+
+.divusers{
+	width : 730px;
+	overflow:auto;
+	border : solid black 1px;
+	margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  /*some CSS3 to be more sex {OPERA,CHROME,SAFARI,IE9,FIREFOX}*/
+  border-radius: 2px;
+  -moz-box-shadow: 4px 4px 5px #3c3c3c;
+	-webkit-box-shadow: 4px 4px 5px #3c3c3c;
+	box-shadow: 4px 4px 5px #3c3c3c;
+	-moz-border-radius: 2px;
+}
+
+.divup{
+	width : 708px;
+	overflow:auto;
+	border : solid black 1px;
+	margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  /*some CSS3 to be more sex {OPERA,CHROME,SAFARI,IE9,FIREFOX}*/
+  border-radius: 2px;
+  -moz-box-shadow: 4px 4px 5px #3c3c3c;
+	-webkit-box-shadow: 4px 4px 5px #3c3c3c;
+	box-shadow: 4px 4px 5px #3c3c3c;
+	-moz-border-radius: 2px;
+}
+
+.tcmd{
+	padding-left : 15px;
+	padding-top : 5px;	
+}
+
+th{
+	text-align:left;
+	background-color : #383838;
+}
+
+.promptico
+{
+	text-align : Left;
+	height:auto;
+	min-height:16px;
+	background-position: left;
+	background-repeat: no-repeat;
+	padding: 4px 0 4px 20px;
+	background-image: url('../imgs/cmd.png');
+	padding-right : 4px;
+	overflow :none;
+}
+
+.listico
+{
+	text-align : Left;
+	height:auto;
+	min-height:16px;
+	background-position: left;
+	background-repeat: no-repeat;
+	padding: 4px 0 4px 20px;
+	background-image: url('../imgs/list.png');
+	padding-right : 4px;
+	overflow :none;
+}
+
+.getcomet
+{
+	text-align : Left;
+	height:auto;
+	min-height:39px;
+	background-position: right;
+	background-repeat: no-repeat;
+	padding: 4px 0 4px 20px;
+	background-image: url('../imgs/getcomet.png');
+	padding-right : 4px;
+	overflow :none;
+}
+
+.upico
+{
+	text-align : Left;
+	height:auto;
+	min-height:16px;
+	background-position: left;
+	background-repeat: no-repeat;
+	padding: 4px 0 4px 20px;
+	background-image: url('../imgs/upl.png');
+	padding-right : 4px;
+	overflow :none;
+}
+
+
+.shutico
+{
+	text-align : Left;
+	height:auto;
+	min-height:16px;
+	background-position: left;
+	background-repeat: no-repeat;
+	padding: 4px 0 4px 20px;
+	background-image: url('../imgs/shut.png');
+	padding-right : 4px;
+	overflow :none;
+}
+
+.usersico
+{
+	text-align : Left;
+	height:auto;
+	min-height:16px;
+	background-position: left;
+	background-repeat: no-repeat;
+	padding: 4px 0 4px 20px;
+	background-image: url('../imgs/users.png');
+	padding-right : 4px;
+	overflow :none;
+}
+
+.aboutico
+{
+	text-align : Left;
+	height:auto;
+	min-height:16px;
+	background-position: left;
+	background-repeat: no-repeat;
+	padding: 4px 0 4px 20px;
+	background-image: url('../imgs/about.png');
+	padding-right : 4px;
+	overflow :none;
+}
+
+.setico
+{
+	text-align : Left;
+	height:auto;
+	min-height:16px;
+	background-position: left;
+	background-repeat: no-repeat;
+	padding: 4px 0 4px 20px;
+	background-image: url('../imgs/settings.png');
+	padding-right : 4px;
+	overflow :none;
+}
+
+#header{
+	background-image: url('../imgs/logo.png');
+	margin-left: auto;
+  margin-right: auto;
+  position: relative;
+	width : 400px;
+	height : 100px;
+}
+
+a{
+	color : #f9f6f1;
+	font-weight : bold;
+	text-decoration : none;
+}
+
+#menu{
+	width : 760px;
+	margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  text-align : center;
+}
+
+#upage{
+	padding-left:5px;
+	padding-bottom:3px;
+	padding-top:3px;
+	background-color:#383838;
+}
+
+.divcmds{
+	width : 730px;
+	overflow:auto;
+	border : solid black 1px;
+	margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  /*some CSS3 to be more sex {OPERA,CHROME,SAFARI,IE9,FIREFOX}*/
+  border-radius: 2px;
+  -moz-box-shadow: 4px 4px 5px #3c3c3c;
+	-webkit-box-shadow: 4px 4px 5px #3c3c3c;
+	box-shadow: 4px 4px 5px #3c3c3c;
+	-moz-border-radius: 2px;
+}
+
+.divabout{
+	width : 730px;
+	border : solid black 1px;
+	margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  /*some CSS3 to be more sex {OPERA,CHROME,SAFARI,IE9,FIREFOX}*/
+  border-radius: 2px;
+  -moz-box-shadow: 4px 4px 5px #3c3c3c;
+	-webkit-box-shadow: 4px 4px 5px #3c3c3c;
+	box-shadow: 4px 4px 5px #3c3c3c;
+	-moz-border-radius: 2px;
+}
+
+.param{
+	color : #6495ed;
+	font-weight:bold;
+}
+
+#downset{
+	padding-left:5px;
+	padding-bottom:3px;
+	padding-top:3px;
+	margin:-5px;
+	background-color:#383838;
+}
+
+#logindiv{
+	width : 350px;
+	border : solid black 1px;
+	margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  /*some CSS3 to be more sex {OPERA,CHROME,SAFARI,IE9,FIREFOX}*/
+  border-radius: 6px;
+  -moz-border-radius: 6px;
+  -moz-box-shadow: 4px 4px 5px #3c3c3c;
+	-webkit-box-shadow: 4px 4px 5px #3c3c3c;
+	box-shadow: 4px 4px 5px #3c3c3c;
+}
+
+/**
+	Menu
+*/
+ul,li,ol{
+	/* Simple page reset */
+	margin:0;
+	padding:0;
+}
+.menuUL li{
+	/* This will arrange the LI-s next to each other */
+	display:inline;
+}
+
+.menuUL li a,.menuUL li a:visited{
+	/* Styling the hyperlinks of the menu as buttons */
+	
+	float:left;
+	font-weight:bold;
+	background:url(../imgs/button_bg.jpg) repeat-x center bottom #666666;
+	
+	/* display:block allows for additinal CSS rules to take effect, such as paddings: */
+	display:block;
+	border:1px solid #4D4D4D;
+	color:#CCCCCC;
+	border-top-color:#565656;
+	
+	padding:4px 6px;
+	margin:4px 5px;
+	height:16px;
+	
+	
+	/* Setting a CSS3 box shadow around the button */
+	
+	-moz-box-shadow:0 0 1px black;
+	-webkit-box-shadow:0 0 1px black;
+	box-shadow:0 0 1px black;
+	
+	/* CSS3 text shadow */
+	text-shadow:0 1px black;
+}
+
+.menuUL li a:hover{
+	/* On hover show the top, lighter, part of the background: */
+	background-position:center top;
+	text-decoration:none;
+}
+
+#navigation{
+	/* The navigation menu bar: */
+	background:#222222;
+	border:1px solid #111111;
+	padding:5px 10px;
+	width:605px;
+	margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  opacity:0.7;
+}
+
+#navigation,.menuUL li a{
+	/* CSS3 rounded corners for both the navigation bar and the buttons: */
+	-moz-border-radius:4px;
+	-webkit-border-radius:4px;
+	-khtml-border-radius:4px;
+	border-radius:4px;
+}
+
+.clear{
+	/* Old-school clear fix hack to clear the floats: */
+	clear:both;
+}
+
+p.tutInfo{
+	/* The tutorial info on the bottom of the page */
+	margin-left : -8px;
+	margin-bottom : 0px;
+	padding:10px 0;
+	text-align:center;
+	position:fixed;
+	bottom:0px;
+	background:#222222;
+	border-top:1px solid black;
+	width:100%;
+}
+
+#stats{
+	 border-radius: 3px;
+  -moz-box-shadow: 4px 4px 5px #3c3c3c;
+  -moz-border-radius: 3px;
+	-webkit-box-shadow: 4px 4px 5px #3c3c3c;
+	box-shadow: 4px 4px 5px #3c3c3c;
+	float:right;
+	margin-right:4px;
+  font-size:0.6em;
+  margin-bottom:10px;
+  margin-right:10px;
+  padding:5px;
+  border:1px solid black;
+  background-color:#232323;
+}
+
+img{
+	border:0px;
+}

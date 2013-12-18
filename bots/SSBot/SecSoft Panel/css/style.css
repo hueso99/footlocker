@@ -1,0 +1,123 @@
+body{
+  font-family: Tahoma;
+  font-size: 12px;
+  background-image: url('../img/bg.png');
+
+}
+
+#wrapper{
+   background-color: #FFFFFF;
+   border: 1px solid #AEAEAE;
+   width: 760px;
+   margin: auto;
+}
+
+#headerwrap{
+   width: 760px;
+   margin: auto;
+   border-top: 1px solid #AEAEAE;
+   border-left: 1px solid #AEAEAE;
+   border-right: 1px solid #AEAEAE;
+}
+ 
+#header{
+   background-color: #FFFFFF;
+   background-image: url('../img/header.png');
+   background-repeat: no-repeat;
+   background-position: center;
+   height: 58px;
+}
+
+#stats{
+  float: right;
+  padding: 5px;
+
+}
+
+#infos{
+  float: left;
+  padding: 5px;
+  font-size: 11px;
+}
+
+#content{
+  padding: 1%;
+}
+
+#navibox{
+  background-color: #FFFFFF;
+  border: 1px solid #AEAEAE;
+  margin-top: -1px;
+  width: 150px;
+  float: left;
+  margin-left: -22%;
+}
+
+#footer{
+   background-color: #FFFFFF;
+   border-top: 1px solid #AEAEAE;
+   padding: 1px;
+   font-size: 11px;
+   text-align: center;
+}
+
+/* Grund Design Ende */
+
+#navibox a{
+  text-decoration: none;
+  color: #000000;
+}
+
+#login{
+   background-color: #FFFFFF;
+   border: 1px solid #AEAEAE;
+   width: 260px;
+   margin: auto;
+   padding: 10px;
+}
+
+#login .tb{
+  width: 200px;
+  background-color: #FFFFFF;
+  border: 1px solid #AEAEAE;
+}
+
+#login .tb:focus{
+  border: 1px solid #00B4E0;
+}
+
+table{
+   width: 100%;
+}
+
+table th{
+  font-size: 11px;
+  border-bottom: 1px solid #AEAEAE;
+}
+
+table td{
+  text-align: center;
+  font-size: 13px;
+  border-bottom: 1px dotted #AEAEAE;
+}
+
+.btn{
+   background-color: #FFFFFF;
+   border: 1px solid #AEAEAE;
+}
+
+.btn:hover{
+  background-color: #00B4E0;
+  border: 1px solid black;
+  cursor: pointer;
+}
+
+label {
+	display: inline-block;
+	width: 5em;
+}
+
+#stats label{
+	display: inline-block;
+	width: 4em;
+}

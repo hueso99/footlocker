@@ -1,0 +1,10 @@
+import javax.sound.midi.ControllerEventListener;
+import javax.sound.midi.ShortMessage;
+
+public class ToolsDemoSubClass
+  implements ControllerEventListener
+{
+  public void controlChange(ShortMessage paramShortMessage)
+  {
+  }
+}

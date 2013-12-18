@@ -1,0 +1,115 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: 3vBotSAS2 - Win32 Release--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating command line "rc.exe /l 0x409 /fo"Release/settings.res" /d "NDEBUG" "C:\Users\Brandon\Desktop\3vBotSAS2\settings.rc"" 
+Creating temporary file "C:\Users\Brandon\AppData\Local\Temp\RSPA434.tmp" with contents
+[
+/nologo /MT /W3 /GX /O2 /D "WIN32" /D "NDEBUG" /D "_WINDOWS" /D "_MBCS" /FR"Release/" /Fp"Release/3vBotSAS2.pch" /YX /Fo"Release/" /Fd"Release/" /FD /c 
+"C:\Users\Brandon\Desktop\3vBotSAS2\API\API.cpp"
+"C:\Users\Brandon\Desktop\3vBotSAS2\IRC\commands\botkiller.cpp"
+"C:\Users\Brandon\Desktop\3vBotSAS2\IRC\commands\ddos.cpp"
+"C:\Users\Brandon\Desktop\3vBotSAS2\IRC\commands\download.cpp"
+"C:\Users\Brandon\Desktop\3vBotSAS2\IRC\commands\server.cpp"
+"C:\Users\Brandon\Desktop\3vBotSAS2\IRC\commands\uninstall.cpp"
+"C:\Users\Brandon\Desktop\3vBotSAS2\IRC\commands\update.cpp"
+"C:\Users\Brandon\Desktop\3vBotSAS2\IRC\commands\uptime.cpp"
+"C:\Users\Brandon\Desktop\3vBotSAS2\IRC\commands\visit.cpp"
+"C:\Users\Brandon\Desktop\3vBotSAS2\IRC\IRC.cpp"
+"C:\Users\Brandon\Desktop\3vBotSAS2\Core\Injection\inject.cpp"
+"C:\Users\Brandon\Desktop\3vBotSAS2\Core\Injection\thread.cpp"
+"C:\Users\Brandon\Desktop\3vBotSAS2\Core\Persistence\file.cpp"
+"C:\Users\Brandon\Desktop\3vBotSAS2\Core\Persistence\registry.cpp"
+"C:\Users\Brandon\Desktop\3vBotSAS2\Core\Usage\Usage.cpp"
+"C:\Users\Brandon\Desktop\3vBotSAS2\Core\install.cpp"
+"C:\Users\Brandon\Desktop\3vBotSAS2\Crypto\MD5\MD5.cpp"
+"C:\Users\Brandon\Desktop\3vBotSAS2\Spreading\USB\usb.cpp"
+"C:\Users\Brandon\Desktop\3vBotSAS2\3vBot.cpp"
+]
+Creating command line "cl.exe @C:\Users\Brandon\AppData\Local\Temp\RSPA434.tmp" 
+Creating temporary file "C:\Users\Brandon\AppData\Local\Temp\RSPA435.tmp" with contents
+[
+kernel32.lib libcpmt.lib msvcrt.lib oleaut32.lib comsupp.lib uuid.lib /nologo /subsystem:windows /incremental:no /pdb:"Release/3vBotSAS2.pdb" /machine:I386 /nodefaultlib /out:"Release/3vBotSAS2.exe" 
+.\Release\API.obj
+.\Release\botkiller.obj
+.\Release\ddos.obj
+.\Release\download.obj
+.\Release\server.obj
+.\Release\uninstall.obj
+.\Release\update.obj
+.\Release\uptime.obj
+.\Release\visit.obj
+.\Release\IRC.obj
+.\Release\inject.obj
+.\Release\thread.obj
+.\Release\file.obj
+.\Release\registry.obj
+.\Release\Usage.obj
+.\Release\install.obj
+.\Release\MD5.obj
+.\Release\usb.obj
+.\Release\3vBot.obj
+.\Release\settings.res
+]
+Creating command line "link.exe @C:\Users\Brandon\AppData\Local\Temp\RSPA435.tmp"
+<h3>Output Window</h3>
+Compiling resources...
+Compiling...
+API.cpp
+botkiller.cpp
+ddos.cpp
+download.cpp
+server.cpp
+uninstall.cpp
+update.cpp
+uptime.cpp
+visit.cpp
+IRC.cpp
+C:\Users\Brandon\Desktop\3vBotSAS2\IRC\IRC.cpp(293) : warning C4101: 'e' : unreferenced local variable
+inject.cpp
+thread.cpp
+file.cpp
+registry.cpp
+Usage.cpp
+install.cpp
+MD5.cpp
+usb.cpp
+3vBot.cpp
+Linking...
+Creating temporary file "C:\Users\Brandon\AppData\Local\Temp\RSPB6DB.tmp" with contents
+[
+/nologo /o"Release/3vBotSAS2.bsc" 
+.\Release\API.sbr
+.\Release\botkiller.sbr
+.\Release\ddos.sbr
+.\Release\download.sbr
+.\Release\server.sbr
+.\Release\uninstall.sbr
+.\Release\update.sbr
+.\Release\uptime.sbr
+.\Release\visit.sbr
+.\Release\IRC.sbr
+.\Release\inject.sbr
+.\Release\thread.sbr
+.\Release\file.sbr
+.\Release\registry.sbr
+.\Release\Usage.sbr
+.\Release\install.sbr
+.\Release\MD5.sbr
+.\Release\usb.sbr
+.\Release\3vBot.sbr]
+Creating command line "bscmake.exe @C:\Users\Brandon\AppData\Local\Temp\RSPB6DB.tmp"
+Creating browse info file...
+<h3>Output Window</h3>
+
+
+
+<h3>Results</h3>
+3vBotSAS2.exe - 0 error(s), 1 warning(s)
+</pre>
+</body>
+</html>

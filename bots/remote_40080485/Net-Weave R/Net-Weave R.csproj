@@ -1,0 +1,322 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{948A2567-10D9-42ED-BAE3-05D4CCE55D33}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Net_Weave_R</RootNamespace>
+    <AssemblyName>Net-Weave R</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>NWR.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Mono.Cecil">
+      <HintPath>..\Mono.Cecil\bin\Debug\Mono.Cecil.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Nat, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Downloads\Mono.Nat.dll</HintPath>
+    </Reference>
+    <Reference Include="NetLib">
+      <HintPath>..\NetLib\bin\Debug\NetLib.dll</HintPath>
+    </Reference>
+    <Reference Include="NetLib.Forms">
+      <HintPath>..\NetLib.Forms\bin\Debug\NetLib.Forms.dll</HintPath>
+    </Reference>
+    <Reference Include="NWR Client">
+      <HintPath>..\NWR Client\bin\Debug\NWR Client.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="XPlugin, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\XPlugin\bin\Debug\XPlugin.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Core\BaseChatPacket.cs" />
+    <Compile Include="Core\ChatClient.cs" />
+    <Compile Include="Core\Client.cs" />
+    <Compile Include="Core\Listener.cs" />
+    <Compile Include="Core\Parser.cs" />
+    <Compile Include="Core\Pinger.cs" />
+    <Compile Include="Core\PluginHelper.cs" />
+    <Compile Include="Forms\BugReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\BugReport.Designer.cs">
+      <DependentUpon>BugReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Builder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Builder.Designer.cs">
+      <DependentUpon>Builder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Chat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Chat.Designer.cs">
+      <DependentUpon>Chat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Dialogs\About.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Dialogs\About.Designer.cs">
+      <DependentUpon>About.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Dialogs\AssemblyEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Dialogs\AssemblyEditor.Designer.cs">
+      <DependentUpon>AssemblyEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Dialogs\DownloadEx.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Dialogs\DownloadEx.Designer.cs">
+      <DependentUpon>DownloadEx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Dialogs\FloodPanelTypeDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Dialogs\FloodPanelTypeDialog.Designer.cs">
+      <DependentUpon>FloodPanelTypeDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Dialogs\IconSelecterDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Dialogs\IconSelecterDialog.Designer.cs">
+      <DependentUpon>IconSelecterDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Dialogs\PluginSelectorDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Dialogs\PluginSelectorDialog.Designer.cs">
+      <DependentUpon>PluginSelectorDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Dialogs\StatusDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Dialogs\StatusDialog.Designer.cs">
+      <DependentUpon>StatusDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\MultiFloodPanel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MultiFloodPanel.Designer.cs">
+      <DependentUpon>MultiFloodPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Dialogs\TermsOfService.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Dialogs\TermsOfService.Designer.cs">
+      <DependentUpon>TermsOfService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FloodPanel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FloodPanel.Designer.cs">
+      <DependentUpon>FloodPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Plugins.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Plugins.Designer.cs">
+      <DependentUpon>Plugins.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PluginView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PluginView.Designer.cs">
+      <DependentUpon>PluginView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PMForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PMForm.Designer.cs">
+      <DependentUpon>PMForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Popups\MsgBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Popups\MsgBox.Designer.cs">
+      <DependentUpon>MsgBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\GUI_Settings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\GUI_Settings.Designer.cs">
+      <DependentUpon>GUI_Settings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PortMapper.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PortMapper.Designer.cs">
+      <DependentUpon>PortMapper.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Misc\FloodTimer.cs" />
+    <Compile Include="Misc\FormFader.cs" />
+    <Compile Include="Misc\Functions.cs" />
+    <Compile Include="Misc\EventLogger.cs" />
+    <Compile Include="Misc\GlobalProperties.cs" />
+    <Compile Include="Misc\IAssembly.cs" />
+    <Compile Include="Misc\PendingCommand.cs" />
+    <Compile Include="Misc\ProfileData.cs" />
+    <Compile Include="Misc\Settings.cs" />
+    <Compile Include="Misc\SettingsIO.cs" />
+    <Compile Include="Misc\xEventArgs.cs" />
+    <Compile Include="Forms\Log.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Log.Designer.cs">
+      <DependentUpon>Log.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Main.Designer.cs">
+      <DependentUpon>Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Misc\xToolStripItemComparer.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\BugReport.resx">
+      <DependentUpon>BugReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Builder.resx">
+      <DependentUpon>Builder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Chat.resx">
+      <DependentUpon>Chat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Dialogs\About.resx">
+      <DependentUpon>About.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Dialogs\AssemblyEditor.resx">
+      <DependentUpon>AssemblyEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Dialogs\DownloadEx.resx">
+      <DependentUpon>DownloadEx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Dialogs\FloodPanelTypeDialog.resx">
+      <DependentUpon>FloodPanelTypeDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Dialogs\IconSelecterDialog.resx">
+      <DependentUpon>IconSelecterDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Dialogs\PluginSelectorDialog.resx">
+      <DependentUpon>PluginSelectorDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Dialogs\StatusDialog.resx">
+      <DependentUpon>StatusDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MultiFloodPanel.resx">
+      <DependentUpon>MultiFloodPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Dialogs\TermsOfService.resx">
+      <DependentUpon>TermsOfService.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FloodPanel.resx">
+      <DependentUpon>FloodPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Log.resx">
+      <DependentUpon>Log.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Main.resx">
+      <DependentUpon>Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Plugins.resx">
+      <DependentUpon>Plugins.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PluginView.resx">
+      <DependentUpon>PluginView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PMForm.resx">
+      <DependentUpon>PMForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Popups\MsgBox.resx">
+      <DependentUpon>MsgBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\GUI_Settings.resx">
+      <DependentUpon>GUI_Settings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PortMapper.resx">
+      <DependentUpon>PortMapper.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IM08.wav" />
+    <None Include="Resources\boing_2.wav" />
+    <None Include="Resources\beep_1.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="NWR.ico" />
+    <None Include="Resources\Mono.Cecil.dll" />
+    <None Include="Resources\XPlugin.dll" />
+    <None Include="Resources\cryStub.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

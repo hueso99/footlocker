@@ -1,0 +1,7 @@
+1) Run Loader to build the bin
+
+2) upload files to host
+
+3) spread
+
+4) profit

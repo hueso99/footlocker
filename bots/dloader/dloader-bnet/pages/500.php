@@ -1,0 +1,1 @@
+<?php echo "<h1><center>500</center></h1>"; ?>

@@ -1,0 +1,193 @@
+/* BASIC */
+body, table, input, textarea {
+	font-family: Tahoma;
+	font-size: 9pt;
+}
+
+body {
+	background-image: url('../images/bg.gif');
+	text-align:center;
+}
+
+input, textarea {
+	border: 1px solid #AAAAAA;
+	background-color: #FFFFFF;
+}
+
+table{
+	width:100%;
+	border:0px;
+	padding:0px;
+	margin:0px;
+	border-spacing:0px;
+}
+
+td {
+	padding: 3px;
+	border-bottom: 1px solid #DDDDDD;
+	font-family:Verdana;
+	font-size:10px;
+}
+
+th {
+	text-transform: none;
+	font-family:Verdana;
+	font-size:10px;
+	font-weight:normal;
+	border:0px;
+	padding:0px;
+	margin:0px;
+	border-spacing:0px;
+}
+
+/* END BASIC */
+
+/* DESIGN */
+#container {
+	width: 900px;
+	padding: 20px;
+	background-color: #FFFFFF;
+	margin:auto;
+	text-align:left;
+}
+
+#banner_subtext {
+	text-align: right;
+	padding-right: 260px;
+	color: #AAAAAA;
+	font-weight: bold;
+}
+
+#navigation {
+	margin-top: 12px;
+	border-top: 1px solid #DDDDDD;
+	padding: 2px;
+	font-family: Tahoma;
+	font-size: 9pt;
+}
+
+#navigation a {
+	color: #666666;
+	font-weight: bold;
+	margin-left: 25px;
+	margin-right: 25px;
+}
+
+#navigation a:hover {
+	color: #202020;
+}
+
+a, a:active, a:visited {
+	color: #000000;
+	text-decoration: none;
+}
+
+div.title {
+	font-weight: bold;
+	border-bottom: 2px solid #696662;
+	padding: 2px;
+	padding-left: 10px;
+}
+
+div.content {
+	margin: 5px;
+	padding: 7px;
+	background-color: #FAFAFA;
+}
+
+div.seperate {
+	border: 1px solid #AAAAAA;
+	margin: 8px;
+	padding: 15px;
+	background-color: #FAFAFA;
+}
+
+div.success {
+	border:1px solid #00AA00;
+	margin: 8px;
+	padding: 15px;
+}
+
+div.error {
+	border:1px solid #EE0000;
+	margin: 8px;
+	padding: 15px;
+}
+
+.tr_title td {
+	border-bottom: 1px solid #777777;
+}
+
+a.button span {
+	width:200px;
+	background-color:#FFFFFF;
+	border:1px solid #AAAAAA;
+	padding: 2px 6px 2px 6px;
+	color: #222222;
+	margin-right: 2px;
+	font-family:Verdana;
+	font-size:10px;
+}
+
+.green, a.green{
+	color: #00AA00;
+}
+
+.red {
+	color: #EE0000;
+}
+
+/* END DESIGN */
+
+/* TABLE BOX */
+#Left_Box{
+	background-image:url('../images/tblLeft_Box.png');
+	background-repeat:no-repeat;
+	width:14px;
+	height:33px;
+	background-position:top right;
+}
+
+#Middle_Box{	
+	font: bold 14px Lucida Grande,Lucida Sans,Lucida Sans Unicode,Verdana,sans-serif;
+	color: #FFFFFF;
+	text-shadow: 0 -1px #3C3C3C;
+	text-transform: none;
+	letter-spacing: 0.5px;
+	background-image:url('../images/tblMiddle_Box.png');
+	background-repeat:repeat-x;
+	height:33px;
+	padding-bottom: 0pt;
+}
+
+#Right_Box{
+	background-image:url('../images/tblRight_Box.png');
+	background-repeat:no-repeat;
+	width:14px;
+	height:33px;
+}
+
+#Main_Left_Box{
+	background-image:url('../images/tbl_Middle_Box_Left.png');
+	background-repeat:repeat-y;
+	width:14px;
+	background-position:top right;
+}
+
+#Main_Middle_Box{
+	background-image:url('../images/tblMiddle_Box_Middle.png');
+	background-repeat:repeat;
+}
+
+#Main_Right_Box{
+	background-image:url('../images/tbl_Middle_Box_Right.png');
+	background-repeat:repeat-y;
+	width:14px;
+}
+
+#Main_Bottom_Box{
+	background-image:url('../images/tbl_Middle_Box_Bottom.png');
+	background-repeat:repeat-x;
+	height:1px;
+}
+/* END TABLE BOX */

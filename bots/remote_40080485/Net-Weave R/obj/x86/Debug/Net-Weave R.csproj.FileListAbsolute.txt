@@ -1,0 +1,37 @@
+C:\Users\Nathan\Documents\Visual Studio 2010\Projects\Net-Weave\Net-Weave R\obj\x86\Debug\Net-Weave R.csprojResolveAssemblyReference.cache
+C:\Users\Nathan\Documents\Visual Studio 2010\Projects\Net-Weave\Net-Weave R\obj\x86\Debug\Net_Weave_R.Forms.Dialogs.TermsOfService.resources
+C:\Users\Nathan\Documents\Visual Studio 2010\Projects\Net-Weave\Net-Weave R\obj\x86\Debug\Net_Weave_R.Forms.Log.resources
+C:\Users\Nathan\Documents\Visual Studio 2010\Projects\Net-Weave\Net-Weave R\obj\x86\Debug\Net_Weave_R.Forms.Main.resources
+C:\Users\Nathan\Documents\Visual Studio 2010\Projects\Net-Weave\Net-Weave R\obj\x86\Debug\Net_Weave_R.Forms.Popups.MsgBox.resources
+C:\Users\Nathan\Documents\Visual Studio 2010\Projects\Net-Weave\Net-Weave R\obj\x86\Debug\Net_Weave_R.Forms.GUI_Settings.resources
+C:\Users\Nathan\Documents\Visual Studio 2010\Projects\Net-Weave\Net-Weave R\obj\x86\Debug\Net_Weave_R.Properties.Resources.resources
+C:\Users\Nathan\Documents\Visual Studio 2010\Projects\Net-Weave\Net-Weave R\obj\x86\Debug\Net-Weave R.csproj.GenerateResource.Cache
+C:\Users\Nathan\Documents\Visual Studio 2010\Projects\Net-Weave\Net-Weave R\bin\Debug\Net-Weave R.exe
+C:\Users\Nathan\Documents\Visual Studio 2010\Projects\Net-Weave\Net-Weave R\bin\Debug\Net-Weave R.pdb
+C:\Users\Nathan\Documents\Visual Studio 2010\Projects\Net-Weave\Net-Weave R\bin\Debug\NetLib.dll
+C:\Users\Nathan\Documents\Visual Studio 2010\Projects\Net-Weave\Net-Weave R\bin\Debug\NetLib.Forms.dll
+C:\Users\Nathan\Documents\Visual Studio 2010\Projects\Net-Weave\Net-Weave R\bin\Debug\NetLib.pdb
+C:\Users\Nathan\Documents\Visual Studio 2010\Projects\Net-Weave\Net-Weave R\bin\Debug\NetLib.Forms.pdb
+C:\Users\Nathan\Documents\Visual Studio 2010\Projects\Net-Weave\Net-Weave R\obj\x86\Debug\Net-Weave R.exe
+C:\Users\Nathan\Documents\Visual Studio 2010\Projects\Net-Weave\Net-Weave R\obj\x86\Debug\Net-Weave R.pdb
+C:\Users\Nathan\Documents\Visual Studio 2010\Projects\Net-Weave\Net-Weave R\obj\x86\Debug\Net_Weave_R.Forms.Builder.resources
+C:\Users\Nathan\Documents\Visual Studio 2010\Projects\Net-Weave\Net-Weave R\obj\x86\Debug\Net_Weave_R.Forms.Plugins.resources
+C:\Users\Nathan\Documents\Visual Studio 2010\Projects\Net-Weave\Net-Weave R\bin\Debug\NWR Client.dll
+C:\Users\Nathan\Documents\Visual Studio 2010\Projects\Net-Weave\Net-Weave R\bin\Debug\NWR Client.pdb
+C:\Users\Nathan\Documents\Visual Studio 2010\Projects\Net-Weave\Net-Weave R\obj\x86\Debug\Net_Weave_R.Forms.Dialogs.DownloadEx.resources
+C:\Users\Nathan\Documents\Visual Studio 2010\Projects\Net-Weave\Net-Weave R\obj\x86\Debug\Net_Weave_R.Forms.Dialogs.FloodPanelTypeDialog.resources
+C:\Users\Nathan\Documents\Visual Studio 2010\Projects\Net-Weave\Net-Weave R\obj\x86\Debug\Net_Weave_R.Forms.Dialogs.MultiFloodPanel.resources
+C:\Users\Nathan\Documents\Visual Studio 2010\Projects\Net-Weave\Net-Weave R\bin\Debug\XPlugin.dll
+C:\Users\Nathan\Documents\Visual Studio 2010\Projects\Net-Weave\Net-Weave R\obj\x86\Debug\Net_Weave_R.Forms.Dialogs.PluginSelectorDialog.resources
+C:\Users\Nathan\Documents\Visual Studio 2010\Projects\Net-Weave\Net-Weave R\obj\x86\Debug\Net_Weave_R.Forms.Chat.resources
+C:\Users\Nathan\Documents\Visual Studio 2010\Projects\Net-Weave\Net-Weave R\obj\x86\Debug\Net_Weave_R.Forms.FloodPanel.resources
+C:\Users\Nathan\Documents\Visual Studio 2010\Projects\Net-Weave\Net-Weave R\obj\x86\Debug\Net_Weave_R.Forms.PMForm.resources
+C:\Users\Nathan\Documents\Visual Studio 2010\Projects\Net-Weave\Net-Weave R\obj\x86\Debug\Net_Weave_R.Forms.Dialogs.AssemblyEditor.resources
+C:\Users\Nathan\Documents\Visual Studio 2010\Projects\Net-Weave\Net-Weave R\obj\x86\Debug\Net_Weave_R.Forms.Dialogs.IconSelecterDialog.resources
+C:\Users\Nathan\Documents\Visual Studio 2010\Projects\Net-Weave\Net-Weave R\obj\x86\Debug\Net_Weave_R.Forms.BugReport.resources
+C:\Users\Nathan\Documents\Visual Studio 2010\Projects\Net-Weave\Net-Weave R\bin\Debug\Mono.Nat.dll
+C:\Users\Nathan\Documents\Visual Studio 2010\Projects\Net-Weave\Net-Weave R\obj\x86\Debug\Net_Weave_R.Forms.PortMapper.resources
+C:\Users\Nathan\Documents\Visual Studio 2010\Projects\Net-Weave\Net-Weave R\obj\x86\Debug\Net_Weave_R.Forms.PluginView.resources
+C:\Users\Nathan\Documents\Visual Studio 2010\Projects\Net-Weave\Net-Weave R\obj\x86\Debug\Net_Weave_R.Forms.Dialogs.StatusDialog.resources
+C:\Users\Nathan\Documents\Visual Studio 2010\Projects\Net-Weave\Net-Weave R\obj\x86\Debug\Net_Weave_R.Forms.Dialogs.About.resources
+C:\Users\Nathan\Documents\Visual Studio 2010\Projects\Net-Weave\Net-Weave R\bin\Debug\Mono.Cecil.dll

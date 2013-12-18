@@ -1,0 +1,45 @@
+//============================================================
+//============================================================
+//== Use HBuilder.exe make your Settings
+
+- Control Panel URL (25 Chrs Max)
+- Dropped EXE Name (9 Chars Max)
+- USB Spread EXE Name (Must be 3 Chars) Does it even Work ?
+
+- Made Upload Keylog Logs to Work (No Send Mail, Uploading in Server Folder)
+- Made Upload Screenshot to work (No Send Mail, Uploading in Server Folder)
+
+Changelog : It is still shit, as much as it was but now is Shit v1.6.1
+
+//============================================================
+Included:
+
+\Binary\HBuilder.exe <= Builder (?)
+\Binary\server.bin <= (Herpes Bin Reloc out, Bin Rebuilded)
+
+\Panel\* <== Control Panel File (Rip from uBot)
+\Panel\inc\config.php <== Edit that file to Set it up
+//============================================================
+Note from coder:
+
+VERSION 1.6.1 RELEASED! PAY ATTENTION WHEN INFECTING YOURSELF: YOU WILL NOT BE ABLE TO KILL IT. <== lol ?
+
+Now the anti-botkill module loads the libraries into the remote processes. <== [rolleye]
+YOU WILL NEVER LOSE A BOT AGAIN. <== lol bis ?
+v1.6.1 fixed a minimal crash bug.
+//============================================================
+
+ Edit CPanel URL
+- Edit Dropped EXE Name
+- Edit URL Spread EXE Name (Is it even working ?)
+
+- Connect every 15 Secondes instead of 5 Secondes (you can change that at Offset 00003B9C => 983A (3A98 = 15000ms))
+
+- Added Upload Keylog File
+- Added Upload Screenshot File
+
+Note : Settings Protected by ... ... ... nothing ?
+//============================================================
+
+//== NoNh / OpenSC.ws 
+

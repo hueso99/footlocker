@@ -1,0 +1,194 @@
+body{
+	font-size: 10px;
+	font-family: Lucida Console, Tahoma, Arial;
+	color: black;
+	
+	
+	/* For IE */
+	text-align: center;
+	background-color: #000000; 
+}
+
+
+label{
+	display: inline-block;
+	width: 80px;
+}
+
+#wrapper{
+	border: 2px dashed gray;
+	margin: auto;
+	width: 1000px;
+	background-color: black;
+	margin-top: 8%;
+}
+
+#header{
+	border-bottom: 2px dashed black;
+	width: 1000px;
+	height: 200px;
+	background: black;
+}
+
+#navi{
+	border-bottom: 1px solid gray;
+	border-top: 1px solid gray;
+	color: gray;
+	/* background-image: url('../img/navi.gif'); */
+	background-color: black;
+	width: 1000px;
+	height: 25px;
+}
+
+#bbord{
+border: 1px dashed gray;
+
+}
+
+#bbord2{
+border: 2pt dashed gray;
+color: gray;
+}
+
+#navi ul{
+		list-style: none;
+		display: inline;
+	}
+
+#navi ul li{
+		float: left;
+		padding: 3px;
+		margin-left: 10px;
+	}
+	
+#navi ul li a{
+		color: gray;
+		text-decoration: none;
+	}
+	
+#navi ul li a:hover{
+		text-decoration: underline;
+	}
+
+#content{
+	
+	/* For IE */
+	text-align: left;
+	color: gray;
+	background-color: black;
+	border-bottom: 1px solid black;
+	padding: 5px;
+	width: 990px;
+}
+
+#footer{
+	text-align: center;
+	background: black;
+	color: #09F;
+	padding: 1px;
+}
+
+select
+{
+	background-color:black;
+	color: #09F;
+	
+	border:1px solid gray;
+	
+}
+
+select:focus
+{
+	background-color:black;
+	color:#FFFFFF;
+
+	border:1px solid #09F;
+	
+}
+.tb{
+	border: 1px solid grey;
+	background: black;
+	color: #09F;
+	width: 180px;
+}
+
+
+.tb:focus{
+	border: 1px solid #09F;
+	width: 180px;
+}
+
+
+
+.btn{
+	border: 1px solid gray;
+	background: black;
+	width: 150px;
+	cursor: pointer;
+	color: gray;
+}
+
+
+.btn:hover{
+	border: 1px solid #09F;
+	color: #09F;
+}
+
+
+
+
+#content #table{
+		font-size: 13px;
+	}
+	
+#content .th{
+		border-bottom: 1px solid silver;
+		width: 150px;
+		text-align: left;
+		font-weight: normal;
+		color: #0072bc;
+	}
+	
+#content .td{
+		border-bottom: 1px solid silver;
+		width: 150px;
+		text-align: left;
+	}
+
+.clearfix:after {
+	content: ".";
+	display: block;
+	clear: both;
+	visibility: hidden;
+	line-height: 0;
+	height: 0;
+}
+ 
+.clearfix {
+	display: inline-block;
+}
+
+#wb
+{
+	text-align: left;
+	color: gray;
+}
+
+#success
+{
+	color: lime;
+	font-size: 15;
+}
+
+#error
+{
+	color: red;
+	font-size: 15;
+}
+
+
+a {
+color: #09F;
+
+
+}

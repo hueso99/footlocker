@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<settings>
+  <socks_port>7000</socks_port>
+  <ftp_port>7002</ftp_port>
+  <ping_timeout>5</ping_timeout>
+  <threads_number>8</threads_number>
+  <ftp_limit>5000</ftp_limit>
+  <socks_limit>10000</socks_limit>
+  <login></login>
+  <password></password>
+  <geoip_path>GeoIPCity.dat</geoip_path>
+  <mysql_host>localhost</mysql_host>
+  <mysql_user>root</mysql_user>
+  <mysql_pass>ser42459</mysql_pass>
+  <mysql_db>bc</mysql_db>
+  <mysql_table>bots</mysql_table>
+</settings>

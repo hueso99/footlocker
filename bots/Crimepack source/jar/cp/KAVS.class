@@ -1,0 +1,20 @@
+package cpak;
+
+import java.beans.Expression;
+import java.util.Map.Entry;
+
+public class KAVS extends Expression
+  implements Map.Entry
+{
+  Map.Entry entry;
+
+  public KAVS(Object target, String methodName, Object[] arguments)
+  {
+    super(target, methodName, arguments);
+  }
+
+  public Object getKey()
+  {
+    return null;
+  }
+}

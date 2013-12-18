@@ -1,0 +1,57 @@
+#mainBox
+{
+position: relative;
+display: block;
+border-left: 170px solid white;
+border-right: 170px solid white;
+}
+
+#innerBox
+{
+display: block;
+margin-left: -170px;
+padding: 5px;
+}
+
+#leftBox
+{
+float: left;
+position: relative;
+width: 170px;
+left: 0px;
+}
+
+#rightBox
+{
+margin-top: -64px;
+margin-left: 340px;
+margin-right: 240px;
+position: relative;
+display: block;
+width: 150px;
+height: 1%;
+}
+
+#rightBox2
+{
+float: right;
+position: relative;
+width: 20px;
+left: 0px;
+}
+
+
+#centerBox
+{
+margin-left: 170px;
+margin-right: 170px;
+position: relative;
+display: block;
+height: 1%;
+width: 130px;
+}
+
+.clear
+{
+clear:both;
+}

@@ -1,0 +1,34 @@
+1 [2011-May-28 08:53:40.984081] [0x9b29918] [info] Starting socks5\ftp back-connect server
+
+2 [2011-May-28 08:53:40.984252] [0x9b29918] [info] Socks port:         7000
+
+3 [2011-May-28 08:53:40.984276] [0x9b29918] [info] Ftp port:           7002
+
+4 [2011-May-28 08:53:40.984296] [0x9b29918] [info] Ping timeout:       5
+
+5 [2011-May-28 08:53:40.984316] [0x9b29918] [info] Number of threads:  8
+
+6 [2011-May-28 08:53:40.984816] [0x9b29918] [info] MySQL module initialized
+
+7 [2011-May-28 08:53:40.987053] [0x9b29918] [error] Could not clear Geoip table @ clearTable : /home/user/Desktop/windows-share/Server/Linux/mysql_base.cpp(432)
+
+8 [2011-May-28 08:53:40.991702] [0x9b29918] [info] Socks Server initiated...
+
+9 [2011-May-28 08:53:40.991764] [0x9b29918] [info] Ftp Server initiated...
+
+1 [2011-May-28 09:09:27.692074] [0xa043918] [info] Starting socks5\ftp back-connect server
+
+2 [2011-May-28 09:09:27.692227] [0xa043918] [info] Socks port:         7000
+
+3 [2011-May-28 09:09:27.692250] [0xa043918] [info] Ftp port:           7002
+
+4 [2011-May-28 09:09:27.692270] [0xa043918] [info] Ping timeout:       5
+
+5 [2011-May-28 09:09:27.692291] [0xa043918] [info] Number of threads:  8
+
+6 [2011-May-28 09:09:27.692793] [0xa043918] [info] MySQL module initialized
+
+7 [2011-May-28 09:09:27.699401] [0xa043918] [error] Software exception Address already in use @ Start : /home/user/Desktop/windows-share/Server/Linux/bc_server_main.cpp(331)
+
+10 [2011-Jun-06 10:44:55.879196] [0x9b43f98] [error] Could not store Geoip info @ storeGeoipInfo : /home/user/Desktop/windows-share/Server/Linux/mysql_base.cpp(280)
+

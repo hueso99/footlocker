@@ -1,0 +1,8 @@
+C:\Users\GN0M3\Desktop\Dev\N0PE Systems\N0PE Bot\Server\SysDriver\bin\Release\SysDriver.exe
+C:\Users\GN0M3\Desktop\Dev\N0PE Systems\N0PE Bot\Server\SysDriver\bin\Release\SysDriver.pdb
+C:\Users\GN0M3\Desktop\Dev\N0PE Systems\N0PE Bot\Server\SysDriver\obj\x86\Release\ResolveAssemblyReference.cache
+C:\Users\GN0M3\Desktop\Dev\N0PE Systems\N0PE Bot\Server\SysDriver\obj\x86\Release\SysDriver.Properties.Resources.resources
+C:\Users\GN0M3\Desktop\Dev\N0PE Systems\N0PE Bot\Server\SysDriver\obj\x86\Release\ResGen.read.1.tlog
+C:\Users\GN0M3\Desktop\Dev\N0PE Systems\N0PE Bot\Server\SysDriver\obj\x86\Release\ResGen.write.1.tlog
+C:\Users\GN0M3\Desktop\Dev\N0PE Systems\N0PE Bot\Server\SysDriver\obj\x86\Release\SysDriver.exe
+C:\Users\GN0M3\Desktop\Dev\N0PE Systems\N0PE Bot\Server\SysDriver\obj\x86\Release\SysDriver.pdb
